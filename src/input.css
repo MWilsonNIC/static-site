@@ -70,6 +70,10 @@
     @apply uppercase font-bold tracking-wide;
   }
 
+  h5 {
+    @apply font-bold;
+  }
+
   p,
   li,
   blockquote {
@@ -130,14 +134,17 @@
     --color-moss-500: oklch(0.7581 0.1008 109.22);
     --color-moss-700: oklch(86.9% 0.005 56.366);
     --color-tangerine-500: oklch(0.6688 0.1201 84.55);
+    --color-tangerine-300: oklch(0.6688 0.1201 84.55);
+    --color-lake-500: oklch(0.6495 0.1271 235.17);
+    --color-hotpink-500: oklch(0.6401 0.1801 6.16);
+    --color-grape-500: oklch(0.5197 0.1295 322.46);
+    --color-yolk-700: oklch(0.5754 0.1491 41.16);
     --color-white: oklch(14.5% 0 0); /* neutral-950 */
     --color-stone-200: oklch(20.5% 0 0); /* neutral-900 */
     --color-stone-50: oklch(26.9% 0 0); /* neutral-800 */
     --color-stone-100: oklch(20.5% 0 0); /* neutral-900 */
     --color-stone-300: oklch(37.1% 0 0); /* neutral-700 */
     --color-stone-500: oklch(87% 0 0);
-    --color-lake-500: oklch(0.6495 0.1271 235.17);
-    --color-hotpink-500: oklch(0.6401 0.1801 6.16);
   }
 }
 
@@ -236,8 +243,26 @@
     opacity: 0;
     pointer-events: none;
   }
+
   header:has(#theme-toggle:checked) .icon-owls .owl--b {
     opacity: 1;
     pointer-events: auto;
+  }
+
+  /* species table */
+  #species-table th button {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+  }
+
+  #species-table th button:hover {
+    text-decoration: underline;
+  }
+
+  #species-table th button span {
+    margin-left: 0.2rem;
   }
 }
