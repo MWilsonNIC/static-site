@@ -1,0 +1,709 @@
+{
+  "Amphibians": {
+    "scientific_name": "Amphibia",
+    "subcategories": [
+      {
+        "name": "Frogs",
+        "scientific_name": "Anura",
+        "animals": [
+          {
+            "name": "Northern Red-legged Frog",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1,
+            "image": "https://placehold.co/600x400/e7e5e4/a8a29e?text=Northern Red-legged Frog"
+          }
+        ]
+      },
+      {
+        "name": "Salamanders",
+        "scientific_name": "Caudata",
+        "animals": [
+          {
+            "name": "Rough-skinned Newt",
+            "scientific_name": "Taricha granulosa",
+            "count": 1,
+            "image": "images/data/quill.png",
+            "description": "The rough-skinned newt or roughskin newt is a North American newt known for the strong toxin exuded from its skin."
+          }
+        ]
+      }
+    ]
+  },
+  "Reptiles": {
+    "scientific_name": "Reptilia",
+    "subcategories": [
+      {
+        "name": "Snakes",
+        "scientific_name": "Serpentes",
+        "animals": [
+          {
+            "name": "Common Garter Snake",
+            "scientific_name": "Lorum Ipsum",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "name": "Lizards",
+        "scientific_name": "Squamata (Lacertilia)",
+        "animals": [
+          {
+            "name": "Northern Alligator Lizard",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          }
+        ]
+      }
+    ]
+  },
+  "Mammals": {
+    "scientific_name": "Mammalia",
+    "subcategories": [
+      {
+        "name": "Large Land Mammals",
+        "scientific_name": "Mammalia (various orders)",
+        "animals": [
+          {
+            "name": "Black-tailed Deer",
+            "scientific_name": "Lorum Ipsum",
+            "count": 50
+          },
+          {
+            "name": "North American Beaver",
+            "scientific_name": "Lorum Ipsum",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "name": "Medium Land Mammals",
+        "scientific_name": "Carnivora",
+        "animals": [
+          {
+            "name": "Raccoon",
+            "scientific_name": "Lorum Ipsum",
+            "count": 64
+          },
+          {
+            "name": "North American River Otter",
+            "scientific_name": "Lorum Ipsum",
+            "count": 4
+          },
+          {
+            "name": "American Mink",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "Marine Mammals",
+        "scientific_name": "Carnivora (Pinnipedia)",
+        "animals": [
+          {
+            "name": "Harbour Seal",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "Rodents",
+        "scientific_name": "Rodentia",
+        "animals": [
+          {
+            "name": "Red Squirrel",
+            "scientific_name": "Lorum Ipsum",
+            "count": 14
+          },
+          {
+            "name": "Fox Squirrel",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Northern Flying Squirrel",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Deer Mouse",
+            "scientific_name": "Lorum Ipsum",
+            "count": 7
+          },
+          {
+            "name": "Long-tailed Vole",
+            "scientific_name": "Lorum Ipsum",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "name": "Shrews",
+        "scientific_name": "Eulipotyphla (Soricidae)",
+        "animals": [
+          {
+            "name": "Pacific Shrew",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "Bats",
+        "scientific_name": "Chiroptera",
+        "animals": [
+          {
+            "name": "Big Brown Bat",
+            "scientific_name": "Lorum Ipsum",
+            "count": 13
+          },
+          {
+            "name": "Yuma Myotis",
+            "scientific_name": "Lorum Ipsum",
+            "count": 11
+          },
+          {
+            "name": "Little Brown Myotis",
+            "scientific_name": "Lorum Ipsum",
+            "count": 7
+          },
+          {
+            "name": "California Myotis",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Long-eared Myotis",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Silver-haired Bat",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Townsend's Big-eared Bat",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          }
+        ]
+      }
+    ]
+  },
+  "Birds": {
+    "scientific_name": "Aves",
+    "subcategories": [
+      {
+        "name": "Birds of Prey",
+        "scientific_name": "Accipitriformes, Falconiformes, Strigiformes, Cathartiformes",
+        "animals": [
+          {
+            "name": "Bald Eagle",
+            "count": 50,
+            "image": "https://placehold.co/600x400/e7e5e4/a8a29e?text=Bald Eagle"
+          },
+          {
+            "name": "Barred Owl",
+            "scientific_name": "Lorum Ipsum",
+            "count": 32
+          },
+          {
+            "name": "Northern Saw-whet Owl",
+            "scientific_name": "Lorum Ipsum",
+            "count": 13
+          },
+          {
+            "name": "American Barn Owl",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Long-eared Owl",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Western Screech Owl",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Red-tailed Hawk",
+            "scientific_name": "Lorum Ipsum",
+            "count": 4
+          },
+          {
+            "name": "Sharp-shinned Hawk",
+            "scientific_name": "Lorum Ipsum",
+            "count": 3
+          },
+          {
+            "name": "Cooper's Hawk",
+            "scientific_name": "Lorum Ipsum",
+            "count": 7
+          },
+          {
+            "name": "Merlin",
+            "scientific_name": "Lorum Ipsum",
+            "count": 6
+          },
+          {
+            "name": "American Kestrel",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          },
+          {
+            "name": "Turkey Vulture",
+            "scientific_name": "Lorum Ipsum",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "name": "Songbirds",
+        "scientific_name": "Passeriformes",
+        "animals": [
+          {
+            "name": "Pine Siskin",
+            "scientific_name": "Lorum Ipsum",
+            "count": 75
+          },
+          {
+            "name": "American Robin",
+            "scientific_name": "Lorum Ipsum",
+            "count": 73
+          },
+          {
+            "name": "Dark-eyed Junco",
+            "scientific_name": "Lorum Ipsum",
+            "count": 35
+          },
+          {
+            "name": "Spotted Towhee",
+            "scientific_name": "Lorum Ipsum",
+            "count": 30
+          },
+          {
+            "name": "Purple Finch",
+            "scientific_name": "Lorum Ipsum",
+            "count": 17
+          },
+          {
+            "name": "Varied Thrush",
+            "scientific_name": "Lorum Ipsum",
+            "count": 13
+          },
+          {
+            "name": "Chipping Sparrow",
+            "scientific_name": "Lorum Ipsum",
+            "count": 12
+          },
+          {
+            "name": "White-crowned Sparrow",
+            "scientific_name": "Lorum Ipsum",
+            "count": 11
+          },
+          {
+            "name": "Golden-crowned Sparrow",
+            "scientific_name": "Lorum Ipsum",
+            "count": 5
+          },
+          {
+            "name": "Savannah Sparrow",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Song Sparrow",
+            "scientific_name": "Lorum Ipsum",
+            "count": 8
+          },
+          {
+            "name": "Fox Sparrow",
+            "scientific_name": "Lorum Ipsum",
+            "count": 9
+          },
+          {
+            "name": "House Finch",
+            "scientific_name": "Lorum Ipsum",
+            "count": 6
+          },
+          {
+            "name": "American Goldfinch",
+            "scientific_name": "Lorum Ipsum",
+            "count": 4
+          },
+          {
+            "name": "Cedar Waxwing",
+            "scientific_name": "Lorum Ipsum",
+            "count": 6
+          },
+          {
+            "name": "Chestnut-backed Chickadee",
+            "scientific_name": "Lorum Ipsum",
+            "count": 5
+          },
+          {
+            "name": "Red-breasted Nuthatch",
+            "scientific_name": "Lorum Ipsum",
+            "count": 4
+          },
+          {
+            "name": "Brown Creeper",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          },
+          {
+            "name": "Golden-crowned Kinglet",
+            "scientific_name": "Lorum Ipsum",
+            "count": 3
+          },
+          {
+            "name": "Ruby-crowned Kinglet",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Bewick's Wren",
+            "scientific_name": "Lorum Ipsum",
+            "count": 5
+          },
+          {
+            "name": "Pacific Wren",
+            "scientific_name": "Lorum Ipsum",
+            "count": 5
+          },
+          {
+            "name": "Western Flycatcher",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Swainson's Thrush",
+            "scientific_name": "Lorum Ipsum",
+            "count": 7
+          },
+          {
+            "name": "Hermit Thrush",
+            "scientific_name": "Lorum Ipsum",
+            "count": 5
+          },
+          {
+            "name": "Yellow-rumped Warbler",
+            "scientific_name": "Lorum Ipsum",
+            "count": 7
+          },
+          {
+            "name": "Yellow Warbler",
+            "scientific_name": "Lorum Ipsum",
+            "count": 4
+          },
+          {
+            "name": "Orange-crowned Warbler",
+            "scientific_name": "Lorum Ipsum",
+            "count": 3
+          },
+          {
+            "name": "Common Yellowthroat",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          },
+          {
+            "name": "Western Tanager",
+            "scientific_name": "Lorum Ipsum",
+            "count": 8
+          },
+          {
+            "name": "Black-headed Grosbeak",
+            "scientific_name": "Lorum Ipsum",
+            "count": 3
+          },
+          {
+            "name": "Brown-headed Cowbird",
+            "scientific_name": "Lorum Ipsum",
+            "count": 3
+          },
+          {
+            "name": "Steller's Jay",
+            "scientific_name": "Lorum Ipsum",
+            "count": 4
+          },
+          {
+            "name": "Common Raven",
+            "scientific_name": "Lorum Ipsum",
+            "count": 26
+          },
+          {
+            "name": "American Crow",
+            "scientific_name": "Lorum Ipsum",
+            "count": 24
+          }
+        ]
+      },
+      {
+        "name": "Woodpeckers",
+        "scientific_name": "Piciformes",
+        "animals": [
+          {
+            "name": "Northern Flicker",
+            "scientific_name": "Lorum Ipsum",
+            "count": 31
+          },
+          {
+            "name": "Red-breasted Sapsucker",
+            "scientific_name": "Lorum Ipsum",
+            "count": 10
+          },
+          {
+            "name": "Pileated Woodpecker",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          },
+          {
+            "name": "Downy Woodpecker",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "Hummingbirds and Swallows",
+        "scientific_name": "Apodiformes, Passeriformes",
+        "animals": [
+          {
+            "name": "Anna's Hummingbird",
+            "scientific_name": "Lorum Ipsum",
+            "count": 45
+          },
+          {
+            "name": "Rufous Hummingbird",
+            "scientific_name": "Lorum Ipsum",
+            "count": 23
+          },
+          {
+            "name": "Barn Swallow",
+            "scientific_name": "Lorum Ipsum",
+            "count": 9
+          },
+          {
+            "name": "Violet-green Swallow",
+            "scientific_name": "Lorum Ipsum",
+            "count": 10
+          },
+          {
+            "name": "Purple Martin",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "Waterfowl",
+        "scientific_name": "Anseriformes",
+        "animals": [
+          {
+            "name": "Mallard",
+            "scientific_name": "Lorum Ipsum",
+            "count": 26
+          },
+          {
+            "name": "Canada Goose",
+            "scientific_name": "Lorum Ipsum",
+            "count": 15
+          },
+          {
+            "name": "Cackling Goose",
+            "scientific_name": "Lorum Ipsum",
+            "count": 4
+          },
+          {
+            "name": "Snow Goose",
+            "scientific_name": "Lorum Ipsum",
+            "count": 3
+          },
+          {
+            "name": "Trumpeter Swan",
+            "scientific_name": "Lorum Ipsum",
+            "count": 6
+          },
+          {
+            "name": "Wood Duck",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          },
+          {
+            "name": "American Wigeon",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          },
+          {
+            "name": "Green-winged Teal",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          },
+          {
+            "name": "Common Merganser",
+            "scientific_name": "Lorum Ipsum",
+            "count": 4
+          },
+          {
+            "name": "Hooded Merganser",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Red-breasted Merganser",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Ring-neck Duck",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Lesser Scaup",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Common Goldeneye",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "White-winged Scoter",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "Shorebirds and Waders",
+        "scientific_name": "Charadriiformes, Pelecaniformes",
+        "animals": [
+          {
+            "name": "Great Blue Heron",
+            "scientific_name": "Lorum Ipsum",
+            "count": 18
+          },
+          {
+            "name": "Killdeer",
+            "scientific_name": "Lorum Ipsum",
+            "count": 3
+          },
+          {
+            "name": "Wilson's Snipe",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "Seabirds",
+        "scientific_name": "Charadriiformes, Procellariiformes, Suliformes, Gaviiformes, Podicipediformes",
+        "animals": [
+          {
+            "name": "Glaucous-winged Gull",
+            "scientific_name": "Lorum Ipsum",
+            "count": 12
+          },
+          {
+            "name": "Olympic Gull",
+            "scientific_name": "Lorum Ipsum",
+            "count": 11
+          },
+          {
+            "name": "Herring Gull",
+            "scientific_name": "Lorum Ipsum",
+            "count": 3
+          },
+          {
+            "name": "California Gull",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          },
+          {
+            "name": "Ring-billed Gull",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          },
+          {
+            "name": "Short-billed Gull",
+            "scientific_name": "Lorum Ipsum",
+            "count": 3
+          },
+          {
+            "name": "Rhinocerous Auklet",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Leach's Storm Petrel",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          },
+          {
+            "name": "Brown Pelican",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Double-crested Cormorant",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Pacific Loon",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Red-throated Loon",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Red-necked Grebe",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "Game Birds",
+        "scientific_name": "Galliformes",
+        "animals": [
+          {
+            "name": "Ruffed Grouse",
+            "scientific_name": "Lorum Ipsum",
+            "count": 3
+          },
+          {
+            "name": "Ring-neck Pheasant",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          },
+          {
+            "name": "Northern Bobwhite",
+            "scientific_name": "Lorum Ipsum",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "Pigeons",
+        "scientific_name": "Columbiformes",
+        "animals": [
+          {
+            "name": "Band-tailed Pigeon",
+            "scientific_name": "Lorum Ipsum",
+            "count": 2
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -36,11 +36,11 @@
 
   <!-- CONTENT -->
   <body>
-    <header class="sticky top-0 z-50">
+      <header class="sticky top-0 z-50">
       <!-- INFO BAR -->
       <div class="bg-stone-200">
         <section
-          class="grid grid-cols-4 items-center w-(--content-width) mx-auto pt-1 pb-2 md:grid-cols-24">
+          class="grid grid-cols-4 items-center w-(--content-width) mx-auto pt-1 pb-2 lg:pt-0 lg:pb-1 md:grid-cols-24">
           <!-- Phone -->
           <div
             class="link col-span-3 flex gap-x-3 items-center w-full pt-2 md:col-span-8 md:w-auto">
@@ -298,11 +298,11 @@
       <!-- Logo -->
       <div class="border-y border-stone-300 bg-stone-50">
         <nav
-          class="navbar flex items-center justify-between w-(--content-width) mx-auto py-3">
+          class="navbar flex items-center justify-between w-(--content-width) mx-auto py-5">
           <a href="index.html" class="hover:no-underline">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-50 md:w-60"
+              class="w-60 md:w-70"
               viewBox="0 0 334.08 84.46">
               <g>
                 <g>
@@ -394,7 +394,7 @@
             id="menu-toggle-desktop"
             popovertarget="mega-menu__popover"
             type="button"
-            class="hidden btn btn-main place-self-center md:block"
+            class="hidden btn btn-main text-base place-self-center md:block"
             aria-label="Open menu">
             Menu
           </button>
@@ -402,7 +402,7 @@
           <button
             id="menu-toggle-mobile"
             popovertarget="mega-menu__popover"
-            class="text-4xl md:hidden"
+            class="text-5xl md:hidden"
             aria-label="Open menu"
             type="button">
             <i class="fa-solid fa-bars" aria-hidden="true"></i>
@@ -508,8 +508,8 @@
               data-accordion-panel
               class="hidden space-y-2 ml-14 pt-0 pb-3 md:block md:pl-0">
               <li class="pt-0">
-                <a href="emergency-info.html" class="link">
-                  Emergency Information
+                <a href="wildlife-assistance.html" class="link">
+                  Wildlife Assistance
                 </a>
               </li>
               <li class="pt-0">
@@ -736,7 +736,10 @@
 
     <!-- MAIN -->
     <main>
-      <h1>Donate Goods</h1>
+      <div
+        class="border-b border-stone-300 px-8 py-12 text-center md:text-left">
+        <h1 class="text-moss-500">Donate Goods</h1>
+      </div>
       <p>
         Donations can be dropped off at the MARS Wildlife Hospital at 1331
         Williams Beach Road, Merville, or mailed to P.O. Box 415, Merville,

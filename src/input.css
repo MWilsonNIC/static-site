@@ -41,7 +41,7 @@
 
 @layer base {
   body {
-    @apply bg-stone-200 text-moss-700 text-base;
+    @apply bg-stone-100 text-moss-700 text-base;
   }
 
   main,
@@ -103,6 +103,10 @@
     opacity: 0.8;
   }
 
+  .question {
+    @apply text-moss-500 text-xl font-bold max-w-[50ch];
+  }
+
   /* links */
   .link {
     @apply hover:underline underline-offset-4 decoration-moss-500 cursor-pointer active:opacity-70 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2;
@@ -114,6 +118,10 @@
 
   blockquote {
     @apply text-2xl text-moss-500 italic max-w-[35ch];
+  }
+
+  nav .link {
+    @apply text-lg;
   }
 
   /* svgs  */

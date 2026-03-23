@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MARS | Get Involved</title>
+    <title>MARS | Apply for Work Experience</title>
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico" />
     <link
@@ -34,9 +34,8 @@
       crossorigin="anonymous"></script>
   </head>
 
-  <!-- CONTENT -->
   <body>
-     <header class="sticky top-0 z-50">
+    <header class="sticky top-0 z-50">
       <!-- INFO BAR -->
       <div class="bg-stone-200">
         <section
@@ -733,192 +732,506 @@
         </nav>
       </div>
     </header>
-    <!-- MAIN -->
-    <main>
-       <div
-          class=" border-b border-stone-300 px-8 py-12 text-center md:text-left">
-          <h1 class="text-moss-500">Get Involved</h1>
+
+    <!-- form -->
+    <main class="border-b border-stone-300 pb-8">
+      <div
+        class="border-b border-stone-300 px-8 py-12 text-center md:text-left">
+        <h1 class="text-moss-500">Request a Class or Group Tour</h1>
+      </div>
+
+      <div class="mx-auto max-w-5xl px-6 py-8 text-moss-700 md:px-8">
+        <div class="mb-10 max-w-3xl">
+          <p class="max-w-2xl text-lg leading-8">
+            Complete this form to request a class or group visit to MARS. Fields
+            marked
+            <span aria-hidden="true">*</span>
+            <span class="sr-only">required</span>
+            are required.
+          </p>
+          <p class="mt-4 text-moss-700 opacity-80">
+            Tours are typically available Friday to Sunday. Please give us as
+            much notice as possible. Three weeks is ideal.
+          </p>
         </div>
-      <section>
-        <h2>Become a Member</h2>
-        <p>
-          A MARS membership is a great way of getting a little bit more involved
-          with the MARS Wildlife Rescue Centre. It’s a way of saying you care
-          and shows you are willing to step up and make your support concrete.
-        </p>
-        <p>
-          Membership entitles you to attend the Annual General Meeting held each
-          year in May. You can help elect MARS board members and vote on the
-          principles and policies that guide the MARS Wildlife Rescue Centre.
-          You will also receive our eNewsletter. Having a strong membership base
-          also helps demonstrate our organization’s support in the community
-          when we apply for grants.
-        </p>
-        <p>
-          Most of all, you will be helping us to help wildlife on northern
-          Vancouver Island. Your fee goes towards the care and rehabilitation of
-          injured, ill or orphaned wildlife.
-        </p>
-        <p>
-          Memberships are renewed every February by end month. New memberships
-          taken out after October 1st will be valid for one year after the
-          following February.
-        </p>
-        <table>
-          <tr>
-            <th>Membership Type</th>
-            <th>|</th>
-            <th>Membership Fee</th>
-          </tr>
-          <tr>
-            <td>Individual</td>
-            <td>|</td>
-            <td>$15.00</td>
-          </tr>
-          <tr>
-            <td>Senior (60+)</td>
-            <td>|</td>
-            <td>$10.00</td>
-          </tr>
-          <tr>
-            <td>Student</td>
-            <td>|</td>
-            <td>$10.00</td>
-          </tr>
-          <tr>
-            <td>Family</td>
-            <td>|</td>
-            <td>$25.00</td>
-          </tr>
-          <tr>
-            <td>Corporate</td>
-            <td>|</td>
-            <td>$250.00</td>
-          </tr>
-        </table>
-        <a href="#">Apply Now</a>
-      </section>
-      <section>
-        <h2>Become a Volunteer</h2>
-        <section>
-          <h3>Did you know?</h3>
-          <p>
-            … MARS Wildlife Rescue depends almost exclusively on volunteers?
-            It’s true. There are over 100 volunteers working at MARS, filling
-            every position imaginable.
-          </p>
-        </section>
-        <section>
-          <h3>Work With and For Wildlife</h3>
-          <section>
-            <h4>WILDLIFE HOSPITAL VOLUNTEERS</h4>
-            <p>
-              At the Wildlife Hospital, we have positions for wildlife
-              caregivers, ambassador bird caregivers, housekeeping volunteers,
-              and transportation volunteers. We also accept work experience
-              volunteers. We literally could not treat the 1000+ patients
-              annually without the generosity of all these individuals. And of
-              course, even if you’ve had no experience working in a wildlife
-              hospital setting, our professional wildlife rehabbers will teach
-              you what to do.
+
+        <div
+          id="form-error-summary"
+          class="mb-8 hidden border border-red-700 bg-red-50 p-5 text-red-900"
+          role="alert"
+          tabindex="-1"
+          aria-labelledby="form-error-summary-title">
+          <h2 id="form-error-summary-title" class="text-xl">
+            Please correct the following:
+          </h2>
+          <ul id="form-error-list" class="mt-3 list-disc pl-5"></ul>
+        </div>
+
+        <form
+          id="class-group-tour-form"
+          class="space-y-8"
+          action="/request-a-class-or-group-tour"
+          method="post"
+          novalidate>
+          <div>
+            <h2 class="text-2xl text-moss-700">Organizer details</h2>
+            <p class="mt-2 text-moss-700 opacity-80">
+              Tell us who is organizing the visit and how to reach you.
             </p>
-          </section>
-          <section>
-            <h4>VISITOR CENTRE VOLUNTEERS</h4>
-            <p>
-              At the Visitor Centre, we are seeking gift shop volunteers, and
-              people from all walks of life to work with the education and
-              interpretive tours. We also depend on volunteers for on-going
-              habitat stewardship and property development. We are looking for
-              people with special skills: gardeners, carpenters, electricians,
-              plumbers, heavy-duty machinery operators, labourers, and
-              shovelers, too. We also have a cohort of people working off-site
-              to raise money for MARS through park trail maintenance.
+
+            <div class="mt-6 grid gap-6 md:grid-cols-2">
+              <div>
+                <label for="first-name" class="mb-2 block text-moss-700">
+                  First name
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="first-name"
+                  name="first_name"
+                  type="text"
+                  autocomplete="given-name"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="last-name" class="mb-2 block text-moss-700">
+                  Last name
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="last-name"
+                  name="last_name"
+                  type="text"
+                  autocomplete="family-name"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="phone" class="mb-2 block text-moss-700">
+                  Phone
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="email" class="mb-2 block text-moss-700">
+                  Email
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  inputmode="email"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl text-moss-700">Group details</h2>
+            <p class="mt-2 text-moss-700 opacity-80">
+              Tell us about the school, class, or community group you are
+              bringing.
             </p>
-          </section>
-          <section>
-            <h4>OTHER</h4>
-            <p>Or perhaps you have a skill we didn’t even know we needed!</p>
-          </section>
-          <p>
-            So why not give it a go, join us, and share in this incomparable
-            opportunity to be in service to wild nature. We look forward to your
-            application.
-          </p>
-        </section>
-        <a href="#">Apply Now</a>
-        <a href="#">Volunteer Login</a>
-      </section>
-      <section>
-        <h2>Work Experience Program</h2>
-        <p>
-          Mentorship and education are among our core guiding principles at
-          MARS. As a result, every year the MARS Wildlife Hospital offers young
-          aspiring wildlife rehabilitators an opportunity to gain hands on
-          experience working with injured, ill or orphaned wildlife.
-        </p>
-        <p>
-          We accept work experience volunteers all year round. These are
-          full-time unpaid positions filled on a rotating basis of anywhere from
-          two weeks to several months, depending on your availability.
-        </p>
-        <section>
-          <h3>What to Expect</h3>
-          <p>
-            The Wildlife Hospital is staffed by a wildlife rehabilitation
-            manager, assistant wildlife rehabilitation manager, a wildlife
-            rehabilitator, and many dedicated volunteers. As a work experience
-            volunteer you will become part of a team of like-minded people and
-            will be treated with respect and friendship.
-          </p>
-          <p>
-            You can expect to be involved in all aspects of the rehabilitation
-            process, although your main responsibilities will be diet
-            preparation, feeding, and cleaning. You will also participate in
-            animal rescues and releases, treatment administration, building
-            projects, grounds maintenance, and our community outreach program.
-          </p>
-          <p>
-            receive the greatest number of patients. We care for many different
-            species of wildlife native to Vancouver Island, including songbirds,
-            raptors, waterfowl, fawns, raccoons, and other small mammals. Be
-            forewarned, work at the Wildlife Hospital can be very demanding! In
-            the summer, our volunteer caregivers typically work varying shifts
-            between 7 am – 10 pm, with occasional night feedings. The schedule
-            can be intense, but you will also be given time off to enjoy the
-            beautiful scenery of Vancouver Island.
-          </p>
-          <p>
-            MARS offers very basic housing, linens, cooking utensils, and
-            bicycles for student use. You are responsible for you own food and
-            meals, which you can plan on your own or coordinate with other
-            students!
-          </p>
-          <p>
-            We accept work experience volunteers from all over the world, with a
-            variety of different educational backgrounds. You must be at least
-            19 years of age and have a current Tetanus vaccination. We do not
-            require our work experience volunteers to have any previous wildlife
-            knowledge, nor do they have to be students. Come here prepared to
-            give 100% to our wild patients and you will have an extraordinary
-            experience.
-          </p>
-          <p>
-            If you are interested in volunteering with us to learn about and
-            care for a variety of different wildlife species, MARS might be the
-            perfect place for you!
-          </p>
-        </section>
-        <a href="#">Apply Now</a>
-      </section>
-      <section>
-        <h2>Job Opportunities</h2>
-        <p>
-          Thank you for considering a role with the MARS team. At this time, we
-          do not have any paid positions available. Please check again for
-          future job opportunities.
-        </p>
-      </section>
+
+            <div class="mt-6 grid gap-6 md:grid-cols-2">
+              <div class="md:col-span-2">
+                <label for="group-name" class="mb-2 block text-moss-700">
+                  Name of school, preschool, community group, or organization
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="group-name"
+                  name="group_name"
+                  type="text"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="group-type" class="mb-2 block text-moss-700">
+                  Group type
+                </label>
+                <div class="relative">
+                  <select
+                    id="group-type"
+                    name="group_type"
+                    class="w-full appearance-none rounded-2xl border border-stone-300 bg-white px-4 py-3 pr-16 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20">
+                    <option value="">Select one</option>
+                    <option value="school-class">School class</option>
+                    <option value="preschool-daycare">
+                      Preschool or daycare
+                    </option>
+                    <option value="youth-group">Youth group or club</option>
+                    <option value="adult-group">Adult or senior group</option>
+                    <option value="community-organization">
+                      Community organization
+                    </option>
+                    <option value="other">Other</option>
+                  </select>
+
+                  <svg
+                    class="pointer-events-none absolute right-6 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true">
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+
+              <div>
+                <label for="grade-level" class="mb-2 block text-moss-700">
+                  Grade level or age range
+                  <span aria-hidden="true">*</span>
+                </label>
+                <div class="relative">
+                  <select
+                    id="grade-level"
+                    name="grade_level"
+                    required
+                    class="w-full appearance-none rounded-2xl border border-stone-300 bg-white px-4 py-3 pr-16 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20">
+                    <option value="">Select one</option>
+                    <option value="adults-seniors">Adults / Seniors</option>
+                    <option value="preschool-3-4">Preschool 3-4 years</option>
+                    <option value="preschool-4-5">Preschool 4-5 years</option>
+                    <option value="kindergarten">Kindergarten</option>
+                    <option value="grade-1">Grade 1</option>
+                    <option value="grade-2">Grade 2</option>
+                    <option value="grade-3">Grade 3</option>
+                    <option value="grade-4">Grade 4</option>
+                    <option value="grade-5">Grade 5</option>
+                    <option value="grade-6">Grade 6</option>
+                    <option value="grade-7">Grade 7</option>
+                    <option value="grade-8">Grade 8</option>
+                    <option value="grade-9">Grade 9</option>
+                    <option value="grade-10">Grade 10</option>
+                    <option value="grade-11">Grade 11</option>
+                    <option value="grade-12">Grade 12</option>
+                    <option value="mixed-ages">Mixed ages</option>
+                  </select>
+
+                  <svg
+                    class="pointer-events-none absolute right-6 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true">
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="number-of-children"
+                  class="mb-2 block text-moss-700">
+                  Number of children or youth in the group
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="number-of-children"
+                  name="number_of_children"
+                  type="number"
+                  min="0"
+                  required
+                  inputmode="numeric"
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="number-of-adults" class="mb-2 block text-moss-700">
+                  Number of adults
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="number-of-adults"
+                  name="number_of_adults"
+                  type="number"
+                  min="0"
+                  required
+                  inputmode="numeric"
+                  aria-describedby="adults-help"
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                <p
+                  id="adults-help"
+                  class="mt-2 text-sm text-moss-700 opacity-80">
+                  For groups with children or youth, include the number of
+                  supervising adults.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl text-moss-700">Visit planning</h2>
+            <p class="mt-2 text-moss-700 opacity-80">
+              Help us understand what your group is looking for and when you
+              would like to visit.
+            </p>
+
+            <div class="mt-6 grid gap-6 md:grid-cols-2">
+              <div class="md:col-span-2">
+                <label for="transportation" class="mb-2 block text-moss-700">
+                  What form of transportation will your group use?
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="transportation"
+                  name="transportation"
+                  type="text"
+                  required
+                  aria-describedby="transportation-help"
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                <p
+                  id="transportation-help"
+                  class="mt-2 text-sm text-moss-700 opacity-80">
+                  Example: school bus, passenger van, parent drivers, or
+                  bicycles.
+                </p>
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="learning-goals" class="mb-2 block text-moss-700">
+                  What do you hope your group will learn and experience during
+                  the visit?
+                  <span aria-hidden="true">*</span>
+                </label>
+                <textarea
+                  id="learning-goals"
+                  name="learning_goals"
+                  rows="6"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"></textarea>
+              </div>
+
+              <div class="md:col-span-2">
+                <label
+                  for="special-considerations"
+                  class="mb-2 block text-moss-700">
+                  Are there any special considerations we should know about?
+                </label>
+                <textarea
+                  id="special-considerations"
+                  name="special_considerations"
+                  rows="5"
+                  aria-describedby="special-considerations-help"
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"></textarea>
+                <p
+                  id="special-considerations-help"
+                  class="mt-2 text-sm text-moss-700 opacity-80">
+                  You can include accessibility needs, support needs, sensory
+                  considerations, mobility needs, or anything else that would
+                  help us plan well for your group.
+                </p>
+              </div>
+
+              <div>
+                <label for="preferred-date-1" class="mb-2 block text-moss-700">
+                  Preferred date
+                </label>
+                <input
+                  id="preferred-date-1"
+                  name="preferred_date_1"
+                  type="date"
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <span class="mb-2 block text-moss-700">Preferred time</span>
+                <div class="grid grid-cols-3 gap-3">
+                  <div class="relative">
+                    <select
+                      id="preferred-hour"
+                      name="preferred_hour"
+                      class="w-full appearance-none rounded-2xl border border-stone-300 bg-white px-4 py-3 pr-12 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"
+                      aria-label="Preferred hour">
+                      <option value="">Hour</option>
+                      <option value="01">01</option>
+                      <option value="02">02</option>
+                      <option value="03">03</option>
+                      <option value="04">04</option>
+                      <option value="05">05</option>
+                      <option value="06">06</option>
+                      <option value="07">07</option>
+                      <option value="08">08</option>
+                      <option value="09">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+
+                    <svg
+                      class="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+
+                  <div class="relative">
+                    <select
+                      id="preferred-minute"
+                      name="preferred_minute"
+                      class="w-full appearance-none rounded-2xl border border-stone-300 bg-white px-4 py-3 pr-12 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"
+                      aria-label="Preferred minutes">
+                      <option value="">Min</option>
+                      <option value="00">00</option>
+                      <option value="15">15</option>
+                      <option value="30">30</option>
+                      <option value="45">45</option>
+                    </select>
+
+                    <svg
+                      class="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+
+                  <div class="relative">
+                    <select
+                      id="preferred-ampm"
+                      name="preferred_ampm"
+                      class="w-full appearance-none rounded-2xl border border-stone-300 bg-white px-4 py-3 pr-12 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"
+                      aria-label="Preferred AM or PM">
+                      <option value="">AM/PM</option>
+                      <option value="AM">AM</option>
+                      <option value="PM">PM</option>
+                    </select>
+
+                    <svg
+                      class="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="mt-2 text-sm text-moss-700 opacity-80">
+                  Select a time in 15-minute increments.
+                </p>
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="dates-and-times" class="mb-2 block text-moss-700">
+                  What dates and times are you considering?
+                  <span aria-hidden="true">*</span>
+                </label>
+                <textarea
+                  id="dates-and-times"
+                  name="dates_and_times"
+                  rows="5"
+                  required
+                  aria-describedby="dates-and-times-help"
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"></textarea>
+                <p
+                  id="dates-and-times-help"
+                  class="mt-2 text-sm text-moss-700 opacity-80">
+                  Tours are generally about an hour and a half. Let us know
+                  whether you may need extra time for lunch or snacks.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl text-moss-700">Before you submit</h2>
+
+            <div class="mt-6 space-y-4">
+              <label
+                class="flex items-start gap-3 rounded-2xl border border-stone-300 bg-white p-4 text-moss-700">
+                <input
+                  id="acknowledge-request"
+                  name="acknowledge_request"
+                  type="checkbox"
+                  required
+                  class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
+                <span>
+                  I understand that this form does not confirm a visit and that
+                  MARS will contact me about planning a tour.
+                  <span aria-hidden="true">*</span>
+                </span>
+              </label>
+
+              <label
+                class="flex items-start gap-3 rounded-2xl border border-stone-300 bg-white p-4 text-moss-700">
+                <input
+                  id="acknowledge-response-time"
+                  name="acknowledge_response_time"
+                  type="checkbox"
+                  required
+                  class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
+                <span>
+                  I understand that MARS usually responds within 3 business days
+                  and that I should check my spam folder if I have not heard
+                  back.
+                  <span aria-hidden="true">*</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="mt-8">
+              <label for="website" class="sr-only">
+                Leave this field empty
+              </label>
+              <input
+                id="website"
+                name="website"
+                type="text"
+                tabindex="-1"
+                autocomplete="off"
+                class="hidden"
+                aria-hidden="true" />
+            </div>
+
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <button type="submit" class="btn btn-main">Request tour</button>
+
+              <p class="text-sm text-moss-700 opacity-80">
+                Thank you for your interest in MARS. This form is for group tour
+                planning only.
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
     </main>
 
     <!-- FOOTER -->
@@ -1015,9 +1328,9 @@
           </div>
         </section>
 
-        <section class="py-4 px-8 text-center md:text-left">
+        <section class="py-4 px-8 text-center md:text-left md:px-0">
           <div>
-            <p class="font-semibold">Address:</p>
+            <p class="font-semibold">Address</p>
             <a
               href="https://www.google.com/maps/search/?api=1&query=1331%20Williams%20Beach%20Road%2C%20Merville%2C%20BC"
               target="_blank"
@@ -1078,7 +1391,7 @@
               </svg>
             </a>
           </div>
-          <p class="font-semibold">Mailing Address:</p>
+          <p class="font-semibold">Mailing Address</p>
           <address>P.O. Box 415, Merville, BC V0R 2M0</address>
         </section>
 
@@ -1095,7 +1408,7 @@
           </div>
         </section>
 
-        <section class="py-4 px-8 text-center md:text-left">
+        <section class="py-4 px-8 text-center md:text-left md:px-0 md:mr-8">
           <p class="md:paragraph-short">
             We are grateful for the privilege to live, work, and play on the
             unceded traditional territory of the K’ómoks First Nation and
@@ -1106,6 +1419,5 @@
         </section>
       </div>
     </footer>
-    <script src="js/main.js"></script>
   </body>
 </html>

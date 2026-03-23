@@ -41,7 +41,7 @@
       <!-- INFO BAR -->
       <div class="bg-stone-200">
         <section
-          class="grid grid-cols-4 items-center w-(--content-width) mx-auto pt-1 pb-2 md:grid-cols-24">
+          class="grid grid-cols-4 items-center w-(--content-width) mx-auto pt-1 pb-2 lg:pt-0 lg:pb-1 md:grid-cols-24">
           <!-- Phone -->
           <div
             class="link col-span-3 flex gap-x-3 items-center w-full pt-2 md:col-span-8 md:w-auto">
@@ -299,11 +299,11 @@
       <!-- Logo -->
       <div class="border-y border-stone-300 bg-stone-50">
         <nav
-          class="navbar flex items-center justify-between w-(--content-width) mx-auto py-3">
+          class="navbar flex items-center justify-between w-(--content-width) mx-auto py-5">
           <a href="index.html" class="hover:no-underline">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-50 md:w-60"
+              class="w-60 md:w-70"
               viewBox="0 0 334.08 84.46">
               <g>
                 <g>
@@ -395,7 +395,7 @@
             id="menu-toggle-desktop"
             popovertarget="mega-menu__popover"
             type="button"
-            class="hidden btn btn-main place-self-center md:block"
+            class="hidden btn btn-main text-base place-self-center md:block"
             aria-label="Open menu">
             Menu
           </button>
@@ -403,7 +403,7 @@
           <button
             id="menu-toggle-mobile"
             popovertarget="mega-menu__popover"
-            class="text-4xl md:hidden"
+            class="text-5xl md:hidden"
             aria-label="Open menu"
             type="button">
             <i class="fa-solid fa-bars" aria-hidden="true"></i>
@@ -509,8 +509,8 @@
               data-accordion-panel
               class="hidden space-y-2 ml-14 pt-0 pb-3 md:block md:pl-0">
               <li class="pt-0">
-                <a href="emergency-info.html" class="link">
-                  Emergency Information
+                <a href="wildlife-assistance.html" class="link">
+                  Wildlife Assistance
                 </a>
               </li>
               <li class="pt-0">
@@ -737,39 +737,68 @@
 
     <!-- MAIN -->
     <main>
-      <h1>Gift Shop</h1>
-      <p>Open Friday, Saturday, Sunday 10am to 3pm.</p>
-      <p>
-        Welcome to the MARS Visitors Centre Gift Shop, where every purchase
-        makes a difference in the lives of animals in need! Our shop is a great
-        place to buy souvenirs; and it’s a haven for those passionate about
-        conservation and wildlife rehabilitation. We carry a wide assortment of
-        eco-friendly merchandise and handcrafted goods from Northern Vancouver
-        Island and the surrounding area. From plush toys inspired by our
-        resident animals to locally sourced artisanal crafts, to guides and
-        tools for your own wildlife adventures; every item reflects our
-        commitment to conservation.
-      </p>
-      <p>
-        Our knowledgeable staff and volunteers are always on hand to share
-        stories about the animals we care for and the rehabilitation efforts
-        underway. Beyond being a retail space, our Gift Shop serves as a vital
-        source of support MARS Wildlife Rescue. With every purchase, customers
-        directly contribute to the care and rehabilitation of injured and
-        orphaned wildlife. Whether it’s funding medical supplies, building
-        enclosures, or providing nutritious food, the proceeds from our shop
-        play a crucial role in giving animals a second chance at life in the
-        wild. By shopping with us, visitors not only take home meaningful
-        mementos but also become valued partners in our ongoing efforts to
-        protect and preserve wildlife for generations to come.
-      </p>
-      <p>
-        Note: Food crumbs attract insects that are a constant threat to our
-        taxidermy mounts so we do not sell or allow food in our exhibits hall.
-        You are welcome to bring a lunch to eat outside at one of our picnic
-        tables or benches. Please pack out what you bring in.
-      </p>
-      <section>
+      <div
+        class="border-b border-stone-300 px-8 py-12 text-center md:text-left ">
+        <h1 class="text-moss-500">Gift Shop</h1>
+      </div>
+
+      <section class="border-b border-stone-300 bg-stone-50">
+        <div class="grid gap-6 md:grid-cols-2 px-8 pb-8">
+          <div>
+            <div class="flex flex-col items-center lg:flex-row lg:gap-6 p-8">
+              <svg
+                class="size-16"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 314.01 288">
+                <path
+                  class="cls-1"
+                  d="M313.94,236.38c-.1-2.72-.32-5.43-.58-8.13-.52-5.4-1.22-10.76-1.58-16.18-.3-4.52-.79-9.03-.9-13.56-.13-5.16-.02-10.31-.77-15.41-.39-2.65-.83-5.49-.6-8.11.57-6.71,0-13.06-1.72-19.17-1.13-4-1.05-7.97-.33-12.06.26-1.46.5-2.96.56-4.46.21-5.92.35-11.85.5-17.77.03-1.06.14-2.17,0-3.19-.82-6-.68-11.95-.38-18.08.51-10.47.38-21.01.56-31.52.03-1.63.34-3.25.52-4.88.18-1.64.49-3.27.52-4.91l.14-8.42.04-4.21c0-.16,0-.4,0-.6v-.62s-.04-1.24-.04-1.24c-.06-.83-.11-1.66-.2-2.48-.73-6.61-3.09-13.06-6.87-18.44-1.46-2.1-3.07-4.08-4.91-5.77-1.83-1.69-3.88-3.09-6.09-4-3.23-1.31-6.19-2.82-9.28-4.24-3.07-1.43-6.24-2.83-9.6-3.79-2.47-.72-5.03-1.3-7.62-1.59-2.31-.29-4.62-.52-6.93-.54-5.01-.05-10.05-.21-15.07-.04-3.97.07-7.94.32-11.87.97-.44.07-.89.12-1.35.15-1.48-.01-2.99-.11-4.46-.13-7.15-.1-14.3-.33-21.45-.34-2.3,0-4.61.05-6.91.12-1.31.03-2.61.07-3.92.11-2.48.06-4.95.09-7.42.02-4.65-.14-9.26-.42-13.88-.23-2.35.03-4.71.17-7.08.48-5.32.71-10.72,1.12-16.1,1.64-.17.02-.34.02-.52.03-.23,0-.45.01-.68.03-.66.01-1.32.01-1.98.05-.15,0-.3.01-.45.02-5.45,0-10.71-1.07-16.09-1.48-4.5-.34-8.98-1.05-13.31-1.93C106.8.67,97.64-.1,88.28.24c-1.92.04-3.85.12-5.79.25-.71.05-1.42.1-2.13.13-.62,0-1.25-.02-1.86-.07-4.09-.33-8.16-.7-12.19-.5-3.02.03-6.03.31-9.02,1.13-.09.03-.2.04-.3.06-.32-.01-.63-.02-.94,0-2.16.07-4.32.08-6.48.06l-1.62-.02h-.82s-.97,0-.97,0c-.59,0-1.18.02-1.77.05h-.17c-1.29,0-2.58.09-3.87.2-5.14.5-10.24,2.01-14.69,4.61-4.64,2.71-8.85,6.02-12.51,9.87-3.66,3.85-6.77,8.27-9.05,13.15-1,2.11-1.61,4.44-2.4,6.57-.16.45-.32.9-.47,1.36-.14.46-.26.92-.38,1.39-.26.93-.41,1.88-.57,2.82-.14.95-.22,1.91-.28,2.86-.01.48-.02.95-.03,1.43v.7s.02.59.02.59c.13,3.16.5,6.27,1.05,9.26.8,4.35.72,8.39.35,12.46-.45,5-.83,9.85-.23,14.91.34,2.86.51,6.04.09,8.83-.01,1.7-.04,3.4.02,5.1.11,3.02.86,5.68,1.63,8.54.13.49.14,1.01.14,1.51.02,1.74.04,3.48.06,5.22,0,.32,0,.64.11.94.09.26.24.5.39.73,3.87,6.09,4.33,14.62,2.88,21.5-1.11,5.28-1.32,10.64-1.8,15.95-.13.64-.26,1.27-.4,1.9-.29,1.32-.56,2.64-.8,3.97-.05.58-.11,1.15-.16,1.73-1.31,13.79-2.09,27.52-1.97,41.46.09,9.74.41,19.48.48,29.23.03,3.87.13,7.74.06,11.6-.02,2.17.04,4.43.22,6.65.19,2.23.47,4.46.82,6.73.35,2.11.97,4.33,1.88,6.43.91,2.1,2.13,4.08,3.52,5.74,3.5,4.17,7.39,7.76,11.66,10.84,4.27,3.08,8.92,5.65,13.99,7.6l1.38.48.7.23.71.2,1.43.38c.48.11.96.2,1.45.3.97.21,1.95.31,2.94.44.49.06.99.08,1.48.11l.74.04.37.02h.31c.97.04,1.94.06,2.91.06,2.05.02,4.11-.02,6.18-.1.89-.03,1.77-.06,2.66-.1.36-.02.73-.03,1.09-.04.79-.02,1.58-.03,2.38-.04,1.53,0,3.07.01,4.6.05,1.96.05,3.94.12,5.9.13.47,0,.94,0,1.4,0,.02-.02.03-.04.05-.06,3.19.04,6.36-.07,9.42-.76,2.05-.46,3.94-.87,6.12-.78,4.99.2,9.99.43,14.99.45,6.19.03,12.33.2,18.52.53,7.37.39,14.85-.18,22.29-.34,3.32-.07,6.65-.24,9.97-.18.27,0,.55.02.82.04-.05.05-.1.11-.15.16,1.82.19,3.64.49,5.44.44,2.47-.07,4.94-.15,7.41-.24,2.2-.08,4.4-.16,6.6-.24,7.45-.26,14.89-.47,22.36-.28-.02-.03-.04-.05-.06-.08,2.19.04,4.38.11,6.58.22,2.05.11,4.11.2,6.17.28.03.04.05.07.08.11,4.53.16,9.06.27,13.59.3,1.1,0,2.19-.02,3.29-.07,3.03-.08,6.07-.37,9.11-.56.35,0,.71.03,1.07.05,3.17.17,6.34.4,9.51.51.38.01.75.01,1.12.01-.09-.03-.17-.05-.25-.08-.01,0-.02,0-.03-.01.2,0,.41.02.61.03,4.09.13,7.35-.39,9.93-1.37.82.02,1.62.17,2.44.23,1.36.11,2.77-.34,4.15-.42,1.59-.09,3.18-.02,4.76.2.29.04.59.09.88.05.25-.04.49-.14.73-.2,1.17-.31,2.33.16,3.49.25,1.25.1,2.54.09,3.8.09.05,0,.09,0,.14,0,.8,0,1.6-.02,2.4-.06,2.55-.04,5.13-.31,7.75-.96,1.11-.25,2.19-.62,3.31-1.01,1.08-.44,2.2-.9,3.27-1.49,2.17-1.15,4.29-2.65,6.24-4.59,2-1.98,3.96-4.14,5.62-6.46,1.66-2.32,3-4.81,3.8-7.29,1.02-3.12,1.75-6.25,2.33-9.38.58-3.13,1.02-6.26,1.42-9.48.13-.89.18-1.78.23-2.67.05-.98.06-1.56.06-2.27.01-1.37-.01-2.74-.07-4.1ZM67.63,131.09c-.4-.03-.84-.02-1.25-.03l-1.45-.04h-.73c-.35.01-.74-.1-1.03-.23-.51-.21-.94-.44-1.4-.67-.45-.24-.88-.46-1.37-.77-.09-.06-.2-.14-.3-.23-.37-.35-.72-.71-1.01-1.17-.29-.44-.52-.94-.65-1.47-.28-1.05-.21-2.05-.19-2.92,0-.23.04-.47.02-.66-.05-.33-.08-.63-.11-.96-.03-.34-.05-.67-.06-1.01-.02-.68,0-1.36,0-2.05,0-.41-.03-.84-.06-1.26-.19-2.27-.18-4.52.13-6.73.07-.47.13-.95.2-1.44.08-.52.22-1.03.39-1.52.23-.67.58-1.28,1-1.84.21-.28.45-.54.71-.79.29-.28.58-.44.86-.64.19-.13.39-.24.58-.37.24-.16.49-.32.74-.47.26-.15.49-.29.82-.44.32-.17.75-.15,1-.17.28-.02.57-.04.85-.06,1.35-.11,2.69-.05,4.05-.03,1.29.02,2.59-.03,3.88-.03l4.56.05c.55,0,1.13.04,1.65-.01,1.76-.18,3.55-.13,5.32-.12.98,0,1.96.12,2.95.19,1.33.09,2.68.19,3.95-.08.87-.18,1.8-.2,2.72-.24,2.38-.09,4.78-.06,7.16-.04.35,0,.7.05,1.04.07.35.02.69.07,1.04.07,2.24.02,4.48,0,6.71.08,1.3.04,2.57.06,3.85-.05.22-.02.45,0,.68,0,1.26.02,2.52.05,3.78.07.32,0,.64.04.95.08.87.1,1.71.11,2.56-.04,1.3-.23,2.65-.31,4.08-.23.56.03,1.16-.03,1.72-.08,1.08-.1,2.18-.09,3.28-.1.96-.02,1.92-.08,2.88-.12,2.31-.1,4.56-.38,6.92-.28,1.07.04,2.1-.06,3.14-.2.41-.05.86-.07,1.31-.08.19,0,.54,0,.84.03.31.04.62.08.92.16,1.18.28,2.06.95,2.66,1.7.95,1.19,1.11,2.41,1.05,3.87-.03.78.25,1.55.34,2.32.09.71.15,1.44.13,2.15-.02.68-.05,1.35-.07,2.02,0,.12-.01.25,0,.37.03.83.09,1.66.08,2.49,0,1.51-.04,3.02-.08,4.53-.02.74-.03,1.47-.04,2.21v1.1s0,.56,0,.56c-.01.22,0,.44-.04.66-.1.88-.41,1.74-.9,2.49-.5.74-1.17,1.37-1.96,1.81-.58.32-1.24.45-1.88.53-.21.04-.42.04-.64.06-.23.02-.37,0-.56.01l-1.06.02c-1.58.02-3.17.1-4.74.05-1.32-.04-2.62-.07-3.94-.07-1.06,0-2.13-.03-3.19-.06-.46-.01-.87.04-1.3.11-1.02.14-2.09.1-3.16.08-.71-.01-1.42-.01-2.13.01-1.4.04-2.78.02-4.15-.09-1.91-.17-3.81-.2-5.74-.06-.77.05-1.64.02-2.4-.07-1.63-.18-3.28-.13-4.93-.13l-6.22.06c-1.74,0-3.48,0-5.22-.01-1.38-.01-2.8.02-4.13-.1-1.48-.13-2.98-.12-4.47-.32-1.53-.2-3.21-.09-4.56.37-.08.03-.16.09-.23.09-1.48-.06-2.95.14-4.44-.01-.6-.06-1.3-.04-1.93,0-1.08.08-2.11.03-3.17-.03-.87-.05-1.73-.06-2.65.05-1.27.15-2.65.2-4,.08ZM151.44,219.15c-.17,2.83-.2,5.65-.06,8.52.05,1.14.02,2.43-.07,3.56-.04.61-.08,1.21-.1,1.82v.23s-.03.27-.03.27c0,.18-.03.36-.06.53-.02.18-.06.35-.12.52-.04.17-.1.34-.17.51-.5,1.33-1.56,2.46-2.88,3.01-.42.16-.85.3-1.3.36-.22.04-.45.04-.67.06h-.58s-2.31.02-2.31.02l-4.61.03c-2.58,0-5.16,0-7.75-.01-2.05-.01-4.16.02-6.13-.1-2.19-.13-4.43-.12-6.62-.32-2.27-.2-4.76-.09-6.76.37-.12.03-.24.09-.34.09-2.19-.06-4.37.14-6.58-.01-.9-.06-1.93-.04-2.86,0-1.6.08-3.13.03-4.71-.03-1.29-.05-2.56-.06-3.93.05-1.89.15-3.93.2-5.94.08-.6-.04-1.24-.02-1.86-.03-1.43-.03-2.87-.05-4.3-.06-.72,0-1.43,0-2.15.01h-.54s-.27.02-.27.02h-.14c-.07,0-.14,0-.2,0-.27,0-.55-.08-.78-.17-.23-.08-.42-.18-.61-.28-.71-.39-1.29-.86-1.83-1.39-.14-.13-.26-.26-.4-.42-.14-.16-.27-.32-.39-.5-.24-.35-.43-.72-.58-1.11-.15-.39-.25-.8-.3-1.21-.02-.21-.04-.41-.05-.62v-.53c0-.68,0-1.36-.02-2.05,0-.34.02-.71-.02-1-.24-2-.16-4.03-.1-6.08.02-.61,0-1.25-.02-1.87-.11-3.38-.02-6.67.25-9.91.11-1.37.21-2.78.25-4.2.06-1.94.23-3.84.17-5.83,0-.33,0-.67-.02-1-.07-1.7-.14-3.4-.24-5.08-.12-2.01-.06-3.99-.04-6,.02-1.91-.05-3.84-.05-5.76l.03-6.77c0-.82.04-1.68-.02-2.44-.19-2.61-.14-5.26-.14-7.89,0-1.46.12-2.92.18-4.37.09-1.98.17-3.98-.1-5.86-.19-1.29-.21-2.66-.25-4.04-.04-1.45-.06-2.89-.07-4.34l.02.17c-.02-.2-.05-.44-.03-.62.02-.18.04-.38.08-.54.08-.33.19-.63.32-.91.25-.56.57-1.04.91-1.51.34-.47.73-.89,1.15-1.29.21-.2.44-.39.69-.58.26-.18.51-.35.87-.5.19-.06.37-.15.57-.15l.29-.03s.1,0,.15,0h.1s.77.05.77.05c.51.02,1.02.07,1.54.07,3.32.03,6.64,0,9.95.08,1.93.04,3.81.06,5.71-.05.32-.02.67,0,1.01,0,1.87.02,3.74.05,5.61.07.47,0,.95.04,1.41.08,1.29.1,2.54.11,3.8-.04,1.93-.23,3.93-.31,6.05-.23.83.03,1.72-.03,2.56-.08,1.61-.1,3.23-.09,4.86-.1,1.43-.02,2.85-.08,4.28-.12,3.42-.1,6.77-.38,10.27-.28,1.59.04,3.11-.06,4.65-.2,1.23-.11,2.64-.07,3.97-.08.65,0,1.25.02,1.83.06.24.02.68.05,1.04.13.37.07.72.19,1.05.33,1.33.58,2.28,1.61,2.83,2.79.57,1.27.4,2.88.56,4.24.17,1.45.36,2.91.34,4.37-.02,1-.05,2-.07,3,0,.18-.01.37,0,.55.03,1.23.09,2.47.08,3.7,0,2.24-.04,4.48-.08,6.72-.1,4.37.02,8.72.08,13.08,0,.79-.07,1.59-.08,2.39,0,1.05.01,2.1.02,3.15.02,2.35.1,4.71.05,7.03-.04,1.95-.07,3.89-.07,5.85,0,1.58-.03,3.16-.06,4.73-.01.69.04,1.28.11,1.93.14,1.51.1,3.11.08,4.68-.01,1.05-.01,2.11.01,3.15.04,2.07.02,4.13-.09,6.16ZM156.59,94.14c-.88-.02-1.76-.03-2.64-.04-.44,0-.88,0-1.33,0-.49,0-.98,0-1.47.01-.4,0-.8-.07-1.14-.29-.24-.15-.45-.37-.6-.62-.08-.13-.14-.26-.2-.41l-.16-.38c-.15-.36-.31-.73-.46-1.1-.3-.74-.6-1.48-.87-2.18-1.16-2.99-2.68-5.85-4.35-8.59-2.12-3.43-4.59-6.67-7.6-9.27-2.51-2.17-5.48-3.83-8.71-4.26-2.56-.38-5.24.14-7.61.97-1.3.46-2.53,1.16-2.96,2.32-.23.57-.28,1.24-.22,1.93.06.68.17,1.4.39,2.03.22.67.62,1.33,1.07,1.94.45.62.98,1.18,1.53,1.7,1.11,1.04,2.34,1.89,3.51,2.53.15.08.3.12.41.21,2.23,1.81,4.74,3.25,7.13,4.91.97.67,2.17,1.35,3.26,1.91.94.49,1.85.97,2.75,1.46l.68.36c.83.45,1.6,1.07,2.41,1.57.72.45,1.9,1.15,1.51,2.17-.09.24-.24.45-.41.58-.17.14-.34.19-.51.25-.36.12-.74.28-1.35.36-.87.06-1.88.08-2.87.1-.65.02-1.31.04-1.97.05-1.33.02-2.68,0-4.02-.06-.8-.04-1.65-.02-2.48-.03-1.91-.03-3.82-.05-5.73-.06h-1.43c-.18,0-.62.04-.95-.05-.17-.04-.34-.11-.49-.21-.08-.05-.15-.1-.22-.15l-.18-.13c-.78-.56-1.56-1.11-2.34-1.67-2.99-2.14-5.77-4.64-8.16-7.55-.28-.37-.58-.79-.84-1.1-.91-1.05-1.66-2.28-2.26-3.57-.6-1.29-1.05-2.66-1.34-4.08-.09-.42-.18-.85-.25-1.29-.09-.43-.14-.88-.19-1.31-.26-2.38.01-4.82.86-7.03.83-2.21,2.18-4.17,3.84-5.72,1.4-1.3,3.01-2.43,4.73-3.33,2.36-1.24,4.89-1.88,7.5-2.41.44-.08.89-.16,1.33-.24,2.25-.4,4.58-.52,6.86-.38.68.05,1.36.11,2.04.23.68.09,1.34.27,2,.43,1.31.37,2.61.8,3.85,1.37,2.39,1.03,4.67,2.37,6.74,3.94,2.43,1.86,4.59,4.04,6.55,6.37.71.84,1.4,1.78,2.06,2.57,1.11,1.34,2.13,2.77,3.07,4.25.47.74.92,1.49,1.36,2.25.42.74.92,1.64,1.12,2.05l.03.06c.07.12.12.25.2.37.08.12.21.2.35.23.14.03.29,0,.41-.07.12-.07.19-.21.29-.34l.61-.85.84-1.2c1.51-2.17,3.1-4.31,4.38-6.5.87-1.5,2-2.97,3.15-4.42,2.96-3.72,6.35-7.17,10.22-10.04.55-.43,1.17-.78,1.75-1.17.59-.38,1.21-.69,1.8-1.07,1.95-1.14,4.01-2.11,6.17-2.81,2.16-.7,4.43-1.1,6.7-1.14,2.66-.05,5.22.33,7.73.97.44.09.88.28,1.31.44,2.39.88,4.7,2.05,6.74,3.63.25.2.51.41.75.62.24.21.46.46.68.68,1.23,1.28,2.31,2.62,3.28,4.09.2.27.37.56.53.86.16.3.33.6.48.91.25.64.56,1.28.72,1.96.42,1.35.57,2.8.58,4.27-.02.57.01,1.17-.03,1.77-.01.3-.02.6-.03.9,0,.3-.05.59-.07.88-.2,2.23-.82,4.4-1.6,6.5-.69,1.84-1.48,3.63-2.42,5.35-1.13,2.06-2.38,4.02-3.8,5.88-1.43,1.86-3.03,3.61-4.89,5.17-.16.13-.31.26-.47.39-.19.16-.37.31-.55.47-.3.25-.65.42-1.03.5-.19.04-.38.06-.57.06h-.41c-.42.02-.84.04-1.26.05-.83.04-1.67.09-2.5.14-1.64.11-3.51.07-5.29.08-3.45,0-6.03-.4-8.86-.74-.24-.03-.46-.06-.66-.09-.06,0-.12-.02-.18-.03-.09-.01-.17-.03-.25-.05-.17-.05-.32-.11-.46-.2-.27-.16-.46-.39-.56-.6-.11-.21-.15-.41-.16-.58-.01-.35.11-.59.23-.74.3-.35.98-.48,1.34-.77.23-.19.38-.47.6-.68.34-.32.72-.6,1.11-.86,1.21-.81,2.54-1.46,3.88-2.05l.05-.02s.07-.04.11-.06c.08-.04.15-.08.23-.13,1.12-.61,2.21-1.3,3.26-2.06.19-.14.39-.28.57-.43,1.24-1.01,2.4-2.12,3.52-3.25,2.05-2.06,3.91-4.32,5.37-6.79.71-1.2,1.31-2.47,1.71-3.78.22-.65.35-1.32.47-1.98.08-.67.15-1.33.11-1.99,0-.33-.06-.65-.09-.98-.03-.13-.06-.24-.09-.36l-.16-.35c-.26-.47-.69-.91-1.18-1.3-1-.79-2.26-1.37-3.53-1.78-.46-.14-.93-.29-1.39-.39-.44-.1-.94-.16-1.43-.17-.64-.03-1.29.04-1.93.12-.64.11-1.28.24-1.9.44-2.81.85-5.34,2.6-7.66,4.49-1.95,1.6-3.72,3.43-5.39,5.38-1.34,1.58-2.65,3.2-3.88,4.87-.54.73-.94,1.41-1.37,2.15-.99,1.73-2.15,3.48-3.23,5.26-.72,1.19-1.41,2.4-2.06,3.62-.91,1.7-1.82,3.39-2.72,5.07-.17.31-.38.58-.66.78-.28.2-.61.32-.94.35-.17.02-.34.01-.52,0l-.42-.02-.64-.04c-1.75-.1-3.5-.18-5.26-.22ZM241.7,169.07c-.11,1.37-.19,2.79-.23,4.21-.05,1.95-.22,3.85-.16,5.84,0,.33,0,.67.02,1,.07,1.7.14,3.41.23,5.09.11,2.01.06,4,.03,6.01-.03,1.92.03,3.85.02,5.77l-.08,6.78c0,.82-.05,1.68,0,2.45.16,2.62.09,5.27.06,7.91-.02,1.46-.15,2.92-.23,4.38-.11,1.98-.22,3.98.02,5.87.17,1.29.18,2.67.19,4.05l.02,2.66v1.33c0,.4,0,1-.13,1.51-.11.52-.3,1.03-.56,1.5-.13.23-.28.46-.44.67-.08.11-.17.21-.26.31l-.25.27c-.34.35-.7.67-1.1.97-.4.3-.81.58-1.35.8-.16.06-.36.13-.55.16-.1.02-.19.02-.29.03-.1,0-.21,0-.26,0l-.77-.04c-.51-.02-1.03-.07-1.54-.07-3.32-.03-6.65,0-9.96-.08-1.94-.04-3.82-.06-5.71.05-.32.02-.67,0-1.01,0-1.87-.02-3.75-.05-5.62-.07-.47,0-.95-.04-1.41-.07-1.29-.1-2.55-.11-3.81.04-1.93.23-3.94.31-6.06.23-.83-.03-1.73.03-2.56.08-1.61.1-3.24.09-4.87.1-1.43.01-2.86.08-4.29.12-3.43.1-6.78.38-10.29.28-1.59-.04-3.11.06-4.66.2-1.23.11-2.64.07-3.97.08-.65,0-1.26-.02-1.84-.06-.12,0-.35-.03-.53-.05-.19-.02-.38-.06-.56-.1-.18-.04-.36-.09-.53-.15-.17-.06-.34-.12-.5-.2-1.18-.61-2.12-1.47-2.7-2.68-.57-1.19-.42-2.49-.58-3.76-.22-1.66-.39-3.34-.37-5.02.02-1,.05-2,.07-3.01,0-.18.01-.37,0-.55-.03-1.23-.09-2.47-.08-3.7,0-2.24.04-4.49.08-6.73.1-4.38-.02-8.73-.08-13.1,0-.79.07-1.59.08-2.39,0-1.05-.01-2.1-.02-3.15-.02-2.35-.1-4.72-.05-7.05.04-1.96.07-3.9.07-5.85,0-1.58.03-3.16.06-4.74.01-.69-.04-1.29-.11-1.94-.14-1.51-.1-3.11-.08-4.69.01-1.05.01-2.11-.01-3.16-.04-2.08-.02-4.14.09-6.17.17-2.84.2-5.65.06-8.54-.05-1.14-.02-2.43.07-3.57.05-.62.07-1.19.1-1.84.04-.71.21-1.42.51-2.06.59-1.29,1.71-2.34,3.06-2.83.42-.16.87-.25,1.31-.3.48-.04.84-.03,1.22-.03l2.31-.02,4.62-.03c2.59,0,5.17,0,7.76.01,2.05.01,4.17-.02,6.14.1,2.19.14,4.43.12,6.63.32,2.27.2,4.76.09,6.77-.37.12-.03.24-.09.34-.09,2.19.06,4.38-.14,6.59.01.9.06,1.93.04,2.86,0,1.6-.08,3.13-.03,4.71.03,1.29.05,2.57.06,3.94-.05,1.89-.15,3.93-.2,5.95-.08.6.03,1.24.02,1.86.03,1.44.03,2.87.05,4.31.06.72,0,1.44,0,2.15-.01l1.08-.02c.14,0,.27,0,.41,0,.13.04.27.03.4.09.13.04.25.09.38.16.12.06.25.13.33.19.68.42,1.22.9,1.75,1.41.26.26.52.53.76.84.12.15.24.31.36.48.11.16.26.41.35.66.06.12.08.25.11.38.04.13.04.26.04.4v.54s.02,1.03.02,1.03c.01.68.03,1.37.05,2.05.01.34,0,.71.03,1,.27,2,.22,4.04.19,6.1-.01.61.02,1.25.04,1.87.15,3.38.09,6.68-.16,9.94ZM256.04,114.82c-.03.41,0,.84-.01,1.26-.04,1.94-.08,3.88-.02,5.82.03.93,0,1.86-.09,2.81-.05.48-.09.95-.2,1.48-.01.12-.07.3-.12.45-.05.17-.12.28-.17.42-.13.26-.27.5-.42.73-.14.23-.34.43-.46.62-.4.65-.94,1.21-1.56,1.67-.63.46-1.31.86-2.29,1.06-.14.03-.33.04-.49.05-.1,0-.14,0-.19,0h-.16c-.21,0-.42.02-.63.02-2.27.1-4.49,0-6.67-.28-.92-.12-1.87-.21-2.83-.26-1.31-.06-2.58-.24-3.92-.19-.22,0-.45,0-.67.02-1.14.07-2.29.13-3.42.22-1.35.11-2.69.05-4.04.03-1.29-.02-2.58.03-3.88.03l-4.56-.05c-.55,0-1.13-.04-1.65.01-1.76.18-3.54.13-5.31.12-.98,0-1.96-.12-2.94-.19-1.33-.09-2.67-.18-3.94.08-.87.18-1.79.2-2.72.24-2.38.09-4.77.06-7.15.04-.35,0-.69-.05-1.04-.07-.34-.02-.69-.07-1.04-.07-2.23-.03-4.47,0-6.69-.08-1.3-.04-2.56-.06-3.84.05-.22.02-.45,0-.68,0-1.26-.02-2.52-.05-3.77-.07-.32,0-.64-.04-.95-.08-.87-.1-1.71-.11-2.56.04-1.3.23-2.65.31-4.07.23-.56-.03-1.16.03-1.72.08l-.41.03c-.14,0-.26.02-.44.02-.33,0-.66-.03-.99-.09-.66-.13-1.29-.39-1.86-.74-1.01-.61-1.85-1.51-2.36-2.61-.3-.66-.48-1.37-.54-2.1-.04-.58-.08-1.16-.12-1.74-.07-1.15-.12-2.3-.07-3.48.04-1.07-.06-2.09-.2-3.13-.11-.83-.07-1.77-.08-2.67,0-2.18.83-4.14,1.13-6.26.1-.75-.02-1.62.22-2.33.17-.56.54-1.2,1.17-1.76.62-.55,1.36-.95,2.14-1.18.14-.04.29-.07.44-.11.24-.07.49-.1.74-.15l.38-.03.19-.02h.16c.41-.02.83-.04,1.24-.04,1.51,0,3.02.04,4.52.08,2.94.1,5.87-.02,8.8-.08.53,0,1.07.07,1.61.08.7,0,1.41-.01,2.12-.02,1.58-.02,3.17-.1,4.73-.05,1.31.04,2.62.07,3.93.07,1.06,0,2.12.03,3.18.06.46.01.86-.04,1.3-.1,1.02-.14,2.09-.1,3.15-.08.71.01,1.42.01,2.12-.01,1.4-.04,2.78-.02,4.15.09,1.9.17,3.8.2,5.73.06.77-.05,1.63-.02,2.4.07,1.63.18,3.27.13,4.92.13l6.21-.07c1.74,0,3.48,0,5.21.01,1.38.01,2.8-.02,4.12.1,1.47.14,2.98.12,4.46.32,1.53.2,3.2.09,4.55-.37.08-.03.16-.09.23-.09.74.03,1.47,0,2.21-.03h.56c.25,0,.52.01.75.08.48.1.89.33,1.25.57.58.41,1.18.9,1.68,1.39.85.85,1.44,1.86,1.71,3.09.06.24.09.52.12.78.01.22.03.45.04.67.03.44.08.89.15,1.36.2,1.27.29,2.65.2,4.02Z" />
+              </svg>
+              <p class="question text-center">
+                Open Friday - Sunday, 10am to 3pm
+              </p>
+            </div>
+            <p>
+              Welcome to the MARS Visitors Centre Gift Shop, where every
+              purchase makes a difference in the lives of animals in need! Our
+              shop is a great place to buy souvenirs; and it’s a haven for those
+              passionate about conservation and wildlife rehabilitation. We
+              carry a wide assortment of eco-friendly merchandise and
+              handcrafted goods from Northern Vancouver Island and the
+              surrounding area. From plush toys inspired by our resident animals
+              to locally sourced artisanal crafts, to guides and tools for your
+              own wildlife adventures; every item reflects our commitment to
+              conservation.
+            </p>
+          </div>
+
+          <div>
+            <p>
+              Our knowledgeable staff and volunteers are always on hand to share
+              stories about the animals we care for and the rehabilitation
+              efforts underway. Beyond being a retail space, our Gift Shop
+              serves as a vital source of support MARS Wildlife Rescue. With
+              every purchase, customers directly contribute to the care and
+              rehabilitation of injured and orphaned wildlife. Whether it’s
+              funding medical supplies, building enclosures, or providing
+              nutritious food, the proceeds from our shop play a crucial role in
+              giving animals a second chance at life in the wild. By shopping
+              with us, visitors not only take home meaningful mementos but also
+              become valued partners in our ongoing efforts to protect and
+              preserve wildlife for generations to come.
+            </p>
+            <p>
+              <span class="italic">Note:</span>
+              Food crumbs attract insects that are a constant threat to our
+              taxidermy mounts so we do not sell or allow food in our exhibits
+              hall. You are welcome to bring a lunch to eat outside at one of
+              our picnic tables or benches. Please pack out what you bring in.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-8 pb-0 border-b border-stone-300">
         <h2>Selected Items for Sale</h2>
         <p>
           Our gift shop celebrates our love of wildlife. We carry original
@@ -778,96 +807,205 @@
           are popular items. We also have tee-shirts, hats, puzzles and a number
           of locally made pieces of jewelry and clothing.
         </p>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Adult T-Shirts</h3>
-          <p>Land and Sea Graphics</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Handbags</h3>
-          <p>Made by the Mars volunteer sewing team</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Children’s T-Shirts</h3>
-          <p>Wildlife Themed Graphics</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Plush Birds</h3>
-          <p>Audubon Plush Birds</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Driftwood Hangings</h3>
-          <p>Hand-Painted Owls</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Recycled Glass Earrings</h3>
-          <p>Inspired by our Ambassador birds</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Art Cards</h3>
-          <p>Local Artist and Photographers</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Dish Cloths</h3>
-          <p>Locally Hand-Knit</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Wildlife Guides</h3>
-          <p>Reference Books for Exploring Nature</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Card Games</h3>
-          <p>For Kids and Adults</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Bird Identification Books</h3>
-          <p>West Coast Focus</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Stuffies</h3>
-          <p>Mammals, Reptiles and Birds</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Ball Caps</h3>
-          <p>Mars Wildlife Rescue</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Hand-Knit Owl Hats</h3>
-          <p>Get them while they last!</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Vancouver Island Stickers</h3>
-          <p>Graphics by Nicola North</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Posters</h3>
-          <p>West Coast Wildlife</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Handmade Soap</h3>
-          <p>Qualicum Soapworks</p>
-        </section>
-        <section>
-          <img src="images/landscape-sm.png" alt="" />
-          <h3>Wooden Coasters</h3>
-          <p>Wildlife Graphics</p>
-        </section>
+        <div
+          class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 py-6">
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/crow-tshirt.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Adult T-Shirts</p>
+            <p class="pt-0">Land and Sea Graphics</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/handbags.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Handbags</p>
+            <p class="pt-0">Made by the Mars volunteer sewing team</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/childrens-shirts.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Children’s T-Shirts</p>
+            <p class="pt-0">Wildlife Themed Graphics</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/bird-plushies.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Plush Birds</p>
+            <p class="pt-0">Audubon Plush Birds</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/hangings.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Driftwood Hangings</p>
+            <p class="pt-0">Hand-Painted Owls</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/key-chain.png"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Key Chains</p>
+            <p class="pt-0">Inspired by our Ambassador birds</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/art-cards.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Art Cards</p>
+            <p class="pt-0">Local Artist and Photographers</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/dishcloths.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Dish Cloths</p>
+            <p class="pt-0">Locally Hand-Knit</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/wildlife-guildes.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Wildlife Guides</p>
+            <p class="pt-0">Reference Books for Exploring Nature</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/card-games.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Card Games</p>
+            <p class="pt-0">For Kids and Adults</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/bird-guides.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Bird Identification Books</p>
+            <p class="pt-0">West Coast Focus</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/wildlife-plushies.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Stuffies</p>
+            <p class="pt-0">Mammals, Reptiles and Birds</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/ball-caps.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Ball Caps</p>
+            <p class="pt-0">Mars Wildlife Rescue</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/owl-hats.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Hand-Knit Owl Hats</p>
+            <p class="pt-0">Get them while they last!</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/stickers.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Vancouver Island Stickers</p>
+            <p class="pt-0">Graphics by Nicola North</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/posters.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Posters</p>
+            <p class="pt-0">West Coast Wildlife</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/soap.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Handmade Soap</p>
+            <p class="pt-0">Qualicum Soapworks</p>
+          </section>
+          <section class="pb-24 text-center">
+            <img
+              src="images/gifts/coasters.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <p class="question pt-2">Wooden Coasters</p>
+            <p class="pt-0">Wildlife Graphics</p>
+          </section>
+        </div>
+      </section>
+      <!-- SUPPORT US -->
+      <section class="p-8 pb-16 bg-stone-200 border-b border-stone-300">
+        <h2>Support Us</h2>
+
+        <!-- get involved -->
+        <div
+          class="grid justify-between gap-8 mt-8 md:grid-cols-2 xl:grid-cols-3">
+          <section class="bg-white">
+            <div class="pb-8 px-8">
+              <h3 class="mt-6">Get Involved</h3>
+              <p class="min-w-fit paragraph-short">
+                Become a member, volunteer, gain student work experience, or
+                work with us.
+              </p>
+              <a class="btn btn-main mt-12" href="get-involved.html">Join Us</a>
+            </div>
+          </section>
+
+          <!-- donate funds -->
+          <section class="bg-white">
+            <div class="pb-8 px-8">
+              <h3 class="mt-6">Donate Funds</h3>
+              <p class="min-w-fit paragraph-short">
+                Support wildlife through one time or monthly gifts, legacy
+                giving, or adoption.
+              </p>
+              <a class="btn btn-main mt-12" href="donate-funds.html">
+                Donate Funds
+              </a>
+            </div>
+          </section>
+
+          <!-- donate goods -->
+          <section class="bg-white">
+            <div class="pb-8 px-8">
+              <h3 class="mt-6">Donate Goods</h3>
+              <p class="min-w-fit paragraph-short">
+                See current and everyday needs and learn what items we can and
+                cannot accept.
+              </p>
+              <a class="btn btn-main mt-12" href="donate-goods.html">
+                Donate Goods
+              </a>
+            </div>
+          </section>
+
+          <!-- space holder -->
+          <section class="hidden md:block lg:hidden mx-auto">
+            <img src="images/index/tracks.svg" alt="" class="w-50" />
+          </section>
+        </div>
       </section>
     </main>
 

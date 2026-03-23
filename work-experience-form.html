@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MARS | Get Involved</title>
+    <title>MARS | Apply for Work Experience</title>
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico" />
     <link
@@ -34,9 +34,8 @@
       crossorigin="anonymous"></script>
   </head>
 
-  <!-- CONTENT -->
   <body>
-     <header class="sticky top-0 z-50">
+    <header class="sticky top-0 z-50">
       <!-- INFO BAR -->
       <div class="bg-stone-200">
         <section
@@ -733,192 +732,703 @@
         </nav>
       </div>
     </header>
-    <!-- MAIN -->
-    <main>
-       <div
-          class=" border-b border-stone-300 px-8 py-12 text-center md:text-left">
-          <h1 class="text-moss-500">Get Involved</h1>
+    <!-- form -->
+    <main class="border-b border-stone-300 pb-8">
+      <div
+        class="border-b border-stone-300 px-8 py-12 text-center md:text-left">
+        <h1 class="text-moss-500">Apply for Work Experience</h1>
+      </div>
+
+      <div class="mx-auto max-w-5xl px-6 py-8 text-moss-700 md:px-8">
+        <div class="mb-10 max-w-3xl">
+          <p class="max-w-2xl text-lg leading-8">
+            Complete this form to apply for a wildlife hospital work experience
+            placement. Fields marked
+            <span aria-hidden="true">*</span>
+            <span class="sr-only">required</span>
+            are required.
+          </p>
         </div>
-      <section>
-        <h2>Become a Member</h2>
-        <p>
-          A MARS membership is a great way of getting a little bit more involved
-          with the MARS Wildlife Rescue Centre. It’s a way of saying you care
-          and shows you are willing to step up and make your support concrete.
-        </p>
-        <p>
-          Membership entitles you to attend the Annual General Meeting held each
-          year in May. You can help elect MARS board members and vote on the
-          principles and policies that guide the MARS Wildlife Rescue Centre.
-          You will also receive our eNewsletter. Having a strong membership base
-          also helps demonstrate our organization’s support in the community
-          when we apply for grants.
-        </p>
-        <p>
-          Most of all, you will be helping us to help wildlife on northern
-          Vancouver Island. Your fee goes towards the care and rehabilitation of
-          injured, ill or orphaned wildlife.
-        </p>
-        <p>
-          Memberships are renewed every February by end month. New memberships
-          taken out after October 1st will be valid for one year after the
-          following February.
-        </p>
-        <table>
-          <tr>
-            <th>Membership Type</th>
-            <th>|</th>
-            <th>Membership Fee</th>
-          </tr>
-          <tr>
-            <td>Individual</td>
-            <td>|</td>
-            <td>$15.00</td>
-          </tr>
-          <tr>
-            <td>Senior (60+)</td>
-            <td>|</td>
-            <td>$10.00</td>
-          </tr>
-          <tr>
-            <td>Student</td>
-            <td>|</td>
-            <td>$10.00</td>
-          </tr>
-          <tr>
-            <td>Family</td>
-            <td>|</td>
-            <td>$25.00</td>
-          </tr>
-          <tr>
-            <td>Corporate</td>
-            <td>|</td>
-            <td>$250.00</td>
-          </tr>
-        </table>
-        <a href="#">Apply Now</a>
-      </section>
-      <section>
-        <h2>Become a Volunteer</h2>
-        <section>
-          <h3>Did you know?</h3>
-          <p>
-            … MARS Wildlife Rescue depends almost exclusively on volunteers?
-            It’s true. There are over 100 volunteers working at MARS, filling
-            every position imaginable.
-          </p>
-        </section>
-        <section>
-          <h3>Work With and For Wildlife</h3>
-          <section>
-            <h4>WILDLIFE HOSPITAL VOLUNTEERS</h4>
-            <p>
-              At the Wildlife Hospital, we have positions for wildlife
-              caregivers, ambassador bird caregivers, housekeeping volunteers,
-              and transportation volunteers. We also accept work experience
-              volunteers. We literally could not treat the 1000+ patients
-              annually without the generosity of all these individuals. And of
-              course, even if you’ve had no experience working in a wildlife
-              hospital setting, our professional wildlife rehabbers will teach
-              you what to do.
+
+        <div
+          id="form-error-summary"
+          class="mb-8 hidden border border-red-700 bg-red-50 p-5 text-red-900"
+          role="alert"
+          tabindex="-1"
+          aria-labelledby="form-error-summary-title">
+          <h2 id="form-error-summary-title" class="text-xl">
+            Please correct the following:
+          </h2>
+          <ul id="form-error-list" class="mt-3 list-disc pl-5"></ul>
+        </div>
+
+        <form
+          id="work-experience-form"
+          class="space-y-8"
+          action="/apply-for-work-experience"
+          method="post"
+          enctype="multipart/form-data"
+          novalidate>
+          <div>
+            <h2 class="text-2xl text-moss-700">Applicant details</h2>
+            <p class="mt-2 text-moss-700 opacity-80">
+              Tell us who you are and how to reach you.
             </p>
-          </section>
-          <section>
-            <h4>VISITOR CENTRE VOLUNTEERS</h4>
-            <p>
-              At the Visitor Centre, we are seeking gift shop volunteers, and
-              people from all walks of life to work with the education and
-              interpretive tours. We also depend on volunteers for on-going
-              habitat stewardship and property development. We are looking for
-              people with special skills: gardeners, carpenters, electricians,
-              plumbers, heavy-duty machinery operators, labourers, and
-              shovelers, too. We also have a cohort of people working off-site
-              to raise money for MARS through park trail maintenance.
+
+            <div class="mt-6 grid gap-6 md:grid-cols-2">
+              <div>
+                <label for="full-name" class="mb-2 block text-moss-700">
+                  Full name
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="full-name"
+                  name="full_name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="date-of-birth" class="mb-2 block text-moss-700">
+                  Date of birth
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="date-of-birth"
+                  name="date_of_birth"
+                  type="date"
+                  autocomplete="bday"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="email" class="mb-2 block text-moss-700">
+                  Email
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  inputmode="email"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="phone" class="mb-2 block text-moss-700">
+                  Phone
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="street-address" class="mb-2 block text-moss-700">
+                  Street address
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="street-address"
+                  name="street_address"
+                  type="text"
+                  autocomplete="street-address"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="city" class="mb-2 block text-moss-700">
+                  City
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="city"
+                  name="city"
+                  type="text"
+                  autocomplete="address-level2"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="region" class="mb-2 block text-moss-700">
+                  Province, state, or region
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="region"
+                  name="region"
+                  type="text"
+                  autocomplete="address-level1"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="postal-code" class="mb-2 block text-moss-700">
+                  Postal code or ZIP code
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="postal-code"
+                  name="postal_code"
+                  type="text"
+                  autocomplete="postal-code"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="country" class="mb-2 block text-moss-700">
+                  Country
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="country"
+                  name="country"
+                  type="text"
+                  autocomplete="country-name"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl text-moss-700">Placement details</h2>
+            <p class="mt-2 text-moss-700 opacity-80">
+              Tell us when you hope to volunteer and a little about your
+              background.
             </p>
-          </section>
-          <section>
-            <h4>OTHER</h4>
-            <p>Or perhaps you have a skill we didn’t even know we needed!</p>
-          </section>
-          <p>
-            So why not give it a go, join us, and share in this incomparable
-            opportunity to be in service to wild nature. We look forward to your
-            application.
-          </p>
-        </section>
-        <a href="#">Apply Now</a>
-        <a href="#">Volunteer Login</a>
-      </section>
-      <section>
-        <h2>Work Experience Program</h2>
-        <p>
-          Mentorship and education are among our core guiding principles at
-          MARS. As a result, every year the MARS Wildlife Hospital offers young
-          aspiring wildlife rehabilitators an opportunity to gain hands on
-          experience working with injured, ill or orphaned wildlife.
-        </p>
-        <p>
-          We accept work experience volunteers all year round. These are
-          full-time unpaid positions filled on a rotating basis of anywhere from
-          two weeks to several months, depending on your availability.
-        </p>
-        <section>
-          <h3>What to Expect</h3>
-          <p>
-            The Wildlife Hospital is staffed by a wildlife rehabilitation
-            manager, assistant wildlife rehabilitation manager, a wildlife
-            rehabilitator, and many dedicated volunteers. As a work experience
-            volunteer you will become part of a team of like-minded people and
-            will be treated with respect and friendship.
-          </p>
-          <p>
-            You can expect to be involved in all aspects of the rehabilitation
-            process, although your main responsibilities will be diet
-            preparation, feeding, and cleaning. You will also participate in
-            animal rescues and releases, treatment administration, building
-            projects, grounds maintenance, and our community outreach program.
-          </p>
-          <p>
-            receive the greatest number of patients. We care for many different
-            species of wildlife native to Vancouver Island, including songbirds,
-            raptors, waterfowl, fawns, raccoons, and other small mammals. Be
-            forewarned, work at the Wildlife Hospital can be very demanding! In
-            the summer, our volunteer caregivers typically work varying shifts
-            between 7 am – 10 pm, with occasional night feedings. The schedule
-            can be intense, but you will also be given time off to enjoy the
-            beautiful scenery of Vancouver Island.
-          </p>
-          <p>
-            MARS offers very basic housing, linens, cooking utensils, and
-            bicycles for student use. You are responsible for you own food and
-            meals, which you can plan on your own or coordinate with other
-            students!
-          </p>
-          <p>
-            We accept work experience volunteers from all over the world, with a
-            variety of different educational backgrounds. You must be at least
-            19 years of age and have a current Tetanus vaccination. We do not
-            require our work experience volunteers to have any previous wildlife
-            knowledge, nor do they have to be students. Come here prepared to
-            give 100% to our wild patients and you will have an extraordinary
-            experience.
-          </p>
-          <p>
-            If you are interested in volunteering with us to learn about and
-            care for a variety of different wildlife species, MARS might be the
-            perfect place for you!
-          </p>
-        </section>
-        <a href="#">Apply Now</a>
-      </section>
-      <section>
-        <h2>Job Opportunities</h2>
-        <p>
-          Thank you for considering a role with the MARS team. At this time, we
-          do not have any paid positions available. Please check again for
-          future job opportunities.
-        </p>
-      </section>
+
+            <div class="mt-6 grid gap-6 md:grid-cols-2">
+              <div>
+                <label for="start-date" class="mb-2 block text-moss-700">
+                  Preferred start date
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="start-date"
+                  name="preferred_start_date"
+                  type="date"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="end-date" class="mb-2 block text-moss-700">
+                  Preferred end date
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="end-date"
+                  name="preferred_end_date"
+                  type="date"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="education-level" class="mb-2 block text-moss-700">
+                  Last level of education completed
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="education-level"
+                  name="education_level"
+                  type="text"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
+                <label for="occupation" class="mb-2 block text-moss-700">
+                  Current occupation or program
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="occupation"
+                  name="current_occupation"
+                  type="text"
+                  required
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="languages" class="mb-2 block text-moss-700">
+                  Languages you are fluent in
+                </label>
+                <input
+                  id="languages"
+                  name="languages"
+                  type="text"
+                  aria-describedby="languages-help"
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                <p
+                  id="languages-help"
+                  class="mt-2 text-sm text-moss-700 opacity-80">
+                  Example: English, French, Spanish.
+                </p>
+              </div>
+
+              <div class="md:col-span-2">
+                <label
+                  for="independent-travel"
+                  class="mb-2 block text-moss-700">
+                  Have you lived or travelled independently?
+                </label>
+                <textarea
+                  id="independent-travel"
+                  name="independent_travel"
+                  rows="4"
+                  aria-describedby="independent-travel-help"
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"></textarea>
+                <p
+                  id="independent-travel-help"
+                  class="mt-2 text-sm text-moss-700 opacity-80">
+                  You can say yes or no, and include where or any relevant
+                  context.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl text-moss-700">
+              Health, safety, and eligibility
+            </h2>
+            <p class="mt-2 text-moss-700 opacity-80">
+              These questions help MARS assess safety, training needs, and
+              placement fit.
+            </p>
+
+            <div class="mt-6 space-y-8">
+              <fieldset>
+                <legend class="text-moss-700">
+                  Is your tetanus vaccination up to date?
+                  <span aria-hidden="true">*</span>
+                </legend>
+                <p
+                  id="tetanus-help"
+                  class="mt-2 text-sm text-moss-700 opacity-80">
+                  Proof of vaccination is required before placement.
+                </p>
+                <div
+                  class="mt-3 flex flex-wrap gap-4"
+                  aria-describedby="tetanus-help">
+                  <label
+                    class="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-white px-4 py-3 text-moss-700">
+                    <input
+                      id="tetanus-yes"
+                      name="tetanus_up_to_date"
+                      type="radio"
+                      value="yes"
+                      required
+                      class="h-5 w-5 border-stone-300 text-moss-500 focus:ring-moss-500" />
+                    <span>Yes</span>
+                  </label>
+                  <label
+                    class="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-white px-4 py-3 text-moss-700">
+                    <input
+                      id="tetanus-no"
+                      name="tetanus_up_to_date"
+                      type="radio"
+                      value="no"
+                      class="h-5 w-5 border-stone-300 text-moss-500 focus:ring-moss-500" />
+                    <span>No</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend class="text-moss-700">
+                  Are you vaccinated for rabies?
+                </legend>
+                <p
+                  id="rabies-help"
+                  class="mt-2 text-sm text-moss-700 opacity-80">
+                  This is not required, but it may affect the kinds of wildlife
+                  you can work with.
+                </p>
+                <div
+                  class="mt-3 flex flex-wrap gap-4"
+                  aria-describedby="rabies-help">
+                  <label
+                    class="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-white px-4 py-3 text-moss-700">
+                    <input
+                      name="rabies_vaccinated"
+                      type="radio"
+                      value="yes"
+                      class="h-5 w-5 border-stone-300 text-moss-500 focus:ring-moss-500" />
+                    <span>Yes</span>
+                  </label>
+                  <label
+                    class="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-white px-4 py-3 text-moss-700">
+                    <input
+                      name="rabies_vaccinated"
+                      type="radio"
+                      value="no"
+                      class="h-5 w-5 border-stone-300 text-moss-500 focus:ring-moss-500" />
+                    <span>No</span>
+                  </label>
+                  <label
+                    class="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-white px-4 py-3 text-moss-700">
+                    <input
+                      name="rabies_vaccinated"
+                      type="radio"
+                      value="unsure"
+                      class="h-5 w-5 border-stone-300 text-moss-500 focus:ring-moss-500" />
+                    <span>Not sure</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend class="text-moss-700">
+                  Do you hold a valid driver’s licence?
+                  <span aria-hidden="true">*</span>
+                </legend>
+                <div class="mt-3 flex flex-wrap gap-4">
+                  <label
+                    class="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-white px-4 py-3 text-moss-700">
+                    <input
+                      name="drivers_licence"
+                      type="radio"
+                      value="yes"
+                      required
+                      class="h-5 w-5 border-stone-300 text-moss-500 focus:ring-moss-500" />
+                    <span>Yes</span>
+                  </label>
+                  <label
+                    class="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-white px-4 py-3 text-moss-700">
+                    <input
+                      name="drivers_licence"
+                      type="radio"
+                      value="no"
+                      class="h-5 w-5 border-stone-300 text-moss-500 focus:ring-moss-500" />
+                    <span>No</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend class="text-moss-700">
+                  Are you applying from outside Canada?
+                  <span aria-hidden="true">*</span>
+                </legend>
+                <div class="mt-3 flex flex-wrap gap-4">
+                  <label
+                    class="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-white px-4 py-3 text-moss-700">
+                    <input
+                      id="international-yes"
+                      name="international_applicant"
+                      type="radio"
+                      value="yes"
+                      required
+                      class="h-5 w-5 border-stone-300 text-moss-500 focus:ring-moss-500" />
+                    <span>Yes</span>
+                  </label>
+                  <label
+                    class="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-white px-4 py-3 text-moss-700">
+                    <input
+                      id="international-no"
+                      name="international_applicant"
+                      type="radio"
+                      value="no"
+                      class="h-5 w-5 border-stone-300 text-moss-500 focus:ring-moss-500" />
+                    <span>No</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div
+                id="insurance-panel"
+                class="hidden rounded-2xl border border-moss-200 bg-moss-50 p-5"
+                aria-live="polite">
+                <fieldset>
+                  <legend class="text-moss-700">
+                    If selected, are you willing to purchase medical and travel
+                    insurance and provide documentation?
+                    <span aria-hidden="true">*</span>
+                  </legend>
+                  <div class="mt-3 flex flex-wrap gap-4">
+                    <label
+                      class="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-white px-4 py-3 text-moss-700">
+                      <input
+                        name="insurance_confirmation"
+                        type="radio"
+                        value="yes"
+                        class="insurance-option h-5 w-5 border-stone-300 text-moss-500 focus:ring-moss-500" />
+                      <span>Yes</span>
+                    </label>
+                    <label
+                      class="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-white px-4 py-3 text-moss-700">
+                      <input
+                        name="insurance_confirmation"
+                        type="radio"
+                        value="no"
+                        class="insurance-option h-5 w-5 border-stone-300 text-moss-500 focus:ring-moss-500" />
+                      <span>No</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div>
+                <label
+                  for="physical-limitations"
+                  class="mb-2 block text-moss-700">
+                  Do you have any physical limitations or health considerations
+                  that could affect safe completion of the work?
+                  <span aria-hidden="true">*</span>
+                </label>
+                <p
+                  id="limitations-help"
+                  class="mb-2 text-sm text-moss-700 opacity-80">
+                  Example: back problems, severe allergies, immune-related
+                  concerns, or ability to lift. You may also write “none”.
+                </p>
+                <textarea
+                  id="physical-limitations"
+                  name="physical_limitations"
+                  rows="5"
+                  required
+                  aria-describedby="limitations-help"
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl text-moss-700">Experience and motivation</h2>
+
+            <div class="mt-6 grid gap-6">
+              <div>
+                <label for="animal-experience" class="mb-2 block text-moss-700">
+                  Past animal caregiving experience
+                </label>
+                <p
+                  id="animal-experience-help"
+                  class="mb-2 text-sm text-moss-700 opacity-80">
+                  This is not a prerequisite.
+                </p>
+                <textarea
+                  id="animal-experience"
+                  name="animal_experience"
+                  rows="5"
+                  aria-describedby="animal-experience-help"
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"></textarea>
+              </div>
+
+              <div>
+                <label for="skills-interests" class="mb-2 block text-moss-700">
+                  Special skills or interests
+                </label>
+                <textarea
+                  id="skills-interests"
+                  name="special_skills_interests"
+                  rows="4"
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"></textarea>
+              </div>
+
+              <div>
+                <label for="motivation" class="mb-2 block text-moss-700">
+                  Why are you applying, and what unique qualities would you
+                  bring to MARS?
+                  <span aria-hidden="true">*</span>
+                </label>
+                <p
+                  id="motivation-help"
+                  class="mb-2 text-sm text-moss-700 opacity-80">
+                  A few paragraphs is enough. You do not need to upload a
+                  separate essay unless you want to.
+                </p>
+                <textarea
+                  id="motivation"
+                  name="motivation"
+                  rows="8"
+                  required
+                  aria-describedby="motivation-help"
+                  class="w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl text-moss-700">Uploads</h2>
+            <p class="mt-2 text-moss-700 opacity-80">
+              Upload your resume and any optional supporting document.
+            </p>
+
+            <div class="mt-6 grid gap-6 md:grid-cols-2">
+              <div>
+                <label for="resume" class="mb-2 block text-moss-700">
+                  Resume
+                  <span aria-hidden="true">*</span>
+                </label>
+
+                <div
+                  class="flex items-center gap-4 rounded-2xl border border-stone-300 bg-white px-4 py-5">
+                  <input
+                    id="resume"
+                    name="resume"
+                    type="file"
+                    required
+                    accept=".pdf,.doc,.docx"
+                    aria-describedby="resume-help resume-filename"
+                    class="sr-only" />
+
+                  <label
+                    for="resume"
+                    class="btn btn-main inline-flex w-fit self-auto items-center justify-center whitespace-nowrap">
+                    Choose file
+                  </label>
+
+                  <span
+                    id="resume-filename"
+                    class="min-w-0 text-moss-700"
+                    aria-live="polite">
+                    No file chosen
+                  </span>
+                </div>
+
+                <p
+                  id="resume-help"
+                  class="mt-2 text-sm text-moss-700 opacity-80">
+                  Accepted file types: PDF, DOC, or DOCX.
+                </p>
+              </div>
+
+              <div>
+                <label
+                  for="supporting-document"
+                  class="mb-2 block text-moss-700">
+                  Optional supporting document
+                </label>
+
+                <div
+                  class="flex items-center gap-4 rounded-2xl border border-stone-300 bg-white px-4 py-5">
+                  <input
+                    id="supporting-document"
+                    name="supporting_document"
+                    type="file"
+                    accept=".pdf,.doc,.docx"
+                    aria-describedby="supporting-document-help supporting-document-filename"
+                    class="sr-only" />
+
+                  <label
+                    for="supporting-document"
+                    class="btn btn-main inline-flex w-fit self-auto items-center justify-center whitespace-nowrap">
+                    Choose file
+                  </label>
+
+                  <span
+                    id="supporting-document-filename"
+                    class="min-w-0 text-moss-700"
+                    aria-live="polite">
+                    No file chosen
+                  </span>
+                </div>
+
+                <p
+                  id="supporting-document-help"
+                  class="mt-2 text-sm text-moss-700 opacity-80">
+                  Optional: cover letter, reference, or school placement
+                  information.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl text-moss-700">Before you submit</h2>
+
+            <div class="mt-6 space-y-4">
+              <label
+                class="flex items-start gap-3 rounded-2xl border border-stone-300 bg-white p-4 text-moss-700">
+                <input
+                  id="acknowledge-unpaid"
+                  name="acknowledge_unpaid"
+                  type="checkbox"
+                  required
+                  class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
+                <span>
+                  I understand this is an unpaid work experience placement.
+                  <span aria-hidden="true">*</span>
+                </span>
+              </label>
+
+              <label
+                class="flex items-start gap-3 rounded-2xl border border-stone-300 bg-white p-4 text-moss-700">
+                <input
+                  id="acknowledge-demands"
+                  name="acknowledge_demands"
+                  type="checkbox"
+                  required
+                  class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
+                <span>
+                  I understand the work may be physically demanding and can
+                  involve long hours, repetitive tasks, cleaning, and animal
+                  care.
+                  <span aria-hidden="true">*</span>
+                </span>
+              </label>
+
+              <label
+                class="flex items-start gap-3 rounded-2xl border border-stone-300 bg-white p-4 text-moss-700">
+                <input
+                  id="acknowledge-accuracy"
+                  name="acknowledge_accuracy"
+                  type="checkbox"
+                  required
+                  class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
+                <span>
+                  I confirm that the information I have provided is accurate to
+                  the best of my knowledge.
+                  <span aria-hidden="true">*</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="mt-8">
+              <label for="website" class="sr-only">
+                Leave this field empty
+              </label>
+              <input
+                id="website"
+                name="website"
+                type="text"
+                tabindex="-1"
+                autocomplete="off"
+                class="hidden"
+                aria-hidden="true" />
+            </div>
+
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <button type="submit" class="btn btn-main">
+                Submit application
+              </button>
+
+              <p class="text-sm text-moss-700 opacity-80">
+                Your application will be reviewed by the MARS team. Do not use
+                this form for wildlife emergencies.
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
     </main>
 
     <!-- FOOTER -->
@@ -1015,9 +1525,9 @@
           </div>
         </section>
 
-        <section class="py-4 px-8 text-center md:text-left">
+        <section class="py-4 px-8 text-center md:text-left md:px-0">
           <div>
-            <p class="font-semibold">Address:</p>
+            <p class="font-semibold">Address</p>
             <a
               href="https://www.google.com/maps/search/?api=1&query=1331%20Williams%20Beach%20Road%2C%20Merville%2C%20BC"
               target="_blank"
@@ -1078,7 +1588,7 @@
               </svg>
             </a>
           </div>
-          <p class="font-semibold">Mailing Address:</p>
+          <p class="font-semibold">Mailing Address</p>
           <address>P.O. Box 415, Merville, BC V0R 2M0</address>
         </section>
 
@@ -1095,7 +1605,7 @@
           </div>
         </section>
 
-        <section class="py-4 px-8 text-center md:text-left">
+        <section class="py-4 px-8 text-center md:text-left md:px-0 md:mr-8">
           <p class="md:paragraph-short">
             We are grateful for the privilege to live, work, and play on the
             unceded traditional territory of the K’ómoks First Nation and
@@ -1106,6 +1616,156 @@
         </section>
       </div>
     </footer>
-    <script src="js/main.js"></script>
+
+    <script>
+      (function () {
+        const form = document.getElementById("work-experience-form");
+        const summary = document.getElementById("form-error-summary");
+        const errorList = document.getElementById("form-error-list");
+
+        const internationalYes = document.getElementById("international-yes");
+        const internationalNo = document.getElementById("international-no");
+        const insurancePanel = document.getElementById("insurance-panel");
+        const insuranceOptions = document.querySelectorAll(".insurance-option");
+
+        const resumeInput = document.getElementById("resume");
+        const resumeFilename = document.getElementById("resume-filename");
+        const supportingInput = document.getElementById("supporting-document");
+        const supportingFilename = document.getElementById(
+          "supporting-document-filename",
+        );
+
+        function updateInsurancePanel() {
+          const showInsurance = internationalYes.checked;
+
+          insurancePanel.classList.toggle("hidden", !showInsurance);
+
+          insuranceOptions.forEach((option) => {
+            option.required = showInsurance;
+
+            if (!showInsurance) {
+              option.checked = false;
+              option.removeAttribute("aria-invalid");
+            }
+          });
+        }
+
+        function updateFileName(input, output) {
+          if (!input || !output) return;
+
+          output.textContent =
+            input.files && input.files.length > 0
+              ? input.files[0].name
+              : "No file chosen";
+        }
+
+        function getFieldLabel(field) {
+          if (field.type === "radio" || field.type === "checkbox") {
+            const fieldset = field.closest("fieldset");
+            const legend = fieldset ? fieldset.querySelector("legend") : null;
+            return legend
+              ? legend.textContent.replace("*", "").trim()
+              : "This field";
+          }
+
+          const label = document.querySelector(`label[for="${field.id}"]`);
+          return label ? label.textContent.replace("*", "").trim() : field.name;
+        }
+
+        function getFieldTarget(field) {
+          if (field.type === "radio") {
+            const firstRadio = form.querySelector(
+              `input[name="${field.name}"]`,
+            );
+            return firstRadio && firstRadio.id ? firstRadio.id : field.id;
+          }
+
+          return field.id;
+        }
+
+        function clearErrors() {
+          summary.classList.add("hidden");
+          errorList.innerHTML = "";
+
+          form.querySelectorAll('[aria-invalid="true"]').forEach((field) => {
+            field.removeAttribute("aria-invalid");
+          });
+        }
+
+        function showErrors(invalidFields) {
+          const seen = new Set();
+          errorList.innerHTML = "";
+
+          invalidFields.forEach((field) => {
+            const name = getFieldLabel(field);
+            if (seen.has(name)) return;
+            seen.add(name);
+
+            field.setAttribute("aria-invalid", "true");
+
+            const item = document.createElement("li");
+            const link = document.createElement("a");
+            const targetId = getFieldTarget(field);
+
+            if (targetId) {
+              link.href = `#${targetId}`;
+            }
+
+            link.className = "underline";
+            link.textContent = name;
+            item.appendChild(link);
+            errorList.appendChild(item);
+          });
+
+          summary.classList.remove("hidden");
+          summary.focus();
+        }
+
+        [internationalYes, internationalNo].forEach((input) => {
+          input.addEventListener("change", updateInsurancePanel);
+        });
+
+        if (resumeInput && resumeFilename) {
+          resumeInput.addEventListener("change", function () {
+            updateFileName(resumeInput, resumeFilename);
+          });
+        }
+
+        if (supportingInput && supportingFilename) {
+          supportingInput.addEventListener("change", function () {
+            updateFileName(supportingInput, supportingFilename);
+          });
+        }
+
+        form.addEventListener("submit", function (event) {
+          clearErrors();
+          updateInsurancePanel();
+
+          const fields = Array.from(form.elements).filter((field) => {
+            return (
+              !field.disabled &&
+              field.type !== "hidden" &&
+              field.type !== "submit" &&
+              field.type !== "button" &&
+              field.willValidate
+            );
+          });
+
+          const invalidFields = fields.filter(
+            (field) => !field.checkValidity(),
+          );
+
+          if (invalidFields.length > 0) {
+            event.preventDefault();
+            showErrors(invalidFields);
+            invalidFields[0].focus();
+          }
+        });
+
+        updateInsurancePanel();
+        updateFileName(resumeInput, resumeFilename);
+        updateFileName(supportingInput, supportingFilename);
+      })();
+    </script>
   </body>
 </html>

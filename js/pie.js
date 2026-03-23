@@ -68,6 +68,7 @@ async function drawWildlifePieChart() {
             .attr("text-anchor", "middle")
             .attr("dominant-baseline", "middle")
             .style("fill", "#ffffff")
+            .style("font-family", "var(--font-body)")
             .style("font-size", "12px")
             .style("font-weight", "700")
             .text(d => d.data.value);
@@ -76,9 +77,10 @@ async function drawWildlifePieChart() {
             .append("text")
             .attr("text-anchor", "middle")
             .attr("dy", "0.35em")
+            .style("font-family", "var(--font-body)")
             .style("font-size", "20px")
             .style("font-weight", "700")
-            .style("fill", "#222")
+            .style("fill", "var(--color-moss-700)")
             .text(grandTotal);
     } catch (error) {
         console.error("Error loading pie chart data:", error);
