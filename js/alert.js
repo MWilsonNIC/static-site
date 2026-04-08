@@ -1,41 +1,22 @@
 // Today at MARS panels
 (() => {
     function initTodayPanel() {
-        const requiredIds = [
-            "today-panel",
-            "today-panel-content",
-            "toggle-alert",
-            "toggle-hours",
-            "tpl-alerts",
-            "tpl-hours",
-        ];
+        const panel = document.getElementById("today-panel");
+        const panelContent = document.getElementById("today-panel-content");
 
-        const els = Object.fromEntries(
-            requiredIds.map((id) => [id, document.getElementById(id)])
-        );
+        const btnAlerts = document.getElementById("toggle-alert");
+        const btnHours = document.getElementById("toggle-hours");
 
-        const missing = requiredIds.filter((id) => !els[id]);
-        if (missing.length) {
-            // Quiet exit so other pages/scripts keep working
-            return;
-            // If you want debug info sometimes, use this instead:
-            // console.warn("Today panel script: missing IDs:", missing);
-        }
+        const tplAlerts = document.getElementById("tpl-alerts");
+        const tplHours = document.getElementById("tpl-hours");
 
-        const panel = els["today-panel"];
-        const panelContent = els["today-panel-content"];
-
-        const btnAlerts = els["toggle-alert"];
-        const btnHours = els["toggle-hours"];
-
-        const tplAlerts = els["tpl-alerts"];
-        const tplHours = els["tpl-hours"];
+        // Only the base panel is truly required
+        if (!panel || !panelContent) return;
 
         const defaultHTML = panelContent.innerHTML;
 
         let isShowingAlt = false;
         let lastTrigger = null;
-
         let locked = false;
 
         function lockPanelHeight() {
@@ -53,7 +34,6 @@
         function closePanel() {
             panelContent.innerHTML = defaultHTML;
             isShowingAlt = false;
-
             unlockPanelHeight();
 
             if (lastTrigger) lastTrigger.focus();
@@ -61,6 +41,8 @@
         }
 
         function openPanel(templateEl, triggerBtn) {
+            if (!templateEl || !triggerBtn) return;
+
             if (isShowingAlt && lastTrigger === triggerBtn) {
                 closePanel();
                 return;
@@ -81,17 +63,22 @@
             }
         }
 
-        btnAlerts.addEventListener("click", () => openPanel(tplAlerts, btnAlerts));
-        btnHours.addEventListener("click", () => openPanel(tplHours, btnHours));
+        if (btnAlerts && tplAlerts) {
+            btnAlerts.addEventListener("click", () => openPanel(tplAlerts, btnAlerts));
+        }
+
+        if (btnHours && tplHours) {
+            btnHours.addEventListener("click", () => openPanel(tplHours, btnHours));
+        }
 
         document.addEventListener("click", (e) => {
             if (!isShowingAlt) return;
 
             const clickedInsidePanel = panel.contains(e.target);
-            const clickedTrigger =
-                btnAlerts.contains(e.target) || btnHours.contains(e.target);
+            const clickedAlertTrigger = btnAlerts ? btnAlerts.contains(e.target) : false;
+            const clickedHoursTrigger = btnHours ? btnHours.contains(e.target) : false;
 
-            if (clickedInsidePanel || clickedTrigger) return;
+            if (clickedInsidePanel || clickedAlertTrigger || clickedHoursTrigger) return;
 
             closePanel();
         });

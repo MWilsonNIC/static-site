@@ -337,41 +337,131 @@
 })();
 
 // Dark Mode
+// (() => {
+//     const STORAGE_KEY = "theme";
+//     const root = document.documentElement;
+
+//     const systemPrefersDark = () =>
+//         window.matchMedia &&
+//         window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+//     function applyTheme(theme) {
+//         if (theme === "dark") root.setAttribute("data-theme", "dark");
+//         else root.removeAttribute("data-theme");
+//     }
+
+//     function getSavedTheme() {
+//         return localStorage.getItem(STORAGE_KEY);
+//     }
+
+//     function saveTheme(theme) {
+//         localStorage.setItem(STORAGE_KEY, theme);
+//     }
+
+//     const saved = getSavedTheme();
+//     const initialTheme = saved ?? (systemPrefersDark() ? "dark" : "light");
+//     applyTheme(initialTheme);
+
+//     window.addEventListener("DOMContentLoaded", () => {
+//         const toggle = document.getElementById("theme-toggle");
+//         if (!toggle) return;
+
+//         toggle.checked = root.getAttribute("data-theme") === "dark";
+
+//         toggle.addEventListener("change", () => {
+//             const theme = toggle.checked ? "dark" : "light";
+//             applyTheme(theme);
+//             saveTheme(theme);
+//         });
+//     });
+// })();
 (() => {
     const STORAGE_KEY = "theme";
     const root = document.documentElement;
-
-    const systemPrefersDark = () =>
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    function applyTheme(theme) {
-        if (theme === "dark") root.setAttribute("data-theme", "dark");
-        else root.removeAttribute("data-theme");
-    }
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
     function getSavedTheme() {
-        return localStorage.getItem(STORAGE_KEY);
+        const saved = localStorage.getItem(STORAGE_KEY);
+        return saved === "dark" || saved === "light" ? saved : null;
     }
 
     function saveTheme(theme) {
         localStorage.setItem(STORAGE_KEY, theme);
     }
 
-    const saved = getSavedTheme();
-    const initialTheme = saved ?? (systemPrefersDark() ? "dark" : "light");
-    applyTheme(initialTheme);
+    function applyTheme(theme) {
+        if (theme === "dark") {
+            root.setAttribute("data-theme", "dark");
+        } else {
+            root.removeAttribute("data-theme");
+        }
 
-    window.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.getElementById("theme-toggle");
+        if (toggle) {
+            toggle.checked = theme === "dark";
+        }
+    }
+
+    function getPreferredTheme() {
+        const savedTheme = getSavedTheme();
+        if (savedTheme) return savedTheme;
+        return mediaQuery.matches ? "dark" : "light";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
         const toggle = document.getElementById("theme-toggle");
         if (!toggle) return;
 
-        toggle.checked = root.getAttribute("data-theme") === "dark";
+        applyTheme(getPreferredTheme());
 
         toggle.addEventListener("change", () => {
-            const theme = toggle.checked ? "dark" : "light";
-            applyTheme(theme);
-            saveTheme(theme);
+            const newTheme = toggle.checked ? "dark" : "light";
+            applyTheme(newTheme);
+            saveTheme(newTheme);
         });
     });
+
+    // Keep following system preference until the user manually chooses a theme
+    mediaQuery.addEventListener("change", (e) => {
+        if (!getSavedTheme()) {
+            applyTheme(e.matches ? "dark" : "light");
+        }
+    });
 })();
+
+// Today at Mars
+document.addEventListener("DOMContentLoaded", () => {
+    const dateEl = document.getElementById("today-date");
+    const visitorHoursEl = document.getElementById("visitor-centre-hours");
+
+    if (!dateEl || !visitorHoursEl) return;
+
+    const today = new Date();
+    const dayOfWeek = today.getDay(); // 0 = Sun, 1 = Mon, ... 6 = Sat
+
+    const getOrdinal = (num) => {
+        if (num >= 11 && num <= 13) return "th";
+
+        switch (num % 10) {
+            case 1:
+                return "st";
+            case 2:
+                return "nd";
+            case 3:
+                return "rd";
+            default:
+                return "th";
+        }
+    };
+
+    const weekday = today.toLocaleDateString("en-CA", { weekday: "long" });
+    const month = today.toLocaleDateString("en-CA", { month: "long" });
+    const day = today.getDate();
+
+    dateEl.innerHTML = `<em>${weekday}, ${month} ${day}${getOrdinal(day)}</em>`;
+    dateEl.setAttribute("datetime", today.toISOString().split("T")[0]);
+
+    const visitorCentreOpen = dayOfWeek === 5 || dayOfWeek === 6 || dayOfWeek === 0;
+
+    visitorHoursEl.textContent = visitorCentreOpen ? "10:00 am - 3:00 pm" : "Closed Today";
+});

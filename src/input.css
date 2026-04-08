@@ -54,6 +54,7 @@
   h3 {
     @apply tracking-wide text-moss-700 font-headings;
   }
+
   h1 {
     @apply text-4xl md:text-5xl;
   }
@@ -67,7 +68,7 @@
   }
 
   h4 {
-    @apply uppercase font-bold tracking-wide;
+    @apply uppercase font-bold tracking-wide text-moss-500;
   }
 
   h5 {
@@ -114,6 +115,10 @@
 
   .link-accent {
     @apply hover:underline underline-offset-4 decoration-tangerine-500 cursor-pointer active:opacity-70 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+
+  .link-inline {
+    @apply text-moss-500 underline underline-offset-4 stroke-current cursor-pointer hover:no-underline active:opacity-70 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2;
   }
 
   blockquote {
