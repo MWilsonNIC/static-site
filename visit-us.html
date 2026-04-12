@@ -762,12 +762,30 @@
                 </svg>
                 <p class="question text-center lg:pt-0">
                   Open Friday - Sunday, 10am to 3pm
+                  <span class="tooltip inline-flex align-middle" data-tooltip>
+                    <button
+                      type="button"
+                      class="tooltip__trigger"
+                      aria-label="Seasonal visitor centre hours"
+                      aria-expanded="false"
+                      aria-controls="summer-hours-tooltip">
+                      <span aria-hidden="true">*</span>
+                    </button>
+
+                    <span
+                      id="summer-hours-tooltip"
+                      role="tooltip"
+                      class="tooltip__panel absolute bottom-full right-0 z-30 w-[min(18rem,calc(100vw-2rem))] rounded-lg border border-stone-300 bg-stone-50 px-4 py-3 text-left text-sm leading-relaxed text-moss-700 md:left-0 md:right-auto">
+                      From May to Labour Day, we are open Thursday to Sunday,
+                      depending on funding and staffing.
+                    </span>
+                  </span>
                 </p>
               </div>
-              <p>
+              <!-- <p>
                 From May to Labour Day, we are open Thursday to Sunday,
                 depending on funding and staffing.
-              </p>
+              </p> -->
               <p>
                 Our
                 <span class=""></span>
@@ -1291,7 +1309,7 @@
           </section>
 
           <!-- space holder -->
-          <section class="hidden md:block lg:hidden mx-auto">
+          <section class="hidden md:block xl:hidden mx-auto">
             <img src="images/index/tracks.svg" alt="" class="w-50" />
           </section>
         </div>

@@ -129,6 +129,10 @@
     @apply text-lg;
   }
 
+  /* .highlight {
+    @apply text-tangerine-500 ;
+  } */
+
   /* svgs  */
   /* .cls-1 {
     fill: var(--color-moss-500);
@@ -277,5 +281,25 @@
 
   #species-table th button span {
     margin-left: 0.2rem;
+  }
+
+  .tooltip {
+    @apply relative;
+  }
+
+  .tooltip__panel {
+    @apply invisible opacity-0;
+    transform: translateY(0.35rem);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s ease;
+  }
+
+  .tooltip:hover .tooltip__panel,
+  .tooltip:focus-within .tooltip__panel,
+  .tooltip.is-open .tooltip__panel {
+    @apply visible opacity-100;
+    transform: translateY(0);
   }
 }

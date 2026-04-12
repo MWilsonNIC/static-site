@@ -465,3 +465,336 @@ document.addEventListener("DOMContentLoaded", () => {
 
     visitorHoursEl.textContent = visitorCentreOpen ? "10:00 am - 3:00 pm" : "Closed Today";
 });
+
+// Form pages
+(() => {
+    const forms = Array.from(document.querySelectorAll("form[novalidate]"));
+    if (!forms.length) return;
+
+    function cleanLabelText(text) {
+        return (text || "")
+            .replace(/\*/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+    }
+
+    function getFieldLabel(form, field) {
+        if (field.type === "radio" || field.type === "checkbox") {
+            const fieldset = field.closest("fieldset");
+            const legend = fieldset ? fieldset.querySelector("legend") : null;
+            return cleanLabelText(legend ? legend.textContent : "This field");
+        }
+
+        if (field.id) {
+            const label = form.querySelector(`label[for="${field.id}"]`);
+            if (label) return cleanLabelText(label.textContent);
+        }
+
+        return cleanLabelText(field.name || "This field");
+    }
+
+    function getFieldTarget(form, field) {
+        if (field.type === "radio" || field.type === "checkbox") {
+            const first = form.querySelector(`input[name="${field.name}"]`);
+            return first && first.id ? first.id : field.id;
+        }
+
+        return field.id;
+    }
+
+    function clearFieldError(form, field) {
+        if (field.type === "radio" || field.type === "checkbox") {
+            form
+                .querySelectorAll(`input[name="${field.name}"]`)
+                .forEach((input) => input.removeAttribute("aria-invalid"));
+            return;
+        }
+
+        field.removeAttribute("aria-invalid");
+    }
+
+    function clearErrors(form, summary, errorList) {
+        if (summary) summary.classList.add("hidden");
+        if (errorList) errorList.innerHTML = "";
+
+        form.querySelectorAll('[aria-invalid="true"]').forEach((field) => {
+            field.removeAttribute("aria-invalid");
+        });
+    }
+
+    function showErrors(form, summary, errorList, invalidFields) {
+        if (!summary || !errorList) return;
+
+        const seen = new Set();
+        errorList.innerHTML = "";
+
+        invalidFields.forEach((field) => {
+            const name = getFieldLabel(form, field);
+            if (seen.has(name)) return;
+            seen.add(name);
+
+            if (field.type === "radio" || field.type === "checkbox") {
+                form
+                    .querySelectorAll(`input[name="${field.name}"]`)
+                    .forEach((input) => input.setAttribute("aria-invalid", "true"));
+            } else {
+                field.setAttribute("aria-invalid", "true");
+            }
+
+            const item = document.createElement("li");
+            const link = document.createElement("a");
+            const targetId = getFieldTarget(form, field);
+
+            if (targetId) link.href = `#${targetId}`;
+
+            link.className = "underline";
+            link.textContent = name;
+            item.appendChild(link);
+            errorList.appendChild(item);
+        });
+
+        summary.classList.remove("hidden");
+        summary.focus();
+    }
+
+    function getValidatableFields(form) {
+        return Array.from(form.elements).filter((field) => {
+            return (
+                field instanceof HTMLElement &&
+                !field.disabled &&
+                field.type !== "hidden" &&
+                field.type !== "submit" &&
+                field.type !== "button" &&
+                field.willValidate
+            );
+        });
+    }
+
+    function updateFileName(input, output) {
+        if (!input || !output) return;
+
+        output.textContent =
+            input.files && input.files.length > 0
+                ? input.files[0].name
+                : "No file chosen";
+    }
+
+    function initFileInputs(form) {
+        form.querySelectorAll('input[type="file"]').forEach((input) => {
+            const describedBy = (input.getAttribute("aria-describedby") || "")
+                .split(/\s+/)
+                .filter(Boolean);
+
+            let output = describedBy
+                .map((id) => document.getElementById(id))
+                .find((el) => el && /filename$/i.test(el.id));
+
+            if (!output) {
+                output = input.parentElement
+                    ? input.parentElement.querySelector('[id$="filename"]')
+                    : null;
+            }
+
+            if (!output) return;
+
+            const sync = () => updateFileName(input, output);
+            input.addEventListener("change", sync);
+            sync();
+        });
+    }
+
+    function initWorkExperienceInsurance() {
+        const form = document.getElementById("work-experience-form");
+        if (!form) return;
+
+        const internationalInputs = form.querySelectorAll(
+            'input[name="international_applicant"]',
+        );
+        const internationalYes = form.querySelector("#international-yes");
+        const insurancePanel = form.querySelector("#insurance-panel");
+        const insuranceOptions = form.querySelectorAll(".insurance-option");
+
+        if (
+            !internationalInputs.length ||
+            !internationalYes ||
+            !insurancePanel ||
+            !insuranceOptions.length
+        ) {
+            return;
+        }
+
+        function updateInsurancePanel() {
+            const showInsurance = internationalYes.checked;
+
+            insurancePanel.classList.toggle("hidden", !showInsurance);
+            insurancePanel.setAttribute(
+                "aria-hidden",
+                showInsurance ? "false" : "true",
+            );
+
+            insuranceOptions.forEach((option) => {
+                option.disabled = !showInsurance;
+                option.required = showInsurance;
+
+                if (!showInsurance) {
+                    option.checked = false;
+                    option.removeAttribute("aria-invalid");
+                }
+            });
+        }
+
+        internationalInputs.forEach((input) => {
+            input.addEventListener("change", updateInsurancePanel);
+        });
+
+        updateInsurancePanel();
+    }
+
+    function initMembershipFamilySection() {
+        const form = document.getElementById("membership-form");
+        if (!form) return;
+
+        const familyOption = form.querySelector(
+            'input[name="membership_level"][value="family"]',
+        );
+        const membershipOptions = form.querySelectorAll(
+            'input[name="membership_level"]',
+        );
+        const familyHeading = Array.from(form.querySelectorAll("h2")).find((heading) =>
+            /family membership details/i.test(heading.textContent),
+        );
+        const familySection = familyHeading ? familyHeading.closest("div") : null;
+
+        if (!familyOption || !membershipOptions.length || !familySection) return;
+
+        const familyFields = familySection.querySelectorAll(
+            "input, select, textarea, button",
+        );
+
+        function updateFamilySection() {
+            const showFamilyFields = familyOption.checked;
+
+            familySection.classList.toggle("hidden", !showFamilyFields);
+            familySection.setAttribute(
+                "aria-hidden",
+                showFamilyFields ? "false" : "true",
+            );
+
+            familyFields.forEach((field) => {
+                field.disabled = !showFamilyFields;
+                if (!showFamilyFields) field.removeAttribute("aria-invalid");
+            });
+        }
+
+        membershipOptions.forEach((input) => {
+            input.addEventListener("change", updateFamilySection);
+        });
+
+        updateFamilySection();
+    }
+
+    forms.forEach((form) => {
+        const summary = form.parentElement
+            ? form.parentElement.querySelector("#form-error-summary")
+            : null;
+        const errorList = summary
+            ? summary.querySelector("#form-error-list")
+            : null;
+
+        initFileInputs(form);
+
+        form.addEventListener("input", (event) => {
+            const field = event.target;
+            if (!(field instanceof HTMLElement)) return;
+            if (!field.matches("input, select, textarea")) return;
+
+            clearFieldError(form, field);
+        });
+
+        form.addEventListener("change", (event) => {
+            const field = event.target;
+            if (!(field instanceof HTMLElement)) return;
+            if (!field.matches("input, select, textarea")) return;
+
+            clearFieldError(form, field);
+        });
+
+        form.addEventListener("submit", (event) => {
+            clearErrors(form, summary, errorList);
+
+            const invalidFields = getValidatableFields(form).filter(
+                (field) => !field.checkValidity(),
+            );
+
+            if (!invalidFields.length) return;
+
+            event.preventDefault();
+            showErrors(form, summary, errorList, invalidFields);
+            invalidFields[0].focus();
+        });
+    });
+
+    initWorkExperienceInsurance();
+    initMembershipFamilySection();
+})();
+
+// Tooltips
+(() => {
+    const tooltips = Array.from(document.querySelectorAll("[data-tooltip]"));
+    if (!tooltips.length) return;
+
+    function closeTooltip(tooltip) {
+        const trigger = tooltip.querySelector(".tooltip__trigger");
+        tooltip.classList.remove("is-open");
+        if (trigger) trigger.setAttribute("aria-expanded", "false");
+    }
+
+    function openTooltip(tooltip) {
+        const trigger = tooltip.querySelector(".tooltip__trigger");
+        tooltip.classList.add("is-open");
+        if (trigger) trigger.setAttribute("aria-expanded", "true");
+    }
+
+    tooltips.forEach((tooltip) => {
+        const trigger = tooltip.querySelector(".tooltip__trigger");
+        if (!trigger) return;
+
+        trigger.addEventListener("click", (event) => {
+            event.stopPropagation();
+
+            const isOpen = tooltip.classList.contains("is-open");
+
+            tooltips.forEach((otherTooltip) => {
+                if (otherTooltip !== tooltip) closeTooltip(otherTooltip);
+            });
+
+            if (isOpen) closeTooltip(tooltip);
+            else openTooltip(tooltip);
+        });
+
+        trigger.addEventListener("keydown", (event) => {
+            if (event.key !== "Escape") return;
+            closeTooltip(tooltip);
+            trigger.blur();
+        });
+
+        tooltip.addEventListener("focusout", (event) => {
+            if (!tooltip.contains(event.relatedTarget)) {
+                closeTooltip(tooltip);
+            }
+        });
+    });
+
+    document.addEventListener("click", (event) => {
+        tooltips.forEach((tooltip) => {
+            if (!tooltip.contains(event.target)) {
+                closeTooltip(tooltip);
+            }
+        });
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        tooltips.forEach((tooltip) => closeTooltip(tooltip));
+    });
+})();

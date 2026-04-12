@@ -746,9 +746,10 @@
         <h1 class="text-moss-500">Gift Shop</h1>
       </div>
 
+      <!-- Welcome -->
       <section class="border-b border-stone-300 bg-stone-50">
-        <div class="grid gap-6 md:grid-cols-2 p-8">
-          <div>
+        <div class="grid md:grid-cols-2">
+          <div class="p-8">
             <div class="flex flex-col items-center lg:flex-row lg:gap-6 pb-6">
               <svg
                 class="size-16"
@@ -760,36 +761,46 @@
               </svg>
               <p class="question text-center lg:pt-0">
                 Open Friday - Sunday, 10am to 3pm
+                <span class="tooltip inline-flex align-middle" data-tooltip>
+                  <button
+                    type="button"
+                    class="tooltip__trigger"
+                    aria-label="Seasonal visitor centre hours"
+                    aria-expanded="false"
+                    aria-controls="summer-hours-tooltip">
+                    <span aria-hidden="true">*</span>
+                  </button>
+
+                  <span
+                    id="summer-hours-tooltip"
+                    role="tooltip"
+                    class="tooltip__panel absolute bottom-full right-0 z-30 w-[min(18rem,calc(100vw-2rem))] rounded-lg border border-stone-300 bg-stone-50 px-4 py-3 text-left text-sm leading-relaxed text-moss-700 md:left-0 md:right-auto">
+                    From May to Labour Day, we are open Thursday to Sunday,
+                    depending on funding and staffing.
+                  </span>
+                </span>
               </p>
             </div>
-            <p>
-              From May to Labour Day, we are open Thursday to Sunday, depending
-              on funding and staffing.
-            </p>
-            <p>
-              Note: Food crumbs attract insects that are a constant threat to
-              our taxidermy mounts so we do not sell or allow food in our
-              exhibits hall. You are welcome to bring a lunch to eat outside at
-              one of our picnic tables or benches. Please pack out what you
-              bring in.
-            </p>
             <p>
               Welcome to the MARS Visitors Centre Gift Shop, where every
               purchase makes a difference in the lives of wildlife in need of
               care! Not only is our shop is a great place to buy souvenirs; it’s
               a haven for those passionate about conservation and wildlife
-              rehabilitation. We carry a wide assortment of eco-friendly
-              merchandise and handcrafted goods from Northern Vancouver Island
-              and the surrounding area. From plush toys inspired by our resident
-              animals to locally sourced artisanal crafts, to guides and tools
-              for your own wildlife adventures; every item reflects our
-              commitment to conservation.
+              rehabilitation.
+              <span class="highlight">
+                We carry a wide assortment of eco-friendly merchandise and
+                handcrafted goods from Northern Vancouver Island and the
+                surrounding area.
+              </span>
+              From plush toys inspired by our resident animals to locally
+              sourced artisanal crafts, to guides and tools for your own
+              wildlife adventures; every item reflects our commitment to
+              conservation.
             </p>
-          </div>
-
-          <div>
             <p>
-              For a selection of what we have for sale, please visit our
+              For a selection of
+              <span class="highlight">what we have for sale,</span>
+              please visit our
               <a
                 href="https://mars-wildlife-rescue.square.site/"
                 class="link-inline"
@@ -798,7 +809,35 @@
               </a>
               or drop by the Visitor Centre to see our full range of products.
             </p>
+          </div>
+          <div class="lg:grid xl:grid-cols-2 bg-stone-200">
+            <img
+              src="images/gifts/crow-tshirt.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+            <img
+              src="images/gifts/wildlife-plushies.jpg"
+              class="hidden xl:block w-full h-full object-cover"
+              alt="" />
+          </div>
+        </div>
+      </section>
 
+      <!-- Staff and pop-ups -->
+      <section class="border-b border-stone-300 bg-stone-50">
+        <div class="grid md:grid-cols-2">
+          <div class="lg:grid xl:grid-cols-2 bg-stone-200">
+            <img
+              src="images/gifts/handbags.jpg"
+              class="hidden xl:block w-full h-full object-cover"
+              alt="" />
+            <img
+              src="images/gifts/owl-hats.jpg"
+              class="block w-full h-full object-cover"
+              alt="" />
+          </div>
+
+          <div class="p-8">
             <p>
               Our knowledgeable staff and volunteers are always on hand to share
               stories about the animals we care for and the rehabilitation
@@ -807,26 +846,42 @@
               every purchase, customers directly contribute to the care and
               rehabilitation of injured and orphaned wildlife. Whether it’s
               funding medical supplies, building enclosures, or providing
-              nutritious food, the proceeds from our shop play a crucial role in
-              giving animals a second chance at life in the wild. By shopping
-              with us, visitors not only take home meaningful mementos but also
-              become valued partners in our ongoing efforts to protect and
-              preserve wildlife for generations to come.
+              nutritious food,
+              <span class="highlight">
+                the proceeds from our shop play a crucial role in giving animals
+                a second chance at life in the wild.
+              </span>
+              By shopping with us, visitors not only take home meaningful
+              mementos but also become valued partners in our ongoing efforts to
+              protect and preserve wildlife for generations to come.
             </p>
             <p>
-              We also run holiday pop-up markets hosting local handcrafted goods
-              where you can find the perfect seasonal gift. Keep an eye on our
-              socials for dates and times!
-            </p>
-            <p>
-              If you are interested in selling with us as a consignment vendor,
-              please contact the manager at giftshop@marswildliferescue.com
+              We also run
+              <span class="highlight">holiday pop-up markets</span>
+              hosting local handcrafted goods where you can find the perfect
+              seasonal gift. Keep an eye on our socials for dates and times!
             </p>
           </div>
         </div>
       </section>
 
-      <section class="p-8 pb-0 border-b border-stone-300">
+      <!-- Become a Vendor -->
+      <section class="border-b border-stone-300 bg-stone-100">
+        <div class="grid md:grid-cols-2">
+          <div class="px-8 py-16">
+            <h2>Become a Vendor</h2>
+            <p>
+              If you are interested in selling with us as a consignment vendor,
+              please contact the manager at giftshop@marswildliferescue.com
+            </p>
+          </div>
+          <div class="lg:grid xl:grid-cols-2 bg-stone-100"></div>
+        </div>
+      </section>
+
+      <!-- <section class="p-8 pb-0 border-b border-stone-300">
+      
+
         <h2>Selected Items for Sale</h2>
         <p>
           Our gift shop celebrates our love of wildlife. We carry original
@@ -846,7 +901,7 @@
           </section>
           <section class="pb-24 text-center">
             <img
-              src="images/gifts/handbags.jpg"
+              src="images/gifts/bird-plushies.jpg"
               class="block w-full h-full object-cover"
               alt="" />
             <p class="question pt-2">Handbags</p>
@@ -901,10 +956,6 @@
             <p class="pt-0">Locally Hand-Knit</p>
           </section>
           <section class="pb-24 text-center">
-            <img
-              src="images/gifts/wildlife-guildes.jpg"
-              class="block w-full h-full object-cover"
-              alt="" />
             <p class="question pt-2">Wildlife Guides</p>
             <p class="pt-0">Reference Books for Exploring Nature</p>
           </section>
@@ -981,7 +1032,7 @@
             <p class="pt-0">Wildlife Graphics</p>
           </section>
         </div>
-      </section>
+      </section> -->
       <!-- SUPPORT US -->
       <section class="p-8 pb-16 bg-stone-200 border-b border-stone-300">
         <h2>Support Us</h2>
@@ -1029,7 +1080,7 @@
           </section>
 
           <!-- space holder -->
-          <section class="hidden md:block lg:hidden mx-auto">
+          <section class="hidden md:block xl:hidden mx-auto">
             <img src="images/index/tracks.svg" alt="" class="w-50" />
           </section>
         </div>
