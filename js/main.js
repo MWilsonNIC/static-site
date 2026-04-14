@@ -1,4 +1,4 @@
-// Accordion groups
+// Accordion and tab groups
 
 (() => {
     function getStickyHeaderOffset() {
@@ -162,7 +162,7 @@
         const shouldScrollOnMobileOpen = root.hasAttribute("data-rt-scroll");
         const mobileOpenFirst = root.hasAttribute("data-rt-mobile-open-first");
 
-        let activeIndex = -1; // mobile default: closed (unless root opts in)
+        let activeIndex = -1;
         let currentMode = null;
 
         function setTriggerLabelBold(btn, isActive) {
@@ -337,44 +337,6 @@
 })();
 
 // Dark Mode
-// (() => {
-//     const STORAGE_KEY = "theme";
-//     const root = document.documentElement;
-
-//     const systemPrefersDark = () =>
-//         window.matchMedia &&
-//         window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-//     function applyTheme(theme) {
-//         if (theme === "dark") root.setAttribute("data-theme", "dark");
-//         else root.removeAttribute("data-theme");
-//     }
-
-//     function getSavedTheme() {
-//         return localStorage.getItem(STORAGE_KEY);
-//     }
-
-//     function saveTheme(theme) {
-//         localStorage.setItem(STORAGE_KEY, theme);
-//     }
-
-//     const saved = getSavedTheme();
-//     const initialTheme = saved ?? (systemPrefersDark() ? "dark" : "light");
-//     applyTheme(initialTheme);
-
-//     window.addEventListener("DOMContentLoaded", () => {
-//         const toggle = document.getElementById("theme-toggle");
-//         if (!toggle) return;
-
-//         toggle.checked = root.getAttribute("data-theme") === "dark";
-
-//         toggle.addEventListener("change", () => {
-//             const theme = toggle.checked ? "dark" : "light";
-//             applyTheme(theme);
-//             saveTheme(theme);
-//         });
-//     });
-// })();
 (() => {
     const STORAGE_KEY = "theme";
     const root = document.documentElement;
@@ -466,7 +428,7 @@ document.addEventListener("DOMContentLoaded", () => {
     visitorHoursEl.textContent = visitorCentreOpen ? "10:00 am - 3:00 pm" : "Closed Today";
 });
 
-// Form pages
+// Forms
 (() => {
     const forms = Array.from(document.querySelectorAll("form[novalidate]"));
     if (!forms.length) return;
@@ -798,3 +760,15 @@ document.addEventListener("DOMContentLoaded", () => {
         tooltips.forEach((tooltip) => closeTooltip(tooltip));
     });
 })();
+
+// Internal page links
+window.addEventListener("load", () => {
+    if (!window.location.hash) return;
+
+    const target = document.querySelector(window.location.hash);
+    if (!target) return;
+
+    setTimeout(() => {
+        target.scrollIntoView({ block: "start" });
+    }, 0);
+});

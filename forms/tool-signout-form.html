@@ -302,7 +302,7 @@
       <div class="border-y border-stone-300 bg-stone-50">
         <nav
           class="navbar flex items-center justify-between w-(--content-width) mx-auto py-5">
-          <a href="index.html" class="hover:no-underline">
+          <a href="/index.html" class="hover:no-underline">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="w-60 md:w-70"
@@ -973,133 +973,320 @@
           <div>
             <h2 class="text-2xl text-moss-700">Tool request</h2>
             <p class="mt-2 text-moss-700 opacity-80">
-              Select the tools you would like to borrow.
+              Enter the number of each tool you would like to borrow.
             </p>
 
             <fieldset class="mt-6">
               <legend class="mb-2 block text-moss-700">
-                Please select the tools you wish to borrow
+                Requested quantities
                 <span aria-hidden="true">*</span>
               </legend>
               <p
                 id="tool-request-help"
                 class="mb-4 text-sm text-moss-700 opacity-80">
-                If you wish to request more than one of the same tool at a time,
-                please add details in the Notes and Questions section.
+                Enter 0 for any tool you do not need. Quantities cannot exceed
+                the number currently available.
               </p>
 
               <div
-                class="grid gap-3 sm:grid-cols-2"
+                class="grid gap-4 lg:grid-cols-2"
                 aria-describedby="tool-request-help">
-                <label
-                  class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
-                  <input
-                    type="checkbox"
-                    name="tools_requested[]"
-                    value="Extractigator Classic"
-                    class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
-                  <span>Extractigator Classic</span>
-                </label>
+                <div
+                  class="grid gap-4 rounded-lg border border-stone-300 bg-white p-4 md:grid-cols-[minmax(0,1fr)_10rem] md:items-end">
+                  <div>
+                    <label
+                      for="qty-extractigator-classic"
+                      class="block text-moss-700">
+                      Extractigator Classic with BigFoot plate
+                    </label>
+                    <p class="pt-2 text-sm text-moss-700 opacity-80">
+                      Quantity available: 3
+                    </p>
+                  </div>
+                  <div>
+                    <label
+                      for="qty-extractigator-classic"
+                      class="block text-moss-700">
+                      Quantity
+                    </label>
+                    <input
+                      id="qty-extractigator-classic"
+                      name="tools_requested[extractigator_classic]"
+                      type="number"
+                      min="0"
+                      max="3"
+                      value="0"
+                      inputmode="numeric"
+                      class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                  </div>
+                </div>
 
-                <label
-                  class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
-                  <input
-                    type="checkbox"
-                    name="tools_requested[]"
-                    value="Extractigator Junior"
-                    class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
-                  <span>Extractigator Junior</span>
-                </label>
+                <div
+                  class="grid gap-4 rounded-lg border border-stone-300 bg-white p-4 md:grid-cols-[minmax(0,1fr)_10rem] md:items-end">
+                  <div>
+                    <label
+                      for="qty-extractigator-junior"
+                      class="block text-moss-700">
+                      Extractigator Junior with BigFoot plate
+                    </label>
+                    <p class="pt-2 text-sm text-moss-700 opacity-80">
+                      Quantity available: 3
+                    </p>
+                  </div>
+                  <div>
+                    <label
+                      for="qty-extractigator-junior"
+                      class="block text-moss-700">
+                      Quantity
+                    </label>
+                    <input
+                      id="qty-extractigator-junior"
+                      name="tools_requested[extractigator_junior]"
+                      type="number"
+                      min="0"
+                      max="3"
+                      value="0"
+                      inputmode="numeric"
+                      class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                  </div>
+                </div>
 
-                <label
-                  class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
-                  <input
-                    type="checkbox"
-                    name="tools_requested[]"
-                    value="Root Slayer"
-                    class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
-                  <span>Root Slayer</span>
-                </label>
+                <div
+                  class="grid gap-4 rounded-lg border border-stone-300 bg-white p-4 md:grid-cols-[minmax(0,1fr)_10rem] md:items-end">
+                  <div>
+                    <label for="qty-root-slayer" class="block text-moss-700">
+                      Root Slayer Shovel
+                    </label>
+                    <p class="pt-2 text-sm text-moss-700 opacity-80">
+                      Quantity available: 2
+                    </p>
+                  </div>
+                  <div>
+                    <label for="qty-root-slayer" class="block text-moss-700">
+                      Quantity
+                    </label>
+                    <input
+                      id="qty-root-slayer"
+                      name="tools_requested[root_slayer]"
+                      type="number"
+                      min="0"
+                      max="2"
+                      value="0"
+                      inputmode="numeric"
+                      class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                  </div>
+                </div>
 
-                <label
-                  class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
-                  <input
-                    type="checkbox"
-                    name="tools_requested[]"
-                    value="D-Handled Shovel"
-                    class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
-                  <span>D-Handled Shovel</span>
-                </label>
+                <div
+                  class="grid gap-4 rounded-lg border border-stone-300 bg-white p-4 md:grid-cols-[minmax(0,1fr)_10rem] md:items-end">
+                  <div>
+                    <label
+                      for="qty-d-handled-shovel"
+                      class="block text-moss-700">
+                      D-Handled Shovel
+                    </label>
+                    <p class="pt-2 text-sm text-moss-700 opacity-80">
+                      Quantity available: 3
+                    </p>
+                  </div>
+                  <div>
+                    <label
+                      for="qty-d-handled-shovel"
+                      class="block text-moss-700">
+                      Quantity
+                    </label>
+                    <input
+                      id="qty-d-handled-shovel"
+                      name="tools_requested[d_handled_shovel]"
+                      type="number"
+                      min="0"
+                      max="3"
+                      value="0"
+                      inputmode="numeric"
+                      class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                  </div>
+                </div>
 
-                <label
-                  class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
-                  <input
-                    type="checkbox"
-                    name="tools_requested[]"
-                    value="Fiscars PowerGear Lopper"
-                    class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
-                  <span>Fiscars PowerGear Lopper</span>
-                </label>
+                <div
+                  class="grid gap-4 rounded-lg border border-stone-300 bg-white p-4 md:grid-cols-[minmax(0,1fr)_10rem] md:items-end">
+                  <div>
+                    <label for="qty-powergear" class="block text-moss-700">
+                      Fiskars PowerGear Super Pruner/Loppers
+                    </label>
+                    <p class="pt-2 text-sm text-moss-700 opacity-80">
+                      Quantity available: 2
+                    </p>
+                  </div>
+                  <div>
+                    <label for="qty-powergear" class="block text-moss-700">
+                      Quantity
+                    </label>
+                    <input
+                      id="qty-powergear"
+                      name="tools_requested[fiskars_powergear]"
+                      type="number"
+                      min="0"
+                      max="2"
+                      value="0"
+                      inputmode="numeric"
+                      class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                  </div>
+                </div>
 
-                <label
-                  class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
-                  <input
-                    type="checkbox"
-                    name="tools_requested[]"
-                    value="Fiscars Bypass Lopper"
-                    class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
-                  <span>Fiscars Bypass Lopper</span>
-                </label>
+                <div
+                  class="grid gap-4 rounded-lg border border-stone-300 bg-white p-4 md:grid-cols-[minmax(0,1fr)_10rem] md:items-end">
+                  <div>
+                    <label for="qty-bypass" class="block text-moss-700">
+                      Fiskars Control Bypass Loppers
+                    </label>
+                    <p class="pt-2 text-sm text-moss-700 opacity-80">
+                      Quantity available: 3
+                    </p>
+                  </div>
+                  <div>
+                    <label for="qty-bypass" class="block text-moss-700">
+                      Quantity
+                    </label>
+                    <input
+                      id="qty-bypass"
+                      name="tools_requested[fiskars_bypass]"
+                      type="number"
+                      min="0"
+                      max="3"
+                      value="0"
+                      inputmode="numeric"
+                      class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                  </div>
+                </div>
 
-                <label
-                  class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
-                  <input
-                    type="checkbox"
-                    name="tools_requested[]"
-                    value="Stihl Folding Pruning Saw"
-                    class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
-                  <span>Stihl Folding Pruning Saw</span>
-                </label>
+                <div
+                  class="grid gap-4 rounded-lg border border-stone-300 bg-white p-4 md:grid-cols-[minmax(0,1fr)_10rem] md:items-end">
+                  <div>
+                    <label for="qty-pruning-saw" class="block text-moss-700">
+                      Stihl Folding Pruning Saw
+                    </label>
+                    <p class="pt-2 text-sm text-moss-700 opacity-80">
+                      Quantity available: 3
+                    </p>
+                  </div>
+                  <div>
+                    <label for="qty-pruning-saw" class="block text-moss-700">
+                      Quantity
+                    </label>
+                    <input
+                      id="qty-pruning-saw"
+                      name="tools_requested[stihl_pruning_saw]"
+                      type="number"
+                      min="0"
+                      max="3"
+                      value="0"
+                      inputmode="numeric"
+                      class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                  </div>
+                </div>
 
-                <label
-                  class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
-                  <input
-                    type="checkbox"
-                    name="tools_requested[]"
-                    value="Heavy-duty Gloves"
-                    class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
-                  <span>Heavy-duty Gloves</span>
-                </label>
+                <div
+                  class="grid gap-4 rounded-lg border border-stone-300 bg-white p-4 md:grid-cols-[minmax(0,1fr)_10rem] md:items-end">
+                  <div>
+                    <label for="qty-gloves" class="block text-moss-700">
+                      Heavy-duty Gloves
+                    </label>
+                    <p class="pt-2 text-sm text-moss-700 opacity-80">
+                      Quantity available: 5
+                    </p>
+                  </div>
+                  <div>
+                    <label for="qty-gloves" class="block text-moss-700">
+                      Quantity
+                    </label>
+                    <input
+                      id="qty-gloves"
+                      name="tools_requested[gloves]"
+                      type="number"
+                      min="0"
+                      max="5"
+                      value="0"
+                      inputmode="numeric"
+                      class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                  </div>
+                </div>
 
-                <label
-                  class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
-                  <input
-                    type="checkbox"
-                    name="tools_requested[]"
-                    value="Heavy-duty Tarp"
-                    class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
-                  <span>Heavy-duty Tarp</span>
-                </label>
+                <div
+                  class="grid gap-4 rounded-lg border border-stone-300 bg-white p-4 md:grid-cols-[minmax(0,1fr)_10rem] md:items-end">
+                  <div>
+                    <label for="qty-tarps" class="block text-moss-700">
+                      Heavy-duty Tarps
+                    </label>
+                    <p class="pt-2 text-sm text-moss-700 opacity-80">
+                      Quantity available: 3
+                    </p>
+                  </div>
+                  <div>
+                    <label for="qty-tarps" class="block text-moss-700">
+                      Quantity
+                    </label>
+                    <input
+                      id="qty-tarps"
+                      name="tools_requested[tarps]"
+                      type="number"
+                      min="0"
+                      max="3"
+                      value="0"
+                      inputmode="numeric"
+                      class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                  </div>
+                </div>
 
-                <label
-                  class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
-                  <input
-                    type="checkbox"
-                    name="tools_requested[]"
-                    value="Yard Waste Bag (green)"
-                    class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
-                  <span>Yard Waste Bag (green)</span>
-                </label>
+                <div
+                  class="grid gap-4 rounded-lg border border-stone-300 bg-white p-4 md:grid-cols-[minmax(0,1fr)_10rem] md:items-end">
+                  <div>
+                    <label for="qty-yard-bags" class="block text-moss-700">
+                      Yard Waste Bag (green)
+                    </label>
+                    <p class="pt-2 text-sm text-moss-700 opacity-80">
+                      Quantity available: update from tool-library page
+                    </p>
+                  </div>
+                  <div>
+                    <label for="qty-yard-bags" class="block text-moss-700">
+                      Quantity
+                    </label>
+                    <input
+                      id="qty-yard-bags"
+                      name="tools_requested[yard_waste_bags]"
+                      type="number"
+                      min="0"
+                      value="0"
+                      inputmode="numeric"
+                      class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                  </div>
+                </div>
 
-                <label
-                  class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4 sm:col-span-2">
-                  <input
-                    type="checkbox"
-                    name="tools_requested[]"
-                    value="Bulk Bag (white)"
-                    class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
-                  <span>Bulk Bag (white)</span>
-                </label>
+                <div
+                  class="grid gap-4 rounded-lg border border-stone-300 bg-white p-4 md:grid-cols-[minmax(0,1fr)_10rem] md:items-end">
+                  <div>
+                    <label for="qty-bulk-bag" class="block text-moss-700">
+                      Large Capacity Heavy-duty Bulk Bag
+                    </label>
+                    <p class="pt-2 text-sm text-moss-700 opacity-80">
+                      Quantity available: 1
+                    </p>
+                  </div>
+                  <div>
+                    <label for="qty-bulk-bag" class="block text-moss-700">
+                      Quantity
+                    </label>
+                    <input
+                      id="qty-bulk-bag"
+                      name="tools_requested[bulk_bag]"
+                      type="number"
+                      min="0"
+                      max="1"
+                      value="0"
+                      inputmode="numeric"
+                      class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+                  </div>
+                </div>
               </div>
             </fieldset>
           </div>

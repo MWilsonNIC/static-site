@@ -302,7 +302,7 @@
       <div class="border-y border-stone-300 bg-stone-50">
         <nav
           class="navbar flex items-center justify-between w-(--content-width) mx-auto py-5">
-          <a href="index.html" class="hover:no-underline">
+          <a href="/index.html" class="hover:no-underline">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="w-60 md:w-70"
@@ -879,113 +879,9 @@
                   class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"></textarea>
               </div>
 
-              <div class="grid md:grid-cols-2 gap-3">
-                <div>
-                  <label
-                    for="preferred-date-1"
-                    class="mb-2 block text-moss-700">
-                    Preferred date
-                  </label>
-                  <input
-                    id="preferred-date-1"
-                    name="preferred_date_1"
-                    type="date"
-                    class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
-                </div>
-
-                <div>
-                  <span class="mb-2 block text-moss-700">Preferred time</span>
-                  <div class="grid grid-cols-3 gap-3">
-                    <div class="relative">
-                      <select
-                        id="preferred-hour"
-                        name="preferred_hour"
-                        class="w-full appearance-none rounded-lg border border-stone-300 bg-white px-4 py-3 pr-12 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"
-                        aria-label="Preferred hour">
-                        <option value="">Hour</option>
-                        <option value="01">01</option>
-                        <option value="02">02</option>
-                        <option value="03">03</option>
-                        <option value="04">04</option>
-                        <option value="05">05</option>
-                        <option value="06">06</option>
-                        <option value="07">07</option>
-                        <option value="08">08</option>
-                        <option value="09">09</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                      </select>
-
-                      <svg
-                        class="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true">
-                        <path
-                          fill-rule="evenodd"
-                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </div>
-
-                    <div class="relative">
-                      <select
-                        id="preferred-minute"
-                        name="preferred_minute"
-                        class="w-full appearance-none rounded-lg border border-stone-300 bg-white px-4 py-3 pr-12 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"
-                        aria-label="Preferred minutes">
-                        <option value="">Min</option>
-                        <option value="00">00</option>
-                        <option value="15">15</option>
-                        <option value="30">30</option>
-                        <option value="45">45</option>
-                      </select>
-
-                      <svg
-                        class="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true">
-                        <path
-                          fill-rule="evenodd"
-                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </div>
-
-                    <div class="relative">
-                      <select
-                        id="preferred-ampm"
-                        name="preferred_ampm"
-                        class="w-full appearance-none rounded-lg border border-stone-300 bg-white px-4 py-3 pr-12 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"
-                        aria-label="Preferred AM or PM">
-                        <option value="">AM/PM</option>
-                        <option value="AM">AM</option>
-                        <option value="PM">PM</option>
-                      </select>
-
-                      <svg
-                        class="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true">
-                        <path
-                          fill-rule="evenodd"
-                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               <div>
                 <label for="preferred-dates" class="mb-2 block text-moss-700">
-                  What dates and times are you considering?
+                  Please provide several dates and times in order of preference.
                   <span aria-hidden="true">*</span>
                 </label>
                 <p
@@ -1055,9 +951,7 @@
             </div>
 
             <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <button type="submit" class="btn btn-main">
-                Submit Ambassador Bird visit request
-              </button>
+              <button type="submit" class="btn btn-main">Submit Request</button>
 
               <p class="text-sm text-moss-700 opacity-80">
                 A MARS team member will follow up with more information about

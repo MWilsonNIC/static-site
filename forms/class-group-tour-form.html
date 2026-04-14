@@ -35,7 +35,7 @@
   </head>
 
   <body>
-        <header class="sticky top-0 z-50">
+    <header class="sticky top-0 z-50">
       <!-- INFO BAR -->
       <div class="bg-stone-200">
         <section
@@ -302,7 +302,7 @@
       <div class="border-y border-stone-300 bg-stone-50">
         <nav
           class="navbar flex items-center justify-between w-(--content-width) mx-auto py-5">
-          <a href="index.html" class="hover:no-underline">
+          <a href="/index.html" class="hover:no-underline">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="w-60 md:w-70"
@@ -814,7 +814,7 @@
 
               <div>
                 <label for="phone" class="mb-2 block text-moss-700">
-                  Phone
+                  Phone (preferably mobile)
                   <span aria-hidden="true">*</span>
                 </label>
                 <input
@@ -848,10 +848,9 @@
             <h2 class="text-2xl text-moss-700">Group details</h2>
             <p class="mt-2 text-moss-700 opacity-80">
               Tell us about the school, class, or community group you are
-              bringing.
+              bringing
             </p>
-
-            <div class="mt-6 grid gap-6 md:grid-cols-2">
+            <div class="mt-6 grid gap-6 md:grid-cols-3">
               <div class="md:col-span-2">
                 <label for="group-name" class="mb-2 block text-moss-700">
                   Name of school, preschool, community group, or organization
@@ -873,7 +872,7 @@
                   <select
                     id="group-type"
                     name="group_type"
-                    class="w-full appearance-none rounded-lg border border-stone-300 bg-white px-4 py-3 pr-16 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20">
+                    class="w-full appearance-none rounded-lg border border-stone-300 bg-white px-4 py-3 pr-14 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20">
                     <option value="">Select one</option>
                     <option value="school-class">School class</option>
                     <option value="preschool-daycare">
@@ -888,7 +887,7 @@
                   </select>
 
                   <svg
-                    class="pointer-events-none absolute right-6 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
+                    class="pointer-events-none absolute right-5 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -900,50 +899,195 @@
                   </svg>
                 </div>
               </div>
+            </div>
 
-              <div>
-                <label for="grade-level" class="mb-2 block text-moss-700">
-                  Grade level or age range
-                  <span aria-hidden="true">*</span>
-                </label>
-                <div class="relative">
-                  <select
-                    id="grade-level"
-                    name="grade_level"
-                    required
-                    class="w-full appearance-none rounded-lg border border-stone-300 bg-white px-4 py-3 pr-16 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20">
-                    <option value="">Select one</option>
-                    <option value="adults-seniors">Adults / Seniors</option>
-                    <option value="preschool-3-4">Preschool 3-4 years</option>
-                    <option value="preschool-4-5">Preschool 4-5 years</option>
-                    <option value="kindergarten">Kindergarten</option>
-                    <option value="grade-1">Grade 1</option>
-                    <option value="grade-2">Grade 2</option>
-                    <option value="grade-3">Grade 3</option>
-                    <option value="grade-4">Grade 4</option>
-                    <option value="grade-5">Grade 5</option>
-                    <option value="grade-6">Grade 6</option>
-                    <option value="grade-7">Grade 7</option>
-                    <option value="grade-8">Grade 8</option>
-                    <option value="grade-9">Grade 9</option>
-                    <option value="grade-10">Grade 10</option>
-                    <option value="grade-11">Grade 11</option>
-                    <option value="grade-12">Grade 12</option>
-                    <option value="mixed-ages">Mixed ages</option>
-                  </select>
+            <div class="mt-6 grid gap-6 md:grid-cols-2">
+              <div class="md:col-span-2">
+                <fieldset>
+                  <legend class="mb-2 block text-moss-700">
+                    Grade level or age range
+                    <span aria-hidden="true">*</span>
+                  </legend>
+                  <p
+                    id="grade-level-help"
+                    class="mb-4 text-sm text-moss-700 opacity-80">
+                    Select all that apply.
+                  </p>
 
-                  <svg
-                    class="pointer-events-none absolute right-6 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true">
-                    <path
-                      fill-rule="evenodd"
-                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </div>
+                  <div
+                    class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"
+                    aria-describedby="grade-level-help">
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="adults-seniors"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Adults / Seniors</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="preschool-3-4"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Preschool 3-4 years</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="preschool-4-5"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Preschool 4-5 years</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="kindergarten"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Kindergarten</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="grade-1"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Grade 1</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="grade-2"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Grade 2</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="grade-3"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Grade 3</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="grade-4"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Grade 4</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="grade-5"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Grade 5</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="grade-6"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Grade 6</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="grade-7"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Grade 7</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="grade-8"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Grade 8</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="grade-9"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Grade 9</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="grade-10"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Grade 10</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="grade-11"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Grade 11</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="grade-12"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Grade 12</span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-stone-300 bg-white p-4">
+                      <input
+                        type="checkbox"
+                        name="grade_level[]"
+                        value="mixed-ages"
+                        class="mt-1 h-5 w-5 rounded border-stone-300 accent-moss-500 focus:ring-moss-500" />
+                      <span>Mixed ages</span>
+                    </label>
+                  </div>
+                </fieldset>
               </div>
 
               <div>
@@ -1045,117 +1189,18 @@
                   id="special-considerations-help"
                   class="mt-2 text-sm text-moss-700 opacity-80">
                   You can include accessibility needs, support needs, sensory
-                  considerations, mobility needs, or anything else that would
-                  help us plan well for your group.
+                  considerations, mobility needs, or anything else that will
+                  help us plan well for your group. Tours are generally about a
+                  two hours. Let us know whether you need extra time for lunch
+                  or snacks.
                 </p>
-              </div>
-
-              <div>
-                <label for="preferred-date-1" class="mb-2 block text-moss-700">
-                  Preferred date
-                </label>
-                <input
-                  id="preferred-date-1"
-                  name="preferred_date_1"
-                  type="date"
-                  class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
-              </div>
-
-              <div>
-                <span class="mb-2 block text-moss-700">Preferred time</span>
-                <div class="grid grid-cols-3 gap-3">
-                  <div class="relative">
-                    <select
-                      id="preferred-hour"
-                      name="preferred_hour"
-                      class="w-full appearance-none rounded-lg border border-stone-300 bg-white px-4 py-3 pr-12 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"
-                      aria-label="Preferred hour">
-                      <option value="">Hour</option>
-                      <option value="01">01</option>
-                      <option value="02">02</option>
-                      <option value="03">03</option>
-                      <option value="04">04</option>
-                      <option value="05">05</option>
-                      <option value="06">06</option>
-                      <option value="07">07</option>
-                      <option value="08">08</option>
-                      <option value="09">09</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                    </select>
-
-                    <svg
-                      class="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true">
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                        clip-rule="evenodd" />
-                    </svg>
-                  </div>
-
-                  <div class="relative">
-                    <select
-                      id="preferred-minute"
-                      name="preferred_minute"
-                      class="w-full appearance-none rounded-lg border border-stone-300 bg-white px-4 py-3 pr-12 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"
-                      aria-label="Preferred minutes">
-                      <option value="">Min</option>
-                      <option value="00">00</option>
-                      <option value="15">15</option>
-                      <option value="30">30</option>
-                      <option value="45">45</option>
-                    </select>
-
-                    <svg
-                      class="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true">
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                        clip-rule="evenodd" />
-                    </svg>
-                  </div>
-
-                  <div class="relative">
-                    <select
-                      id="preferred-ampm"
-                      name="preferred_ampm"
-                      class="w-full appearance-none rounded-lg border border-stone-300 bg-white px-4 py-3 pr-12 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20"
-                      aria-label="Preferred AM or PM">
-                      <option value="">AM/PM</option>
-                      <option value="AM">AM</option>
-                      <option value="PM">PM</option>
-                    </select>
-
-                    <svg
-                      class="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-moss-700"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true">
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                        clip-rule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-                <!-- <p class="mt-2 text-sm text-moss-700 opacity-80">
-                  Select a time in 15-minute increments.
-                </p> -->
               </div>
 
               <div class="md:col-span-2">
                 <label for="dates-and-times" class="mb-2 block text-moss-700">
-                  What other dates and times are you considering?
+                  School & group tours are available on Friday through Sunday.
+                  What dates and times are you considering? Please provide
+                  several dates and times in order of preference.
                   <span aria-hidden="true">*</span>
                 </label>
                 <textarea
@@ -1434,6 +1479,6 @@
         </section>
       </div>
     </footer>
+    <script src="js/main.js"></script>
   </body>
-      <script src="js/main.js"></script>
 </html>
