@@ -959,9 +959,7 @@
           </section>
 
           <!-- Root Slayer Shovel -->
-          <section
-            data-accordion
-            class="border-b border-stone-300 bg-stone-50">
+          <section data-accordion class="border-b border-stone-300 bg-stone-50">
             <button
               type="button"
               data-accordion-trigger
@@ -1107,9 +1105,7 @@
           </section>
 
           <!-- Fiskars PowerGear Super Pruner/Loppers -->
-          <section
-            data-accordion
-            class="border-b border-stone-300 bg-stone-50">
+          <section data-accordion class="border-b border-stone-300 bg-stone-50">
             <button
               type="button"
               data-accordion-trigger
@@ -1264,9 +1260,7 @@
           </section>
 
           <!-- Stihl Folding Pruning Saw -->
-          <section
-            data-accordion
-            class="border-b border-stone-300 bg-stone-50">
+          <section data-accordion class="border-b border-stone-300 bg-stone-50">
             <button
               type="button"
               data-accordion-trigger
@@ -1407,9 +1401,7 @@
           </section>
 
           <!-- Heavy-duty Tarps -->
-          <section
-            data-accordion
-            class="border-b border-stone-300 bg-stone-50">
+          <section data-accordion class="border-b border-stone-300 bg-stone-50">
             <button
               type="button"
               data-accordion-trigger
@@ -1545,9 +1537,7 @@
           </section>
 
           <!-- Large Capacity Heavy-duty Bulk Bag -->
-          <section
-            data-accordion
-            class="border-b border-stone-300 bg-stone-50">
+          <section data-accordion class="border-b border-stone-300 bg-stone-50">
             <button
               type="button"
               data-accordion-trigger
@@ -1621,26 +1611,26 @@
       </section>
 
       <!-- Borrowing Tools -->
-      <section>
+      <section class="border-b border-stone-300">
         <div>
           <h2 class="text-center md:text-left p-8 border-b border-stone-300">
             Borrowing Tools
           </h2>
         </div>
-        <div class="grid lg:grid-cols-2 p-8 gap-6 lg:gap-8">
-          <p>
+        <div class="grid lg:grid-cols-2 p-8 lg:gap-16">
+          <p class="pt-0">
             This tool lending library is for the benefit of community members
             engaged in habitat stewardship in the Comox Valley and Campbell
             River. While we do not charge for tool borrowing, donations to MARS
             Wildlife Rescue are gratefully accepted.
           </p>
           <div>
-            <p>
+            <p class="lg:pt-0">
               If you have questions about the invasives removal tool lending
               library, please email
               <a
                 target="_blank"
-                href="habitatstewardship@marswildliferescue.com">
+                href="habitatstewardship@marswildliferescue.com" class="link">
                 habitatstewardship@marswildliferescue.com.
               </a>
             </p>
@@ -1652,55 +1642,83 @@
       </section>
 
       <!-- SUPPORT US -->
-      <section class="p-8 pb-16 bg-stone-200 border-b border-stone-300">
-        <h2>Support Us</h2>
-
-        <!-- get involved -->
+      <section
+        class="relative p-8 pb-16 bg-moss-500/20 border-b border-stone-300 overflow-hidden">
         <div
-          class="grid justify-between gap-8 mt-8 md:grid-cols-2 xl:grid-cols-3">
-          <section class="bg-white">
-            <div class="pb-8 px-8">
-              <h3 class="mt-6">Get Involved</h3>
-              <p class="min-w-fit paragraph-short">
-                Become a member, volunteer, gain student work experience, or
-                work with us.
-              </p>
-              <a class="btn btn-main mt-12" href="get-involved.html">Join Us</a>
-            </div>
-          </section>
+          class="pointer-events-none absolute inset-0 opacity-20 text-moss-500"
+          data-inline-svg="/images/topo.svg"
+          aria-hidden="true"></div>
 
-          <!-- donate funds -->
-          <section class="bg-white">
-            <div class="pb-8 px-8">
-              <h3 class="mt-6">Donate Funds</h3>
-              <p class="min-w-fit paragraph-short">
-                Support wildlife through one time or monthly gifts, legacy
-                giving, or adoption.
-              </p>
-              <a class="btn btn-main mt-12" href="donate-funds.html">
-                Donate Funds
-              </a>
-            </div>
-          </section>
+        <div class="relative z-10">
+          <h2>Support Us</h2>
 
-          <!-- donate goods -->
-          <section class="bg-white">
-            <div class="pb-8 px-8">
-              <h3 class="mt-6">Donate Goods</h3>
-              <p class="min-w-fit paragraph-short">
-                See current and everyday needs and learn what items we can and
-                cannot accept.
-              </p>
-              <a class="btn btn-main mt-12" href="donate-goods.html">
-                Donate Goods
-              </a>
-            </div>
-          </section>
+          <div
+            class="mt-8 grid gap-8 md:grid-cols-2 md:items-stretch xl:grid-cols-3">
+            <!-- get involved -->
+            <section class="h-full rounded-lg bg-white opacity-80">
+              <div class="flex h-full flex-col px-8 pt-6 pb-8">
+                <h3 class="leading-none">Get Involved</h3>
 
-          <!-- space holder -->
-          <section class="hidden md:block xl:hidden mx-auto">
-            <img src="images/index/tracks.svg" alt="" class="w-50" />
-          </section>
+                <p class="paragraph-short">
+                  Become a member, volunteer, gain student work experience, or
+                  work with us.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    class="btn btn-main mt-8 w-full self-auto md:w-full"
+                    href="get-involved.html">
+                    Join Us
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- donate funds -->
+            <section class="h-full rounded-lg bg-white opacity-80">
+              <div class="flex h-full flex-col px-8 pt-6 pb-8">
+                <h3 class="leading-none">Donate Funds</h3>
+
+                <p class="paragraph-short">
+                  Support wildlife through one time or monthly gifts, legacy
+                  giving, or adoption.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    class="btn btn-main mt-8 w-full self-auto md:w-full"
+                    href="donate-funds.html">
+                    Donate Funds
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- donate goods -->
+            <section class="h-full rounded-lg bg-white opacity-80">
+              <div class="flex h-full flex-col px-8 pt-6 pb-8">
+                <h3 class="leading-none">Donate Goods</h3>
+
+                <p class="paragraph-short">
+                  See current and everyday needs and learn what items we can and
+                  cannot accept.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    class="btn btn-main mt-8 w-full self-auto md:w-full"
+                    href="donate-goods.html">
+                    Donate Goods
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- space holder -->
+            <section class="mx-auto hidden md:block xl:hidden">
+              <img
+                src="images/index/tracks.svg"
+                alt=""
+                class="w-50 opacity-85" />
+            </section>
+          </div>
         </div>
       </section>
     </main>

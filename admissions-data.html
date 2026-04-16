@@ -777,21 +777,93 @@
             <h2>Detailed Species List</h2>
             <p class="pt-4">
               Species are listed by total patient count, highest to lowest.
-              Click on a heading to sort by species, category, or count.
+              Click on a heading to sort by status, species, category, or count.
             </p>
+
+            <!-- key -->
+            <section
+              aria-labelledby="bc-status-key-heading"
+              class="mt-8 rounded-lg bg-stone-50">
+              <h3
+                id="bc-status-key-heading"
+                class="text-base uppercase tracking-wide text-moss-500">
+                BC Status
+              </h3>
+
+              <p class="max-w-[75ch] pt-3 text-sm md:text-base">
+                British Columbia uses a color-coded system (Red, Blue, Yellow)
+                managed by the BC Conservation Data Centre to classify animal
+                status based on conservation risk.
+              </p>
+
+              <ul class="grid gap-3 pt-4">
+                <li class="flex items-start gap-3 pt-0">
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 inline-block size-3 shrink-0 rounded-full bg-hotpink-500"></span>
+                  <span class="text-sm md:text-base">
+                    Extirpated, Endangered, or Threatened in BC
+                  </span>
+                </li>
+
+                <li class="flex items-start gap-3 pt-0">
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 inline-block size-3 shrink-0 rounded-full bg-lake-500"></span>
+                  <span class="text-sm md:text-base">
+                    Sensitive or vulnerable to human activity or natural events
+                  </span>
+                </li>
+
+                <li class="flex items-start gap-3 pt-0">
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 inline-block size-3 shrink-0 rounded-full bg-yolk-500"></span>
+                  <span class="text-sm md:text-base">
+                    Species that are apparently secure or secure
+                  </span>
+                </li>
+
+                <li class="flex items-start gap-3 pt-0">
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 inline-block size-3 shrink-0 rounded-full bg-moss-500"></span>
+                  <span class="text-sm md:text-base">Other</span>
+                </li>
+              </ul>
+            </section>
 
             <div class="pt-8">
               <div class="overflow-x-auto">
                 <table
+                  id="species-table"
                   class="w-full table-fixed border-collapse bg-white text-sm">
                   <colgroup>
-                    <col class="w-[52%]" />
+                    <col class="w-[8%]" />
+                    <col class="w-[44%]" />
                     <col class="w-[28%]" />
                     <col class="w-[20%]" />
                   </colgroup>
 
                   <thead>
                     <tr class="border-b border-stone-300">
+                      <th
+                        class="bg-stone-200 p-3 text-center font-bold"
+                        scope="col"
+                        aria-sort="none">
+                        <button
+                          type="button"
+                          data-sort-button="status"
+                          class="inline-flex items-center justify-center cursor-pointer"
+                          aria-label="Sort by status dot color">
+                          <span class="sr-only">Status</span>
+                          <span
+                            data-sort-arrow="status"
+                            class="inline-block w-5 text-center"
+                            aria-hidden="true"></span>
+                        </button>
+                      </th>
+
                       <th
                         class="bg-stone-200 p-3 text-left font-bold"
                         scope="col"
@@ -851,56 +923,85 @@
           </div>
         </section>
       </div>
+
       <!-- SUPPORT US -->
-      <section class="p-8 pb-16 bg-stone-200 border-b border-stone-300">
-        <h2>Support Us</h2>
-
-        <!-- get involved -->
+      <section
+        class="relative p-8 pb-16 bg-stone-100 border-b border-stone-300 overflow-hidden">
         <div
-          class="grid justify-between gap-8 mt-8 md:grid-cols-2 xl:grid-cols-3">
-          <section class="bg-white">
-            <div class="pb-8 px-8">
-              <h3 class="mt-6">Get Involved</h3>
-              <p class="min-w-fit paragraph-short">
-                Become a member, volunteer, gain student work experience, or
-                work with us.
-              </p>
-              <a class="btn btn-main mt-12" href="get-involved.html">Join Us</a>
-            </div>
-          </section>
+          class="pointer-events-none absolute inset-0 opacity-40 text-yolk-500"
+          data-inline-svg="/images/topo.svg"
+          aria-hidden="true"></div>
 
-          <!-- donate funds -->
-          <section class="bg-white">
-            <div class="pb-8 px-8">
-              <h3 class="mt-6">Donate Funds</h3>
-              <p class="min-w-fit paragraph-short">
-                Support wildlife through one time or monthly gifts, legacy
-                giving, or adoption.
-              </p>
-              <a class="btn btn-main mt-12" href="donate-funds.html">
-                Donate Funds
-              </a>
-            </div>
-          </section>
+        <div class="relative z-10">
+          <h2>Support Us</h2>
 
-          <!-- donate goods -->
-          <section class="bg-white">
-            <div class="pb-8 px-8">
-              <h3 class="mt-6">Donate Goods</h3>
-              <p class="min-w-fit paragraph-short">
-                See current and everyday needs and learn what items we can and
-                cannot accept.
-              </p>
-              <a class="btn btn-main mt-12" href="donate-goods.html">
-                Donate Goods
-              </a>
-            </div>
-          </section>
+          <div
+            class="mt-8 grid gap-8 md:grid-cols-2 md:items-stretch xl:grid-cols-3">
+            <!-- get involved -->
+            <section class="h-full rounded-lg bg-white opacity-80">
+              <div class="flex h-full flex-col px-8 pt-6 pb-8">
+                <h3 class="leading-none">Get Involved</h3>
 
-          <!-- space holder -->
-          <section class="hidden md:block xl:hidden mx-auto">
-            <img src="images/index/tracks.svg" alt="" class="w-50" />
-          </section>
+                <p class="paragraph-short">
+                  Become a member, volunteer, gain student work experience, or
+                  work with us.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    class="btn btn-main mt-8 w-full self-auto md:w-full"
+                    href="get-involved.html">
+                    Join Us
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- donate funds -->
+            <section class="h-full rounded-lg bg-white opacity-80">
+              <div class="flex h-full flex-col px-8 pt-6 pb-8">
+                <h3 class="leading-none">Donate Funds</h3>
+
+                <p class="paragraph-short">
+                  Support wildlife through one time or monthly gifts, legacy
+                  giving, or adoption.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    class="btn btn-main mt-8 w-full self-auto md:w-full"
+                    href="donate-funds.html">
+                    Donate Funds
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- donate goods -->
+            <section class="h-full rounded-lg bg-white opacity-80">
+              <div class="flex h-full flex-col px-8 pt-6 pb-8">
+                <h3 class="leading-none">Donate Goods</h3>
+
+                <p class="paragraph-short">
+                  See current and everyday needs and learn what items we can and
+                  cannot accept.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    class="btn btn-main mt-8 w-full self-auto md:w-full"
+                    href="donate-goods.html">
+                    Donate Goods
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- space holder -->
+            <section class="mx-auto hidden md:block xl:hidden">
+              <img
+                src="images/index/tracks.svg"
+                alt=""
+                class="w-50 opacity-85" />
+            </section>
+          </div>
         </div>
       </section>
     </main>

@@ -772,3 +772,37 @@ window.addEventListener("load", () => {
         target.scrollIntoView({ block: "start" });
     }, 0);
 });
+
+// topo background
+
+async function injectInlineSVGs() {
+    const targets = document.querySelectorAll("[data-inline-svg]");
+
+    for (const target of targets) {
+        const url = target.getAttribute("data-inline-svg");
+        if (!url) continue;
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Failed to load SVG: ${url}`);
+
+            const svgMarkup = await response.text();
+            target.innerHTML = svgMarkup;
+
+            const svg = target.querySelector("svg");
+            if (!svg) continue;
+
+            svg.setAttribute("aria-hidden", "true");
+            svg.classList.add(
+                "h-full",
+                "w-full",
+                "text-[var(--your-stroke-custom-property)]",
+                "[&_path]:stroke-current"
+            );
+        } catch (error) {
+            console.error(error);
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", injectInlineSVGs);

@@ -129,21 +129,70 @@
     @apply text-lg;
   }
 
-  /* .highlight {
-    @apply text-tangerine-500 ;
-  } */
-
-  /* svgs  */
-  /* .cls-1 {
-    fill: var(--color-moss-500);
-  } */
-
   .cls-1 {
     fill: var(--icon-fill, var(--color-moss-500));
   }
 
   .cls-accent {
     fill: var(--color-tangerine-500);
+  }
+
+  form
+    :is(
+      input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not(
+          [type="hidden"]
+        ):not([type="submit"]):not([type="button"]),
+      select,
+      textarea
+    ) {
+    background-color: var(--color-stone-100) !important;
+    border-color: var(--color-stone-300) !important;
+    color: var(--color-moss-700) !important;
+    caret-color: var(--color-moss-500);
+  }
+
+  form
+    :is(
+      label:has(> input[type="checkbox"]),
+      label:has(> input[type="radio"]),
+      div:has(> input[type="file"])
+    ) {
+    background-color: var(--color-stone-100) !important;
+    border-color: var(--color-stone-300) !important;
+  }
+
+  form input[type="checkbox"],
+  form input[type="radio"] {
+    accent-color: var(--color-moss-500) !important;
+  }
+
+  form
+    :is(
+      input[type="date"],
+      input[type="datetime-local"],
+      input[type="month"],
+      input[type="week"],
+      input[type="time"],
+      select
+    ) {
+    color-scheme: light;
+  }
+
+  html[data-theme="dark"]
+    form
+    :is(
+      input[type="date"],
+      input[type="datetime-local"],
+      input[type="month"],
+      input[type="week"],
+      input[type="time"],
+      select
+    ) {
+    color-scheme: dark;
+  }
+
+  form :is(input, textarea)::placeholder {
+    color: color-mix(in oklab, var(--color-moss-700) 70%, transparent);
   }
 
   /* light-mode / dark-mode */
@@ -168,23 +217,22 @@
 @layer components {
   /* buttons */
   .btn {
-    @apply block self-end h-fit px-8 py-2 border-[1.5px] rounded-md hover:bg-transparent text-sm text-center font-bold uppercase tracking-wider cursor-pointer md:w-fit;
+    @apply block self-end h-fit px-8 py-2 border-[1.5px] rounded-md 
+         text-sm text-center font-bold uppercase tracking-wider cursor-pointer w-full md:w-fit
+         transition-all duration-200 ease-in-out;
   }
 
   .btn-main {
-    @apply border-moss-500 bg-moss-500 hover:border-stone-500 hover:text-stone-500 text-white;
+    @apply border-moss-500 bg-moss-500 text-white 
+         hover:bg-transparent hover:border-stone-500 hover:text-stone-500;
   }
 
   .btn-inverse {
     @apply border-stone-400 text-stone-500 hover:bg-moss-500 hover:text-white hover:border-moss-500;
   }
 
-  /* .btn {
-    @apply block self-end h-fit px-8 py-2 border-[1.5px] border-moss-500 rounded-md bg-moss-500 hover:bg-transparent hover:border-stone-500 hover:text-stone-500 text-white text-sm text-center font-bold uppercase cursor-pointer md:w-fit;
-  } */
-
   .btn-accent {
-    @apply border-tangerine-500 bg-tangerine-500 hover:border-tangerine-500 hover:text-tangerine-500 text-white;
+    @apply border-tangerine-500 bg-tangerine-500 hover:border-tangerine-500 hover:text-tangerine-500 hover:bg-transparent text-white;
   }
 
   .btn-white {
@@ -279,8 +327,12 @@
     text-decoration: underline;
   }
 
-  #species-table th button span {
+  #species-table th [data-sort-arrow] {
     margin-left: 0.2rem;
+  }
+
+  .species-status-dot {
+    @apply inline-block size-3 rounded-full;
   }
 
   .tooltip {

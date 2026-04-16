@@ -736,6 +736,7 @@
         </nav>
       </div>
     </header>
+
     <!-- form -->
     <main class="border-b border-stone-300 pb-8">
       <div
@@ -756,7 +757,7 @@
 
         <div
           id="form-error-summary"
-          class="mb-8 hidden border border-red-700 bg-red-50 p-5 text-red-900"
+          class="mb-8 hidden border border-hotpink-500 bg-hotpink-500/20 p-5 text-hotpink-500"
           role="alert"
           tabindex="-1"
           aria-labelledby="form-error-summary-title">
@@ -809,6 +810,20 @@
               </div>
 
               <div>
+                <label for="pronoun" class="mb-2 block text-moss-700">
+                  Personal pronouns
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="pronount"
+                  name="pronoun"
+                  type="text"
+                  autocomplete="pronoun"
+                  required
+                  class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
+              </div>
+
+              <div>
                 <label for="email" class="mb-2 block text-moss-700">
                   Email
                   <span aria-hidden="true">*</span>
@@ -838,7 +853,7 @@
                   class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
               </div>
 
-              <div class="md:col-span-2">
+              <div>
                 <label for="street-address" class="mb-2 block text-moss-700">
                   Street address
                   <span aria-hidden="true">*</span>
@@ -944,7 +959,39 @@
                   class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
               </div>
 
-              <div>
+              <fieldset class="col-span-2">
+                <legend class="text-moss-700">
+                  If space allows would you be interested in extending your
+                  stay?
+                </legend>
+                <div
+                  class="mt-3 flex flex-wrap gap-4"
+                  aria-describedby="extended-stay">
+                  <label
+                    class="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-white px-4 py-3 text-moss-700">
+                    <input
+                      id="extended-stay-yes"
+                      name="extended-stay"
+                      type="radio"
+                      value="yes"
+                      required
+                      class="h-5 w-5 border-stone-300 text-moss-500 focus:ring-moss-500" />
+                    <span>Yes</span>
+                  </label>
+                  <label
+                    class="inline-flex items-center gap-3 rounded-full border border-stone-300 bg-white px-4 py-3 text-moss-700">
+                    <input
+                      id="extended-stay-no"
+                      name="extended-stay"
+                      type="radio"
+                      value="no"
+                      class="h-5 w-5 border-stone-300 text-moss-500 focus:ring-moss-500" />
+                    <span>No</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="col-span-2 md:col-span-1">
                 <label for="education-level" class="mb-2 block text-moss-700">
                   Last level of education completed
                   <span aria-hidden="true">*</span>
@@ -957,7 +1004,7 @@
                   class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
               </div>
 
-              <div>
+              <div class="col-span-2 md:col-span-1">
                 <label for="occupation" class="mb-2 block text-moss-700">
                   Current occupation or program
                   <span aria-hidden="true">*</span>
@@ -970,7 +1017,7 @@
                   class="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-moss-700 outline-none transition placeholder:text-moss-500 focus:border-moss-500 focus:ring-4 focus:ring-moss-500/20" />
               </div>
 
-              <div class="md:col-span-2">
+              <div class="col-span-2 md:col-span-1">
                 <label for="languages" class="mb-2 block text-moss-700">
                   Languages you are fluent in
                 </label>
@@ -987,7 +1034,7 @@
                 </p>
               </div>
 
-              <div class="md:col-span-2">
+              <div class="col-span-2 md:col-span-1">
                 <label
                   for="independent-travel"
                   class="mb-2 block text-moss-700">
@@ -1369,7 +1416,8 @@
                   required
                   class="mt-1 h-5 w-5 rounded border-stone-300 text-moss-500 focus:ring-moss-500" />
                 <span>
-                  I understand this is an unpaid work experience placement.
+                  I understand this is a full-time (40 hrs / week) unpaid work
+                  experience placement.
                   <span aria-hidden="true">*</span>
                 </span>
               </label>
@@ -1527,7 +1575,7 @@
             </svg>
 
             <a
-              href="contact-us.html"
+              href="/contact-us.html"
               class="hidden md:block btn btn-inverse mt-8">
               Contact Us
             </a>
@@ -1601,7 +1649,7 @@
           <address>P.O. Box 415, Merville, BC V0R 2M0</address>
         </section>
         <section class="md:hidden">
-          <a href="contact-us.html" class="btn btn-inverse mt-6 w-50 mx-auto">
+          <a href="/contact-us.html" class="btn btn-inverse mt-6 w-50 mx-auto">
             Contact Us
           </a>
         </section>
@@ -1630,6 +1678,6 @@
         </section>
       </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

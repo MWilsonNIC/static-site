@@ -789,9 +789,9 @@
           </p>
         </div>
         <div
-          class="grid gap-x-12 border-b border-stone-300 pb-12 md:grid-cols-2 p-8">
+          class="grid gap-x-12 border-b border-stone-300 pb-12 md:grid-cols-2 px-8">
           <div>
-            <p>
+            <p class="pt-0">
               Each weekend, MARS provides family-friendly tours on Friday,
               Saturday, and Sunday. The one-hour outdoor & indoor tours are
               scheduled from 10:00 to 2:00 for groups of up to 8 people per
@@ -808,14 +808,13 @@
           </div>
 
           <div>
-            <p>
+            <p class=" md:pt-0">
               Our tours are suitable for all ages! Our guides love engaging
               children, youth, adults, and seniors in learning about wildlife
               and wild spaces. MARS is a family-friendly place. All are
               welcomed.
             </p>
-            <div
-              class="flex flex-col items-center justify-center mt-6">
+            <div class="flex flex-col items-center justify-center mt-6">
               <svg
                 class="size-16"
                 xmlns="http://www.w3.org/2000/svg"
@@ -842,7 +841,7 @@
 
         <!-- planning -->
         <section class="grid lg:grid-cols-2 lg:gap-8">
-          <div class="p-8">
+          <div class="p-8 flex flex-col h-full">
             <h3>Planning Your Tour</h3>
             <p>
               Plan to be at MARS for 1 1/2 hours. The outdoor portion of the
@@ -873,11 +872,11 @@
               Facebook, Instagram, or in a review on
               <a href="#">TripAdvisor.</a>
             </p>
-            <a
-              href="forms/book-tour-form.html"
-              class="btn btn-main mt-6 place-self-end">
-              Book a Tour
-            </a>
+            <div class="pt-6 md:mt-auto md:place-self-end">
+              <a href="forms/book-tour-form.html" class="btn btn-main">
+                Book a Tour
+              </a>
+            </div>
           </div>
           <img
             src="images/visit-us/viewing.jpg"
@@ -905,7 +904,7 @@
             src="images/visitorcentre/class-tours.jpg"
             class="block w-full h-full object-cover"
             alt="" />
-          <div class="p-8">
+          <div class="p-8 flex flex-col h-full">
             <h3>Why Bring your Class to MARS?</h3>
             <ul>
               <li class="flex gap-3 items-start">
@@ -965,9 +964,10 @@
                 to have fun!
               </li>
             </ul>
+
             <a
               href="forms/class-group-tour-form.html"
-              class="btn btn-main mt-6">
+              class="btn btn-main md:mt-auto mt-6">
               Request a Group Tour
             </a>
           </div>
@@ -1074,54 +1074,83 @@
       </section>
 
       <!-- SUPPORT US -->
-      <section class="p-8 pb-16 bg-stone-200 border-b border-stone-300">
-        <h2>Support Us</h2>
-        <!-- get involved -->
+      <section
+        class="relative p-8 pb-16 bg-stone-200 border-b border-stone-300 overflow-hidden">
         <div
-          class="grid justify-between gap-8 mt-8 md:grid-cols-2 xl:grid-cols-3">
-          <section class="bg-white">
-            <div class="pb-8 px-8">
-              <h3 class="mt-6">Get Involved</h3>
-              <p class="min-w-fit paragraph-short">
-                Become a member, volunteer, gain student work experience, or
-                work with us.
-              </p>
-              <a class="btn btn-main mt-12" href="get-involved.html">Join Us</a>
-            </div>
-          </section>
+          class="pointer-events-none absolute inset-0 opacity-20 text-moss-500"
+          data-inline-svg="/images/topo.svg"
+          aria-hidden="true"></div>
 
-          <!-- donate funds -->
-          <section class="bg-white">
-            <div class="pb-8 px-8">
-              <h3 class="mt-6">Donate Funds</h3>
-              <p class="min-w-fit paragraph-short">
-                Support wildlife through one time or monthly gifts, legacy
-                giving, or adoption.
-              </p>
-              <a class="btn btn-main mt-12" href="donate-funds.html">
-                Donate Funds
-              </a>
-            </div>
-          </section>
+        <div class="relative z-10">
+          <h2>Support Us</h2>
 
-          <!-- donate goods -->
-          <section class="bg-white">
-            <div class="pb-8 px-8">
-              <h3 class="mt-6">Donate Goods</h3>
-              <p class="min-w-fit paragraph-short">
-                See current and everyday needs and learn what items we can and
-                cannot accept.
-              </p>
-              <a class="btn btn-main mt-12" href="donate-goods.html">
-                Donate Goods
-              </a>
-            </div>
-          </section>
+          <div
+            class="mt-8 grid gap-8 md:grid-cols-2 md:items-stretch xl:grid-cols-3">
+            <!-- get involved -->
+            <section class="h-full rounded-lg bg-white opacity-80">
+              <div class="flex h-full flex-col px-8 pt-6 pb-8">
+                <h3 class="leading-none">Get Involved</h3>
 
-          <!-- space holder -->
-          <section class="hidden md:block xl:hidden mx-auto">
-            <img src="images/index/tracks.svg" alt="" class="w-50" />
-          </section>
+                <p class="paragraph-short">
+                  Become a member, volunteer, gain student work experience, or
+                  work with us.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    class="btn btn-main mt-8 w-full self-auto md:w-full"
+                    href="get-involved.html">
+                    Join Us
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- donate funds -->
+            <section class="h-full rounded-lg bg-white opacity-80">
+              <div class="flex h-full flex-col px-8 pt-6 pb-8">
+                <h3 class="leading-none">Donate Funds</h3>
+
+                <p class="paragraph-short">
+                  Support wildlife through one time or monthly gifts, legacy
+                  giving, or adoption.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    class="btn btn-main mt-8 w-full self-auto md:w-full"
+                    href="donate-funds.html">
+                    Donate Funds
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- donate goods -->
+            <section class="h-full rounded-lg bg-white opacity-80">
+              <div class="flex h-full flex-col px-8 pt-6 pb-8">
+                <h3 class="leading-none">Donate Goods</h3>
+
+                <p class="paragraph-short">
+                  See current and everyday needs and learn what items we can and
+                  cannot accept.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    class="btn btn-main mt-8 w-full self-auto md:w-full"
+                    href="donate-goods.html">
+                    Donate Goods
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- space holder -->
+            <section class="mx-auto hidden md:block xl:hidden">
+              <img
+                src="images/index/tracks.svg"
+                alt=""
+                class="w-50 opacity-85" />
+            </section>
+          </div>
         </div>
       </section>
     </main>

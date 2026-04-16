@@ -881,8 +881,8 @@
         </svg>
         <h2 class="text-center md:text-left">Everyday Needs</h2>
       </div>
-      <section class="border-b border-stone-300">
-        <p class="p-8">
+      <section class="border-b border-stone-300 p-8">
+        <p class="pt-0 pb-6">
           The small things really help, and we are always on the lookout for
           bits and pieces, odds and ends, such as:
         </p>
@@ -1167,11 +1167,12 @@
           </svg>
           <h2 class="text-center md:text-left">Do not donate</h2>
         </div>
-        <p class="p-8">
+        <div class="p-8">
+  <p class="pt-0 pb-6">
           It is very hard to say no to generous people, but there are just some
           items we can’t accept!
         </p>
-        <div class="grid lg:grid-cols-3 gap-8 px-8 pb-8">
+        <div class="grid lg:grid-cols-3 gap-8">
           <section>
             <h3>Linens</h3>
             <ul>
@@ -1340,7 +1341,7 @@
             <p>
               If you have something that you think might benefit wildlife care,
               call
-              <a href="tel:+12503372021" aria-label="Call 250-337-2021">
+              <a href="tel:+12503372021" class="link" aria-label="Call 250-337-2021">
                 250-337-2021
               </a>
               and leave a message. We will be happy to get back to you.
@@ -1361,7 +1362,7 @@
             <p>
               If you have something that might suit our gift shop, please email
               the gift shop manager at
-              <a href="mailto:giftshop@marswildliferescue.com">
+              <a href="mailto:giftshop@marswildliferescue.com" class="link">
                 giftshop@marswildliferescue.com
               </a>
             </p>
@@ -1377,58 +1378,88 @@
             </p>
           </section>
         </div>
+        </div>
+      
       </section>
 
       <!-- SUPPORT US -->
-      <section class="p-8 pb-16 bg-stone-200 border-b border-stone-300">
-        <h2>Support Us</h2>
-
-        <!-- get involved -->
+      <section
+        class="relative p-8 pb-16 bg-stone-100 border-b border-stone-300 overflow-hidden">
         <div
-          class="grid justify-between gap-8 mt-8 md:grid-cols-2 xl:grid-cols-3">
-          <section class="bg-white">
-            <div class="pb-8 px-8">
-              <h3 class="mt-6">Get Involved</h3>
-              <p class="min-w-fit paragraph-short">
-                Become a member, volunteer, gain student work experience, or
-                work with us.
-              </p>
-              <a class="btn btn-main mt-12" href="get-involved.html">Join Us</a>
-            </div>
-          </section>
+          class="pointer-events-none absolute inset-0 opacity-20 text-hotpink-500"
+          data-inline-svg="/images/topo.svg"
+          aria-hidden="true"></div>
 
-          <!-- donate funds -->
-          <section class="bg-white">
-            <div class="pb-8 px-8">
-              <h3 class="mt-6">Donate Funds</h3>
-              <p class="min-w-fit paragraph-short">
-                Support wildlife through one time or monthly gifts, legacy
-                giving, or adoption.
-              </p>
-              <a class="btn btn-main mt-12" href="donate-funds.html">
-                Donate Funds
-              </a>
-            </div>
-          </section>
+        <div class="relative z-10">
+          <h2>Support Us</h2>
 
-          <!-- donate goods -->
-          <section class="bg-white">
-            <div class="pb-8 px-8">
-              <h3 class="mt-6">Donate Goods</h3>
-              <p class="min-w-fit paragraph-short">
-                See current and everyday needs and learn what items we can and
-                cannot accept.
-              </p>
-              <a class="btn btn-main mt-12" href="donate-goods.html">
-                Donate Goods
-              </a>
-            </div>
-          </section>
+          <div
+            class="mt-8 grid gap-8 md:grid-cols-2 md:items-stretch xl:grid-cols-3">
+            <!-- get involved -->
+            <section class="h-full rounded-lg bg-white opacity-80">
+              <div class="flex h-full flex-col px-8 pt-6 pb-8">
+                <h3 class="leading-none">Get Involved</h3>
 
-          <!-- space holder -->
-          <section class="hidden md:block xl:hidden mx-auto">
-            <img src="images/index/tracks.svg" alt="" class="w-50" />
-          </section>
+                <p class="paragraph-short">
+                  Become a member, volunteer, gain student work experience, or
+                  work with us.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    class="btn btn-main mt-8 w-full self-auto md:w-full"
+                    href="get-involved.html">
+                    Join Us
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- donate funds -->
+            <section class="h-full rounded-lg bg-white opacity-80">
+              <div class="flex h-full flex-col px-8 pt-6 pb-8">
+                <h3 class="leading-none">Donate Funds</h3>
+
+                <p class="paragraph-short">
+                  Support wildlife through one time or monthly gifts, legacy
+                  giving, or adoption.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    class="btn btn-main mt-8 w-full self-auto md:w-full"
+                    href="donate-funds.html">
+                    Donate Funds
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- donate goods -->
+            <section class="h-full rounded-lg bg-white opacity-80">
+              <div class="flex h-full flex-col px-8 pt-6 pb-8">
+                <h3 class="leading-none">Donate Goods</h3>
+
+                <p class="paragraph-short">
+                  See current and everyday needs and learn what items we can and
+                  cannot accept.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    class="btn btn-main mt-8 w-full self-auto md:w-full"
+                    href="donate-goods.html">
+                    Donate Goods
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- space holder -->
+            <section class="mx-auto hidden md:block xl:hidden">
+              <img
+                src="images/index/tracks.svg"
+                alt=""
+                class="w-50 opacity-85" />
+            </section>
+          </div>
         </div>
       </section>
     </main>

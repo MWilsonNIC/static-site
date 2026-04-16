@@ -43,6 +43,12 @@ function getSpeciesData(data) {
             count: patient.count,
             category: group.category,
             color: group.color,
+            bcListStatus: patient.bcListStatus ?? null,
+            statusDotGroup: patient.statusDotGroup ?? "lake",
+            statusDotColor: patient.statusDotColor ?? "var(--color-lake-500)",
+            statusDotLabel:
+                patient.statusDotLabel ??
+                "No matched BC Red or Blue listing in the uploaded PDFs",
         }))
     );
 }
@@ -57,10 +63,30 @@ function formatPercent(value, total) {
     return `${Math.round(percent)}%`;
 }
 
+function getStatusSortValue(species) {
+    return species.statusDotGroup === "hotpink" ? 0 : 1;
+}
+
 function sortSpecies(species, sortKey, direction) {
     const sorted = [...species];
 
     sorted.sort((a, b) => {
+        if (sortKey === "status") {
+            const statusCompare = getStatusSortValue(a) - getStatusSortValue(b);
+
+            if (statusCompare !== 0) {
+                return direction === "asc" ? statusCompare : -statusCompare;
+            }
+
+            const nameCompare = a.name.localeCompare(b.name);
+
+            if (nameCompare !== 0) {
+                return nameCompare;
+            }
+
+            return b.count - a.count;
+        }
+
         if (sortKey === "species") {
             const nameCompare = a.name.localeCompare(b.name);
 
@@ -148,10 +174,19 @@ function renderSpeciesTable() {
     );
 
     const fragment = document.createDocumentFragment();
-
     sortedSpecies.forEach((species) => {
         const row = document.createElement("tr");
         row.className = "border-b border-stone-300";
+
+        const statusCell = document.createElement("td");
+        statusCell.className = "p-3 text-center align-middle";
+
+        const statusDot = document.createElement("span");
+        statusDot.className = "species-status-dot";
+        statusDot.style.backgroundColor = species.statusDotColor;
+        statusDot.setAttribute("role", "img");
+        statusDot.setAttribute("aria-label", species.statusDotLabel);
+        statusCell.append(statusDot);
 
         const speciesCell = document.createElement("td");
         speciesCell.className = "p-3 pr-4 font-medium";
@@ -171,7 +206,7 @@ function renderSpeciesTable() {
         countCell.className = "p-3 text-right whitespace-nowrap";
         countCell.textContent = String(species.count);
 
-        row.append(speciesCell, categoryCell, countCell);
+        row.append(statusCell, speciesCell, categoryCell, countCell);
         fragment.append(row);
     });
 
@@ -406,7 +441,7 @@ function showAdmissionsDataError() {
         row.className = "border-b border-stone-300";
 
         const cell = document.createElement("td");
-        cell.colSpan = 3;
+        cell.colSpan = 4;
         cell.className = "p-3";
         cell.textContent = "Unable to load species data.";
 
