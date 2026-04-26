@@ -305,35 +305,117 @@
     });
 })();
 
-// Desktop Menu Button
+// Mega menu
 (() => {
-    const popover = document.getElementById("mega-menu__popover");
+    const menu = document.getElementById("mega-menu__popover");
     const desktopButton = document.getElementById("menu-toggle-desktop");
     const mobileButton = document.getElementById("menu-toggle-mobile");
 
-    if (!popover || !desktopButton || !mobileButton) return;
+    if (!menu || !desktopButton || !mobileButton) return;
 
+    const buttons = [desktopButton, mobileButton];
+    const desktopLabel = desktopButton.querySelector("[data-menu-label]");
+    const desktopScreenReaderText = desktopButton.querySelector(".sr-only");
+    const mobileScreenReaderText = mobileButton.querySelector(".sr-only");
     const mobileIcon = mobileButton.querySelector("i");
+    const desktopMQ = window.matchMedia("(min-width: 768px)");
 
-    popover.addEventListener("toggle", (event) => {
-        const isOpen = event.newState === "open";
+    function getVisibleMenuButton() {
+        return buttons.find((button) => {
+            return getComputedStyle(button).display !== "none";
+        });
+    }
 
-        desktopButton.textContent = isOpen ? "X" : "Menu";
-        desktopButton.setAttribute(
-            "aria-label",
-            isOpen ? "Close menu" : "Open menu",
-        );
+    function setDesktopLabel(text) {
+        if (desktopLabel) {
+            desktopLabel.textContent = text;
+            return;
+        }
+
+        const textNode = Array.from(desktopButton.childNodes).find((node) => {
+            return node.nodeType === Node.TEXT_NODE && node.textContent.trim();
+        });
+
+        if (textNode) textNode.textContent = text;
+    }
+
+    function setOpen(isOpen, { returnFocus = false } = {}) {
+        menu.hidden = !isOpen;
+        menu.dataset.state = isOpen ? "open" : "closed";
+
+        buttons.forEach((button) => {
+            button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            button.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+        });
+
+        setDesktopLabel(isOpen ? "X" : "Menu");
+
+        if (desktopScreenReaderText) {
+            desktopScreenReaderText.textContent = isOpen ? "Close menu" : "Open menu";
+        }
+
+        if (mobileScreenReaderText) {
+            mobileScreenReaderText.textContent = isOpen ? "Close menu" : "Open menu";
+        }
 
         if (mobileIcon) {
             mobileIcon.classList.toggle("fa-bars", !isOpen);
             mobileIcon.classList.toggle("fa-xmark", isOpen);
         }
 
-        mobileButton.setAttribute(
-            "aria-label",
-            isOpen ? "Close menu" : "Open menu",
-        );
+        if (returnFocus) {
+            const button = getVisibleMenuButton();
+            if (button) button.focus();
+        }
+    }
+
+    function isOpen() {
+        return !menu.hidden;
+    }
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            setOpen(!isOpen());
+        });
     });
+
+    document.addEventListener("click", (event) => {
+        if (!isOpen()) return;
+
+        const clickedButton = buttons.some((button) => button.contains(event.target));
+        const clickedMenu = menu.contains(event.target);
+
+        if (!clickedButton && !clickedMenu) setOpen(false);
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!isOpen()) return;
+
+        const clickedButton = buttons.some((button) => button.contains(event.target));
+        const clickedMenu = menu.contains(event.target);
+
+        if (!clickedButton && !clickedMenu) setOpen(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape" || !isOpen()) return;
+
+        setOpen(false, { returnFocus: true });
+    });
+
+    const closeOnBreakpointChange = () => {
+        if (isOpen()) setOpen(false);
+    };
+
+    if (desktopMQ.addEventListener) {
+        desktopMQ.addEventListener("change", closeOnBreakpointChange);
+    } else if (desktopMQ.addListener) {
+        desktopMQ.addListener(closeOnBreakpointChange);
+    }
+
+    setOpen(false);
 })();
 
 // Dark Mode

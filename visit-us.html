@@ -36,7 +36,7 @@
 
   <!-- CONTENT -->
   <body>
-    <header class="sticky top-0 z-50">
+  <header class="sticky top-0 z-50">
       <!-- INFO BAR -->
       <div class="bg-stone-200">
         <section
@@ -102,18 +102,22 @@
           <!-- Owl -->
           <div class="col-span-1 flex items-center justify-end md:col-span-8">
             <div class="flex items-center gap-1">
-              <p class="pb-1 text-sm text-moss-500">light/dark</p>
+              <p class="hidden md:block pb-1 text-sm text-moss-500">
+                light/dark
+              </p>
 
               <div class="theme-toggle">
-                <input id="theme-toggle" type="checkbox" />
+                <input id="theme-toggle" type="checkbox" aria-hidden="true" />
                 <label
                   class="owl flex items-center leading-none"
-                  for="theme-toggle">
+                  for="theme-toggle"
+                  aria-hidden="true">
                   <div class="icon-owls flex items-center">
                     <!-- OWL--B -->
                     <svg
                       id="owl--b"
                       class="owl owl--b"
+                      aria-hidden="true"
                       data-name="owl--b"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 205.63 154.15">
@@ -213,6 +217,7 @@
                     <svg
                       id="owl--a"
                       class="owl owl--a"
+                      aria-hidden="true"
                       data-name="owl--a"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 205.63 154.15">
@@ -291,6 +296,7 @@
                       </g>
                     </svg>
                   </div>
+                  <span class="sr-only">light-dark mode toggle</span>
                 </label>
               </div>
             </div>
@@ -390,26 +396,31 @@
                 </g>
               </g>
             </svg>
+            <span class="sr-only">MARS Wildlife Rescue home</span>
           </a>
 
           <!-- Menu Button -->
           <!-- Desktop -->
           <button
             id="menu-toggle-desktop"
-            popovertarget="mega-menu__popover"
             type="button"
             class="hidden btn btn-main text-base place-self-center md:block"
+            aria-controls="mega-menu__popover"
+            aria-expanded="false"
             aria-label="Open menu">
-            Menu
+            <span aria-hidden="true" data-menu-label>Menu</span>
+            <span class="sr-only">Open menu</span>
           </button>
           <!-- Mobile -->
           <button
             id="menu-toggle-mobile"
-            popovertarget="mega-menu__popover"
             class="text-5xl md:hidden"
+            aria-controls="mega-menu__popover"
+            aria-expanded="false"
             aria-label="Open menu"
             type="button">
             <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            <span class="sr-only">Open menu</span>
           </button>
         </nav>
       </div>
@@ -417,11 +428,13 @@
       <!-- MEGA MENU -->
       <div
         id="mega-menu__popover"
-        popover="auto"
-        class="relative w-full md:w-(--content-width) md:mx-auto overflow-visible border border-stone-300 bg-stone-50 shadow-lg">
+        hidden
+        data-state="closed"
+        class="overflow-visible border-b border-stone-300 bg-stone-50 shadow-lg">
         <div
           aria-hidden="true"
-          class="absolute inset-x-0 top-full h-screen bg-stone-50"></div>
+          class="absolute inset-x-0 bg-stone-50 top-full h-screen"></div>
+
         <!-- Menu Content -->
         <nav
           class="grid py-4 px-8 overflow-y-auto md:grid-cols-3 md:gap-4 md:mx-auto md:py-4 xl:pl-30">
@@ -437,6 +450,7 @@
                 id="menu-about-us"
                 data-name="menu-about-us"
                 class="w-10 shrink-0"
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 314.01 288">
                 <path
@@ -997,45 +1011,63 @@
               </li>
             </ul>
           </div>
-          <div class="basis-1/2 xl:min-h-120 mt-6 lg:mt-0">
+          <div
+            class="relative basis-1/2 min-h-80 overflow-hidden mt-6 lg:mt-0 xl:min-h-120">
             <img
               src="images/index/visitor-center.jpg"
               alt="the MARS visitor center sign"
-              class="w-full h-full object-cover block object-bottom-left" />
+              class="absolute inset-0 block size-full object-cover object-bottom-left" />
           </div>
         </section>
       </section>
       <!-- FAQ -->
       <section
         id="frequently-asked-questions"
-        class="grid border-b border-stone-300 bg-stone-50 lg:grid-cols-2">
+        class="grid items-stretch border-b border-stone-300 bg-stone-50 lg:grid-cols-2">
         <!-- left column -->
-        <div class="hidden lg:grid">
-          <!-- xl:grid-cols-2 -->
-          <img
-            class="hidden xl:block w-full h-full object-cover"
-            src="images/visit-us/education-centre.jpg"
-            alt="a group of young students engaged in an education center activity" />
-          <img
-            class="hidden xl:block w-full h-full object-cover"
-            src="images/visit-us/picnic.jpg"
-            alt="the MARS visitor center picnic area" />
-          <img
-            class="hidden xl:block w-full h-full object-cover"
-            src="images/visit-us/deer.jpg"
-            alt="two fawns in the MARS field" />
-          <img
-            class="hidden xl:block w-full h-full object-cover"
-            src="images/visit-us/wetlands.jpg"
-            alt="MARS wetland habitat" />
-          <img
-            class="xl:hidden w-full h-full object-cover"
-            src="images/visit-us/education-center-tall.jpg"
-            alt="a group of young students engaged in an education center activity" />
-          <img
-            class="xl:hidden w-full h-full object-cover"
-            src="images/visit-us/picnic-tall.jpg"
-            alt="the MARS visitor center picnic area" />
+        <div
+          class="hidden self-stretch bg-stone-200 lg:grid lg:grid-cols-1 lg:grid-rows-2 lg:min-h-0 xl:grid-rows-4">
+          <div class="relative hidden min-h-0 overflow-hidden xl:block">
+            <img
+              class="absolute inset-0 block size-full object-cover"
+              src="images/visit-us/education-centre.jpg"
+              alt="a group of young students engaged in an education center activity" />
+          </div>
+
+          <div class="relative hidden min-h-0 overflow-hidden xl:block">
+            <img
+              class="absolute inset-0 block size-full object-cover"
+              src="images/visit-us/picnic.jpg"
+              alt="the MARS visitor center picnic area" />
+          </div>
+
+          <div class="relative hidden min-h-0 overflow-hidden xl:block">
+            <img
+              class="absolute inset-0 block size-full object-cover"
+              src="images/visit-us/deer.jpg"
+              alt="two fawns in the MARS field" />
+          </div>
+
+          <div class="relative hidden min-h-0 overflow-hidden xl:block">
+            <img
+              class="absolute inset-0 block size-full object-cover"
+              src="images/visit-us/wetlands.jpg"
+              alt="MARS wetland habitat" />
+          </div>
+
+          <div class="relative min-h-0 overflow-hidden xl:hidden">
+            <img
+              class="absolute inset-0 block size-full object-cover"
+              src="images/visit-us/education-center-tall.jpg"
+              alt="a group of young students engaged in an education center activity" />
+          </div>
+
+          <div class="relative min-h-0 overflow-hidden xl:hidden">
+            <img
+              class="absolute inset-0 block size-full object-cover"
+              src="images/visit-us/picnic-tall.jpg"
+              alt="the MARS visitor center picnic area" />
+          </div>
         </div>
         <div>
           <h2 class="text-center md:text-left p-8">
@@ -1183,10 +1215,12 @@
         <div class="grid md:grid-cols-2 gap-4 pt-6 lg:grid-cols-3">
           <div class="text-center bg-stone-100">
             <a href="tours.html" class="block font-bold text-moss-500">
-              <img
-                src="images/visit-us/viewing.jpg"
-                class="block w-full h-full object-cover"
-                alt="visitors watching a bird in the flight pen during a tour" />
+              <div class="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src="images/visit-us/viewing.jpg"
+                  class="absolute inset-0 block size-full object-cover"
+                  alt="visitors watching a bird in the flight pen during a tour" />
+              </div>
               <p class="link py-4">Booked Tours</p>
             </a>
           </div>
@@ -1195,10 +1229,12 @@
             <a
               href="tours.html#class-tour"
               class="block font-bold text-moss-500">
-              <img
-                src="images/visitorcentre/class-tours.jpg"
-                class="block w-full h-full object-cover"
-                alt="a group of young students learning about native plants" />
+              <div class="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src="images/visitorcentre/class-tours.jpg"
+                  class="absolute inset-0 block size-full object-cover"
+                  alt="a group of young students learning about native plants" />
+              </div>
               <p class="link py-4">Class Tours</p>
             </a>
           </div>
@@ -1207,10 +1243,12 @@
             <a
               href="ambassador-birds.html"
               class="block font-bold text-moss-500">
-              <img
-                class="block w-full h-full object-cover"
-                src="images/visitorcentre/bird-visits.jpg"
-                alt="Aaron Schmidt visiting a classroom with an ambassador bird" />
+              <div class="relative aspect-[4/3] overflow-hidden">
+                <img
+                  class="absolute inset-0 block size-full object-cover"
+                  src="images/visitorcentre/bird-visits.jpg"
+                  alt="Aaron Schmidt visiting a classroom with an ambassador bird" />
+              </div>
               <p class="link p-4 md:px-0">Ambassador Bird Visits</p>
             </a>
           </div>

@@ -450,6 +450,9 @@
   .table {
     display: table;
   }
+  .aspect-\[4\/3\] {
+    aspect-ratio: 4/3;
+  }
   .size-2 {
     width: calc(var(--spacing) * 2);
     height: calc(var(--spacing) * 2);
@@ -510,6 +513,10 @@
     width: calc(var(--spacing) * 50);
     height: calc(var(--spacing) * 50);
   }
+  .size-full {
+    width: 100%;
+    height: 100%;
+  }
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
@@ -518,6 +525,9 @@
   }
   .h-25 {
     height: calc(var(--spacing) * 25);
+  }
+  .h-auto {
+    height: auto;
   }
   .h-full {
     height: 100%;
@@ -530,6 +540,9 @@
   }
   .min-h-48 {
     min-height: calc(var(--spacing) * 48);
+  }
+  .min-h-80 {
+    min-height: calc(var(--spacing) * 80);
   }
   .w-\(--content-width\) {
     width: var(--content-width);
@@ -573,9 +586,6 @@
   .w-120 {
     width: calc(var(--spacing) * 120);
   }
-  .w-\[8\%\] {
-    width: 8%;
-  }
   .w-\[12\%\] {
     width: 12%;
   }
@@ -587,9 +597,6 @@
   }
   .w-\[40\%\] {
     width: 40%;
-  }
-  .w-\[44\%\] {
-    width: 44%;
   }
   .w-\[min\(18rem\,calc\(100vw-2rem\)\)\] {
     width: min(18rem, calc(100vw - 2rem));
@@ -875,6 +882,9 @@
   .self-start {
     align-self: flex-start;
   }
+  .self-stretch {
+    align-self: stretch;
+  }
   .overflow-auto {
     overflow: auto;
   }
@@ -959,17 +969,11 @@
   .border-yolk-700 {
     border-color: var(--color-yolk-700);
   }
-  .bg-hotpink-500 {
-    background-color: var(--color-hotpink-500);
-  }
   .bg-hotpink-500\/20 {
     background-color: color-mix(in srgb, oklch(0.5268 0.1919 11.36) 20%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-hotpink-500) 20%, transparent);
     }
-  }
-  .bg-lake-500 {
-    background-color: var(--color-lake-500);
   }
   .bg-moss-500 {
     background-color: var(--color-moss-500);
@@ -1009,9 +1013,6 @@
   }
   .bg-white {
     background-color: var(--color-white);
-  }
-  .bg-yolk-500 {
-    background-color: var(--color-yolk-500);
   }
   .bg-\[url\(\'\/images\/backgrounds\/anemone\.jpg\'\)\] {
     background-image: url('/images/backgrounds/anemone.jpg');
@@ -1222,9 +1223,6 @@
   }
   .pl-5 {
     padding-left: calc(var(--spacing) * 5);
-  }
-  .pl-6 {
-    padding-left: calc(var(--spacing) * 6);
   }
   .text-center {
     text-align: center;
@@ -1476,13 +1474,6 @@
       color: var(--color-stone-500);
     }
   }
-  .hover\:border-stone-300 {
-    &:hover {
-      @media (hover: hover) {
-        border-color: var(--color-stone-300);
-      }
-    }
-  }
   .hover\:bg-stone-50 {
     &:hover {
       @media (hover: hover) {
@@ -1501,13 +1492,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-white);
-      }
-    }
-  }
-  .hover\:text-moss-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-moss-500);
       }
     }
   }
@@ -2325,6 +2309,16 @@
       height: 100%;
     }
   }
+  .lg\:min-h-0 {
+    @media (width >= 64rem) {
+      min-height: calc(var(--spacing) * 0);
+    }
+  }
+  .lg\:min-h-full {
+    @media (width >= 64rem) {
+      min-height: 100%;
+    }
+  }
   .lg\:w-24 {
     @media (width >= 64rem) {
       width: calc(var(--spacing) * 24);
@@ -2343,6 +2337,11 @@
   .lg\:rotate-0 {
     @media (width >= 64rem) {
       rotate: 0deg;
+    }
+  }
+  .lg\:grid-cols-1 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
     }
   }
   .lg\:grid-cols-2 {
@@ -2365,6 +2364,11 @@
       grid-template-columns: repeat(8, minmax(0, 1fr));
     }
   }
+  .lg\:grid-rows-2 {
+    @media (width >= 64rem) {
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+    }
+  }
   .lg\:flex-col {
     @media (width >= 64rem) {
       flex-direction: column;
@@ -2383,6 +2387,11 @@
   .lg\:items-center {
     @media (width >= 64rem) {
       align-items: center;
+    }
+  }
+  .lg\:items-stretch {
+    @media (width >= 64rem) {
+      align-items: stretch;
     }
   }
   .lg\:gap-6 {
@@ -2551,6 +2560,11 @@
       height: calc(var(--spacing) * 40);
     }
   }
+  .xl\:min-h-0 {
+    @media (width >= 80rem) {
+      min-height: calc(var(--spacing) * 0);
+    }
+  }
   .xl\:min-h-120 {
     @media (width >= 80rem) {
       min-height: calc(var(--spacing) * 120);
@@ -2581,9 +2595,29 @@
       grid-template-columns: repeat(24, minmax(0, 1fr));
     }
   }
+  .xl\:grid-rows-2 {
+    @media (width >= 80rem) {
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .xl\:grid-rows-3 {
+    @media (width >= 80rem) {
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .xl\:grid-rows-4 {
+    @media (width >= 80rem) {
+      grid-template-rows: repeat(4, minmax(0, 1fr));
+    }
+  }
   .xl\:place-content-start {
     @media (width >= 80rem) {
       place-content: start;
+    }
+  }
+  .xl\:items-stretch {
+    @media (width >= 80rem) {
+      align-items: stretch;
     }
   }
   .xl\:gap-0 {
@@ -3042,10 +3076,39 @@
     outline-offset: 2px;
   }
   .navbar {
-    anchor-name: --navbar;
+    position: relative;
   }
-  #mega-menu__popover[popover] {
-    inset-block-start: anchor(--navbar bottom);
+  #mega-menu__popover {
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    z-index: 60;
+    inline-size: 100%;
+    max-block-size: calc(100vh - 6rem);
+    max-block-size: calc(100svh - 6rem);
+  }
+  #mega-menu__popover[hidden] {
+    display: none !important;
+  }
+  #mega-menu__popover > nav {
+    max-block-size: calc(100vh - 6rem);
+    max-block-size: calc(100svh - 6rem);
+    -webkit-overflow-scrolling: touch;
+  }
+  @media (min-width: 768px) {
+    #mega-menu__popover {
+      inset-inline-start: 50%;
+      inset-inline-end: auto;
+      transform: translateX(-50%);
+      inline-size: var(--content-width);
+      max-block-size: calc(100vh - 8rem);
+      max-block-size: calc(100svh - 8rem);
+    }
+    #mega-menu__popover > nav {
+      max-block-size: calc(100vh - 8rem);
+      max-block-size: calc(100svh - 8rem);
+    }
   }
   #alert__popover::backdrop, #directions__popover::backdrop, #hours__popover::backdrop {
     background-color: color-mix(in srgb, oklch(26.8% 0.007 34.298) 90%, transparent);

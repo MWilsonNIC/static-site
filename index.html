@@ -408,18 +408,20 @@
           <!-- Desktop -->
           <button
             id="menu-toggle-desktop"
-            popovertarget="mega-menu__popover"
             type="button"
             class="hidden btn btn-main text-base place-self-center md:block"
+            aria-controls="mega-menu__popover"
+            aria-expanded="false"
             aria-label="Open menu">
-            Menu
+            <span aria-hidden="true" data-menu-label>Menu</span>
             <span class="sr-only">Open menu</span>
           </button>
           <!-- Mobile -->
           <button
             id="menu-toggle-mobile"
-            popovertarget="mega-menu__popover"
             class="text-5xl md:hidden"
+            aria-controls="mega-menu__popover"
+            aria-expanded="false"
             aria-label="Open menu"
             type="button">
             <i class="fa-solid fa-bars" aria-hidden="true"></i>
@@ -431,8 +433,9 @@
       <!-- MEGA MENU -->
       <div
         id="mega-menu__popover"
-        popover="auto"
-        class="relative w-full md:w-(--content-width) md:mx-auto overflow-visible border border-stone-300 bg-stone-50 shadow-lg">
+        hidden
+        data-state="closed"
+        class="overflow-visible border-b border-stone-300 bg-stone-50 shadow-lg">
         <div
           aria-hidden="true"
           class="absolute inset-x-0 bg-stone-50 top-full h-screen"></div>
@@ -977,8 +980,10 @@
       <!-- Mobile Alert -->
       <article class="md:hidden grid p-8 border-b border-stone-300">
         <a class="btn btn-accent" href="avian-flu-alert.html">Alerts</a>
-        <a class="btn btn-inverse mt-6" href="avian-flu-alert.html">Book a Tour</a>
-         <a class="btn btn-inverse mt-6" href="avian-flu-alert.html">Donate</a>
+        <a class="btn btn-inverse mt-6" href="avian-flu-alert.html">
+          Book a Tour
+        </a>
+        <a class="btn btn-inverse mt-6" href="avian-flu-alert.html">Donate</a>
       </article>
 
       <!-- Distress -->
@@ -1142,8 +1147,8 @@
         <!-- Hospital FAQ  -->
         <a
           href="about-the-hospital.html"
-          class="col-span-9 xl:col-span-3 md:grid justify-items-center content-center gap-2 w-full h-full py-2 px-4 bg-stone-50 hover:bg-white border-l border-b border-stone-300 cursor-pointer"
-          aria-label="View all hours">
+          class="col-span-9 grid justify-items-center content-center gap-2 w-full h-full py-2 px-4 bg-stone-50 hover:bg-white border-l border-b border-stone-300 cursor-pointer xl:col-span-3"
+          aria-label="View hospital FAQ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="size-12"
@@ -1152,14 +1157,16 @@
               class="cls-1"
               d="M.37,112.04c.06,1.53.13,3.04.22,4.59.15,1.69.63,3.25,1.26,4.72.45,1.06,1,2.08,1.65,3.06.33.49.67.97,1.08,1.43.42.47.81.9,1.51,1.35.2.14.41.22.62.29.11.03.21.1.32.11.11,0,.22.02.34.02h.93s1.66,0,1.66,0c1.11,0,2.21-.01,3.33-.02,2.24-.02,4.51-.02,6.76-.01,3.38.02,6.8.06,10.04-.09,1.39-.07,2.67-.13,4.14-.11,3.38.02,6.76.04,10.14.07,4.19,0,8.35.03,12.53.08.61,0,1.23.01,1.84.02.54.02,1.09.09,1.61.22,1.06.26,2.06.75,2.93,1.42.22.17.42.35.62.54l.67.65.33.33c.1.1.2.19.29.3.18.21.36.42.52.64.65.89,1.1,1.92,1.32,3.01.1.48.15.97.15,1.47v1.69c.01,1.12.01,2.25.02,3.37,0,1.71-.1,3.43-.09,5.12.06,9.34.19,18.66.08,28.04-.02,2.39-.04,4.8-.06,7.2l-.02,3.6v.9s0,.45,0,.45c0,.22,0,.48,0,.71.05.23.2.43.3.65.05.1.13.21.18.3l.15.23c.2.28.4.55.61.8.93,1.09,1.95,2.02,3.08,2.86.57.42,1.15.82,1.84,1.16.19.08.34.17.56.24l.31.11c.11.03.23.06.31.08.37.08.71.13,1.05.18.4.05.81.11,1.21.17,2.18.27,4.33.43,6.49.55,4.42.22,7.42.02,9.35-.29,1.01-.17,1.73-.38,2.2-.61.25,0,.49,0,.75,0,.21,0,.43,0,.64,0,.1.04.2.07.24.11.46.41,1.41.72,4.5.93,4.58.29,8.74.66,14.35.37.74-.05,1.39-.06,2.31-.18.43-.05.84-.15,1.25-.23.4-.11.81-.21,1.19-.35,1.54-.52,2.93-1.23,4.13-2.05.75-.52,1.47-1.08,2.16-1.74.35-.34.69-.68,1.03-1.15.08-.11.19-.24.28-.41l.25-.52c.09-.17.1-.37.16-.55.08-.18.07-.37.07-.56-.01-.85-.03-1.71-.04-2.57,0-.84,0-1.68,0-2.53.1-7.51-.2-14.69-.3-22.02-.04-3.06-.11-6.11-.13-9.17-.02-3.49,0-6.97-.11-10.42-.05-1.79-.13-3.72-.08-5.47.05-2.03.89-3.94,2.2-5.35,1.31-1.42,3.08-2.34,4.97-2.63.6-.09,1.3-.11,1.97-.13.68-.02,1.35-.03,2.03-.03,1.36,0,2.72.02,4.1.08.99.04,2,.07,3.01.08,4.01.02,8.01.05,12.02.07.72,0,1.47.02,2.16,0,4.06-.12,8.09-.1,12.23-.06,3.54.02,7.09.04,10.65.06h2.67s.72,0,.72,0c.16,0,.32,0,.48,0l.42-.21,1.25-.62.61-.3.3-.15c.11-.04.26-.14.36-.22.41-.28.79-.6,1.14-.94.7-.69,1.27-1.5,1.71-2.35.55-1.06.97-2.16,1.25-3.29.28-1.12.45-2.33.51-3.42.5-7.64.58-15.25.41-22.85-.08-2.96-.18-5.92-.49-8.68-.25-2.02-.4-4.1-.62-6.21-.05-.53-.1-1.06-.18-1.59-.07-.53-.12-1.07-.25-1.61-.07-.28-.09-.54-.19-.83-.09-.3-.22-.56-.35-.82-.26-.51-.56-.97-.87-1.43-.95-1.32-1.98-2.53-3.31-3.58-.16-.13-.35-.25-.6-.4l-.36-.19-.09-.05h-.1s-.2-.01-.2-.01l-1.28-.03-2.35-.02c-5.64-.01-11.32-.07-16.92.13-1.65.06-3.49.02-5.24.01l-14.51-.05c-2.06,0-4.12.02-6.18.03h-3.09c-1.01,0-2.1.04-3.01-.04-1.98-.22-3.83-1.21-5.13-2.68-1.32-1.46-2.09-3.39-2.15-5.38-.1-3.59-.16-7.26-.24-10.89,0-.71-.01-1.43-.02-2.15-.06-4.27.14-8.33.2-12.5.05-3.04.15-6.08.28-9,.15-3.48.25-6.98.3-10.52.03-1.77.04-3.55.04-5.34v-1.57c-.02-.09,0-.19-.04-.27l-.13-.25c-.09-.16-.16-.33-.27-.48-.19-.3-.32-.46-.49-.68-.64-.79-1.33-1.45-2.07-2.07-1.09-.9-2.22-1.75-3.63-2.42-.3-.14-.68-.26-.99-.33-.31-.07-.6-.13-.88-.17-.57-.1-1.13-.17-1.68-.24-1.11-.13-2.21-.23-3.31-.3-2.19-.14-4.37-.19-6.53-.12-.62.02-1.43-.03-2.15-.03-5.87-.06-11.73-.12-17.61.18-3.06.16-6.14.32-9.23.54-.77.06-1.55.12-2.32.19-.39.04-.78.08-1.17.12-.2.02-.39.04-.59.07l-.31.04c-.14.01-.28.04-.42.1-.97.36-1.59.82-2.27,1.31-.66.49-1.27,1.01-1.86,1.57-.5.48-.99,1-1.45,1.57-.12.14-.23.29-.34.44-.12.15-.21.29-.33.49-.14.21-.25.44-.37.66-.07.24-.04.5-.05.74-.13,4.36-.07,8.7.09,12.76.12,2.94.1,5.67.05,8.43-.07,3.38-.12,6.67-.03,10.09.05,1.99.08,4.21,0,6.13-.17,4.73.06,9.44-.03,14.08-.02.2.05.42.06.66.03.98-.18,2.04-.63,3.06-.45,1.02-1.17,1.97-2.09,2.72-.91.76-2.03,1.31-3.2,1.58-.59.14-1.19.2-1.78.2-.6,0-1.23-.03-1.83-.06-4.71-.21-9.51-.2-14.2-.35-4.23-.13-8.75-.09-13.14-.11-5.53,0-11.07,0-16.61-.01h-4.94s-.62.02-.62.02h-.84c-.27.14-.54.28-.79.45-.21.13-.38.27-.56.41-.7.56-1.31,1.16-1.9,1.79-.58.63-1.13,1.29-1.63,2.01-.25.35-.49.73-.71,1.13-.21.39-.44.92-.5,1.34-.4,1.76-.49,3.38-.63,5.05-.37,5.26-.41,10.51-.65,15.72-.11,2.43-.14,5.2-.06,7.65.11,3.09.22,6.15.33,9.2Z" />
           </svg>
-          <p
-            class="font-headings text-xl link leading-none text-center text-moss-500 pt-1 md:pt-0">
-            Hospital
-          </p>
-          <p
-            class="font-headings text-xl link leading-none text-center text-moss-500 pt-1 md:pt-0">
-            FAQ
-          </p>
+          <div class="text-center">
+            <p
+              class="font-headings text-xl link leading-none text-moss-500 pt-1 md:pt-0">
+              Hospital
+            </p>
+            <p
+              class="font-headings text-xl link leading-none text-moss-500 pt-1 md:pt-0">
+              FAQ
+            </p>
+          </div>
         </a>
 
         <!-- Species -->
@@ -1241,17 +1248,13 @@
             </g>
           </svg>
         </div>
-        <div>
+        <div class="md:flex md:flex-col md:items-end">
           <p class="pt-4 md:text-end md:pt-0 paragraph-short">
             Browse our hospital wish list and help provide items that support
             patient care and comfort.
           </p>
 
-          <a
-            class="btn btn-main mt-8 md:justify-self-end"
-            href="donate-goods.html">
-            Donate Goods
-          </a>
+          <a class="btn btn-main mt-8" href="donate-goods.html">Donate Goods</a>
         </div>
       </section>
 
