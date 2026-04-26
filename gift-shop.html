@@ -749,10 +749,29 @@
       <div
         class="border-b border-stone-300 px-8 py-12 text-center md:text-left">
         <h1 class="text-moss-500">Gift Shop</h1>
+        <nav aria-label="Donate funds page sections" class="mt-0">
+          <ul
+            class="flex flex-col items-center justify-center gap-2 text-sm sm:flex-row sm:flex-wrap sm:gap-x-3 sm:gap-y-2 md:justify-start">
+            <li>
+              <a href="#welcome" class="link whitespace-nowrap">Welcome</a>
+            </li>
+
+            <li aria-hidden="true" class="flex items-center">
+              <span
+                class="block size-2 shrink-0 bg-moss-500/60 [mask-image:url('../images/bullet.svg')] [mask-repeat:no-repeat] [mask-position:center] [mask-size:contain] [-webkit-mask-image:url('../images/bullet.svg')] [-webkit-mask-repeat:no-repeat] [-webkit-mask-position:center] [-webkit-mask-size:contain]"></span>
+            </li>
+
+            <li>
+              <a href="#become-a-vendor" class="link whitespace-nowrap">
+                Become a Vendor
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
 
       <!-- Welcome -->
-      <section class="border-b border-stone-300 bg-stone-50">
+      <section id="welcome" class="border-b border-stone-300 bg-stone-50">
         <div class="grid md:grid-cols-2">
           <div class="p-8">
             <div class="flex flex-col items-center lg:flex-row lg:gap-6 pb-6">
@@ -773,7 +792,7 @@
                     aria-label="Seasonal visitor centre hours"
                     aria-expanded="false"
                     aria-controls="summer-hours-tooltip">
-                    <span aria-hidden="true">*</span>
+                    <span aria-hidden="true"><sup>?</sup></span>
                   </button>
 
                   <span
@@ -787,20 +806,22 @@
               </p>
             </div>
             <p class="pt-0">
-              Welcome to the MARS Visitors Centre Gift Shop, where every
-              purchase makes a difference in the lives of wildlife in need of
-              care! Not only is our shop is a great place to buy souvenirs; it’s
-              a haven for those passionate about conservation and wildlife
-              rehabilitation.
-              <span class="highlight">
-                We carry a wide assortment of eco-friendly merchandise and
-                handcrafted goods from Northern Vancouver Island and the
-                surrounding area.
-              </span>
-              From plush toys inspired by our resident animals to locally
-              sourced artisanal crafts, to guides and tools for your own
-              wildlife adventures; every item reflects our commitment to
-              conservation.
+              Welcome to the MARS Visitor Centre Gift Shop, where every purchase
+              makes a difference to the lives of animals in need! Our shop is a
+              great place to buy souvenirs and is a haven for those passionate
+              about conservation and wildlife rehabilitation. We carry a wide
+              assortment of eco-friendly merchandise and handcrafted goods from
+              across Vancouver Island and the surrounding area.
+            </p>
+            <p class="pt-0">
+              From plush toys inspired by our resident animals to guides and
+              tools for your own wildlife adventures, every item reflects our
+              commitment to conservation. We carry books and guides for all ages
+              about wildlife and nature. Kids’ toys and games are popular items
+              as are our wildlife-safety products like window-collison tape and
+              hummingbird feeder cleaning brushes. We also have MARS-branded
+              clothing so you can wear your heart on your sleeve and show some
+              love for wildlife!
             </p>
             <p>
               For a selection of
@@ -810,9 +831,8 @@
                 href="https://mars-wildlife-rescue.square.site/"
                 class="link-inline"
                 target="_blank">
-                Online Shop
+                Online Shop.
               </a>
-              or drop by the Visitor Centre to see our full range of products.
             </p>
           </div>
           <div class="lg:grid xl:grid-cols-2 bg-stone-200">
@@ -871,7 +891,9 @@
       </section>
 
       <!-- Become a Vendor -->
-      <section class="border-b border-stone-300 bg-stone-100">
+      <section
+        id="become-a-vendor"
+        class="border-b border-stone-300 bg-stone-100">
         <div class="grid md:grid-cols-2">
           <div class="px-8 py-8 md:py-16">
             <h2>Become a Vendor</h2>

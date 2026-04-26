@@ -195,6 +195,18 @@
     color: color-mix(in oklab, var(--color-moss-700) 70%, transparent);
   }
 
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
   /* light-mode / dark-mode */
   html[data-theme="dark"] {
     --color-moss-500: oklch(0.7581 0.1008 109.22);
@@ -215,6 +227,56 @@
 }
 
 @layer components {
+  .bullet {
+    @apply space-y-1;
+  }
+
+  .bullet li {
+    @apply relative pl-6 pt-0;
+  }
+
+  .bullet li::before {
+    content: "";
+    @apply absolute left-0 top-[0.425em] size-2.75 bg-moss-500;
+
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+  }
+
+  .bullet-default li::before {
+    mask-image: url("../images/bullet.svg");
+    -webkit-mask-image: url("../images/bullet.svg");
+  }
+
+  .bullet-yes li {
+    @apply pl-8;
+  }
+
+  .bullet-yes li::before {
+    @apply size-5;
+    top: 0.05em;
+
+    mask-image: url("../images/yes.svg");
+    -webkit-mask-image: url("../images/yes.svg");
+  }
+
+  .bullet-no li {
+    @apply pl-7;
+  }
+
+  .bullet-no li::before {
+    @apply size-4 bg-hotpink-500/70;
+    top: 0.2em;
+
+    mask-image: url("../images/no.svg");
+    -webkit-mask-image: url("../images/no.svg");
+  }
+
   /* buttons */
   .btn {
     @apply block self-end h-fit px-8 py-2 border-[1.5px] rounded-md 

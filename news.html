@@ -748,31 +748,62 @@
       <div
         class="border-b border-stone-300 px-8 py-12 text-center md:text-left">
         <h1 class="text-moss-500">News</h1>
-        <!-- <h2 class="text-center md:text-left mt-2">Current News</h2> -->
+        <nav aria-label="Donate funds page sections" class="mt-0">
+          <ul
+            class="flex flex-col items-center justify-center gap-2 text-sm sm:flex-row sm:flex-wrap sm:gap-x-3 sm:gap-y-2 md:justify-start">
+            <li>
+              <a href="#current-news" class="link whitespace-nowrap">
+                Current News
+              </a>
+            </li>
+
+            <li aria-hidden="true" class="flex items-center">
+              <span
+                class="block size-2 shrink-0 bg-moss-500/60 [mask-image:url('../images/bullet.svg')] [mask-repeat:no-repeat] [mask-position:center] [mask-size:contain] [-webkit-mask-image:url('../images/bullet.svg')] [-webkit-mask-repeat:no-repeat] [-webkit-mask-position:center] [-webkit-mask-size:contain]"></span>
+            </li>
+
+            <li>
+              <a href="#newsletters" class="link whitespace-nowrap">
+                Newsletters
+              </a>
+            </li>
+
+            <li aria-hidden="true" class="flex items-center">
+              <span
+                class="block size-2 shrink-0 bg-moss-500/60 [mask-image:url('../images/bullet.svg')] [mask-repeat:no-repeat] [mask-position:center] [mask-size:contain] [-webkit-mask-image:url('../images/bullet.svg')] [-webkit-mask-repeat:no-repeat] [-webkit-mask-position:center] [-webkit-mask-size:contain]"></span>
+            </li>
+
+            <li>
+              <a href="#annual-reports" class="link whitespace-nowrap">
+                Annual Reports
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
 
       <!-- News -->
-      <section class="grid">
+      <section id="current-news" class="grid">
         <!-- <h2 class="text-center md:hidden p-8 border-b border-stone-300">
           Current News
         </h2> -->
         <section
-          class="grid md:gap-3 bg-stone-200 border-b border-stone-300 md:grid-cols-3 lg:grid-cols-4">
+          class="grid md:gap-3 bg-stone-100 border-b border-stone-300 md:grid-cols-3 lg:grid-cols-4">
           <img
             class="w-full object-cover"
-            src="images/index/social-work-orange.jpg"
+            src="images/portrait-sm.png"
             alt="" />
           <img
             class="w-full object-cover"
-            src="images/index/social-shop.jpg"
+            src="images/portrait-sm.png"
             alt="" />
           <img
             class="hidden w-full object-cover md:block"
-            src="images/index/social-summer.jpg"
+            src="images/portrait-sm.png"
             alt="" />
           <img
             class="hidden w-full object-cover lg:block"
-            src="images/index/social-adopt.jpg"
+            src="images/portrait-sm.png"
             alt="" />
         </section>
         <div class="p-8 border-b border-stone-300">
@@ -804,7 +835,9 @@
         </div>
         <div>
           <p class="pt-4 md:text-end md:pt-0 paragraph-short">
-            Members receive updates on wildlife care, seasonal changes, special events, and the many ways MARS supports animals and the wider community.
+            Members receive updates on wildlife care, seasonal changes, special
+            events, and the many ways MARS supports animals and the wider
+            community.
           </p>
 
           <a
@@ -816,8 +849,9 @@
       </section>
 
       <!-- Newsletters -->
-      <section>
-        <h2 class="text-center md:text-left p-8 border-b border-stone-300">
+      <section id="newsletters">
+        <h2
+          class="text-center md:text-left px-8 py-8 md:py-12 border-b border-stone-300">
           Newsletters
         </h2>
         <section class="grid lg:grid-cols-2 border-b border-stone-300">
@@ -987,14 +1021,20 @@
             </a>
           </div>
           <div>
-            <img src="images/hospital/bird-stripe.jpg" class="w-full h-full object-cover block scale-x-[-1]" alt="" />
+            <img
+              src="images/hospital/bird-stripe.jpg"
+              class="w-full h-full object-cover block scale-x-[-1]"
+              alt="a raptor in the MARS flight pen" />
           </div>
         </section>
       </section>
 
       <!-- Annual Reports -->
-      <section class="border-b border-stone-300 bg-stone-50">
-        <h2 class="text-center md:text-left p-8 border-b border-stone-300">
+      <section
+        id="annual-reports"
+        class="border-b border-stone-300 bg-stone-50">
+        <h2
+          class="text-center md:text-left px-8 py-8 md:py-12 border-b border-stone-300">
           Annual Reports
         </h2>
         <div class="grid lg:grid-cols-2">
@@ -1002,7 +1042,7 @@
             <img
               src="images/index/report-25.jpg"
               class="h-full w-full"
-              alt="" />
+              alt="an annual report cover page" />
           </div>
           <div class="p-8">
             <p class="pt-0">
@@ -1066,68 +1106,6 @@
             </a>
             <p>Earlier annual reports are availble on request.</p>
           </div>
-
-          <!-- <div
-            class="grid gap-4 grid-cols-[repeat(auto-fit,minmax(min(165px,100%),1fr))] p-8 border-b border-stone-300">
-            <a
-              href="#"
-              class="btn btn-inverse py-6 hover:bg-white hover:text-moss-500 hover:border-stone-300">
-              <p class="pt-0 tracking-wide whitespace-nowrap">2023 - 2024</p>
-            </a>
-            <a
-              href="#"
-              class="btn btn-inverse py-6 hover:bg-white hover:text-moss-500 hover:border-stone-300">
-              <p class="pt-0 tracking-wide whitespace-nowrap">2022 - 2023</p>
-            </a>
-            <a
-              href="#"
-              class="btn btn-inverse py-6 hover:bg-white hover:text-moss-500 hover:border-stone-300">
-              <p class="pt-0 tracking-wide whitespace-nowrap">2021 - 2022</p>
-            </a>
-            <a
-              href="#"
-              class="btn btn-inverse py-6 hover:bg-white hover:text-moss-500 hover:border-stone-300">
-              <p class="pt-0 tracking-wide whitespace-nowrap">2020 - 2021</p>
-            </a>
-            <a
-              href="#"
-              class="btn btn-inverse py-6 hover:bg-white hover:text-moss-500 hover:border-stone-300">
-              <p class="pt-0 tracking-wide whitespace-nowrap">2019 - 2020</p>
-            </a>
-            <a
-              href="#"
-              class="btn btn-inverse py-6 hover:bg-white hover:text-moss-500 hover:border-stone-300">
-              <p class="pt-0 tracking-wide whitespace-nowrap">2018 - 2019</p>
-            </a>
-            <a
-              href="#"
-              class="btn btn-inverse py-6 hover:bg-white hover:text-moss-500 hover:border-stone-300">
-              <p class="pt-0 tracking-wide whitespace-nowrap">2017 - 2018</p>
-            </a>
-            <a
-              href="#"
-              class="btn btn-inverse py-6 hover:bg-white hover:text-moss-500 hover:border-stone-300">
-              <p class="pt-0 tracking-wide whitespace-nowrap">2016 - 2017</p>
-            </a>
-            <a
-              href="#"
-              class="btn btn-inverse py-6 hover:bg-white hover:text-moss-500 hover:border-stone-300">
-              <p class="pt-0 tracking-wide whitespace-nowrap">2015 - 2016</p>
-            </a>
-            <a
-              href="#"
-              class="btn btn-inverse py-6 hover:bg-white hover:text-moss-500 hover:border-stone-300">
-              <p class="pt-0 tracking-wide whitespace-nowrap">2014 - 2015</p>
-            </a>
-            <a
-              href="#"
-              class="btn btn-inverse py-6 hover:bg-white hover:text-moss-500 hover:border-stone-300">
-              <p class="pt-0 tracking-wide whitespace-nowrap">2013 - 2014</p>
-            </a>
-            <p class="italic place-self-center">
-              Earlier reports available on request.
-            </p>
-          </div> -->
         </div>
       </section>
 
@@ -1142,7 +1120,7 @@
         <div class="relative z-10">
           <h2>Support Us</h2>
 
-           <div
+          <div
             class="mt-8 grid gap-8 md:grid-cols-2 md:items-stretch xl:grid-cols-3">
             <!-- get involved -->
             <section class="h-full rounded-lg bg-white opacity-80">

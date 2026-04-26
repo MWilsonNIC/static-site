@@ -751,178 +751,227 @@
       </div>
 
       <!-- Data -->
-      <!-- Data -->
-      <div id="admissions-data" class="grid md:grid-cols-2 bg-stone-50">
-        <!-- Left column -->
-        <section
-          class="border-b border-stone-300 md:sticky md:top-36 md:self-start">
-          <div class="px-8 py-8 md:px-12">
-            <h2>2025 Wildlife Patients</h2>
-
-            <div class="flex items-center justify-center p-8 md:p-12">
-              <div id="wildlife-pie-chart" class="w-full max-w-[320px]"></div>
-            </div>
-
-            <ul id="wildlife-summary-list" class="space-y-2"></ul>
-
-            <p
-              id="wildlife-summary-total"
-              class="pt-6 text-xl font-bold uppercase tracking-wide"></p>
+      <section id="admissions-data" class="bg-stone-50">
+        <div class="border-b border-stone-300 bg-stone-50 px-8 py-6 md:px-12">
+          <div
+            class="flex flex-wrap gap-x-8 gap-y-4"
+            role="tablist"
+            aria-label="Admissions data range">
+            <button
+              id="admissions-tab-ytd"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="admissions-data-panel"
+              data-active="true"
+              data-admissions-tab="year-to-date"
+              class="pb-1 border-b-2 border-transparent text-moss-700 data-[active=true]:border-moss-500  cursor-pointer">
+              <h3>Year-to-date</h3>
+            </button>
+            <button
+              id="admissions-tab-2025"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="admissions-data-panel"
+              data-active="false"
+              data-admissions-tab="last-year"
+              class="pb-1 border-b-2 border-stone-500 text-moss-700 data-[active=true]:border-moss-500 cursor-pointer">
+              <h3>2025</h3>
+            </button>
           </div>
-        </section>
+        </div>
 
-        <!-- Right column -->
-        <section class="border-b border-stone-300 bg-stone-50">
-          <div class="px-8 py-8 md:px-12">
-            <h2>Detailed Species List</h2>
-            <p class="pt-4">
-              Species are listed by total patient count, highest to lowest.
-              Click on a heading to sort by status, species, category, or count.
-            </p>
+        <div
+          id="admissions-data-panel"
+          role="tabpanel"
+          aria-labelledby="admissions-tab-2025"
+          class="grid bg-stone-50 md:grid-cols-2">
+          <!-- Left column -->
+          <section
+            class="border-b border-stone-300 md:sticky md:top-36 md:self-start">
+            <div class="px-8 py-8 md:px-12">
+              <h2 id="admissions-data-heading">2025 Wildlife Patients</h2>
 
-            <!-- key -->
-            <section
-              aria-labelledby="bc-status-key-heading"
-              class="mt-8 rounded-lg bg-stone-50">
-              <h3
-                id="bc-status-key-heading"
-                class="text-base uppercase tracking-wide text-moss-500">
-                BC Status
-              </h3>
+              <div class="flex items-center justify-center p-8 md:p-12">
+                <div id="wildlife-pie-chart" class="w-full max-w-[320px]"></div>
+              </div>
 
-              <p class="max-w-[75ch] pt-3 text-sm md:text-base">
-                British Columbia uses a color-coded system (Red, Blue, Yellow)
-                managed by the BC Conservation Data Centre to classify animal
-                status based on conservation risk.
+              <ul id="wildlife-summary-list" class="space-y-2"></ul>
+
+              <p
+                id="wildlife-summary-total"
+                class="pt-6 text-xl font-bold uppercase tracking-wide"></p>
+            </div>
+          </section>
+
+          <!-- Right column -->
+          <section class="border-b border-stone-300 bg-stone-50">
+            <div class="px-8 py-8 md:px-12">
+              <h2>Detailed Species List</h2>
+              <p class="pt-4">
+                Species are listed by total patient count, highest to lowest.
+                Click on a heading to sort by BC status, species, category, or
+                count.
               </p>
 
-              <ul class="grid gap-3 pt-4">
-                <li class="flex items-start gap-3 pt-0">
-                  <span
-                    aria-hidden="true"
-                    class="mt-1 inline-block size-3 shrink-0 rounded-full bg-hotpink-500"></span>
-                  <span class="text-sm md:text-base">
-                    Extirpated, Endangered, or Threatened in BC
-                  </span>
-                </li>
+              <!-- key -->
+              <section
+                aria-labelledby="bc-status-key-heading"
+                class="mt-8 rounded-lg bg-stone-50">
+                <h3
+                  id="bc-status-key-heading"
+                  class="text-base uppercase tracking-wide text-moss-500">
+                  BC Status
+                </h3>
 
-                <li class="flex items-start gap-3 pt-0">
-                  <span
-                    aria-hidden="true"
-                    class="mt-1 inline-block size-3 shrink-0 rounded-full bg-lake-500"></span>
-                  <span class="text-sm md:text-base">
-                    Sensitive or vulnerable to human activity or natural events
-                  </span>
-                </li>
+                <p class="max-w-[75ch] pt-3 text-sm md:text-base">
+                  British Columbia classifies animal status based on
+                  conservation risk.
+                </p>
 
-                <li class="flex items-start gap-3 pt-0">
-                  <span
-                    aria-hidden="true"
-                    class="mt-1 inline-block size-3 shrink-0 rounded-full bg-yolk-500"></span>
-                  <span class="text-sm md:text-base">
-                    Species that are apparently secure or secure
-                  </span>
-                </li>
+                <ul class="grid gap-3 pt-4">
+                  <li class="flex items-start gap-3 pt-0">
+                    <span
+                      aria-hidden="true"
+                      class="inline-flex size-7 shrink-0 items-center justify-center rounded-full border border-stone-300 bg-stone-100 text-xs font-bold">
+                      T
+                    </span>
+                    <span class="text-sm md:text-base">
+                      Threatened (BC Red List): Extirpated, endangered, or
+                      threatened in BC.
+                    </span>
+                  </li>
 
-                <li class="flex items-start gap-3 pt-0">
-                  <span
-                    aria-hidden="true"
-                    class="mt-1 inline-block size-3 shrink-0 rounded-full bg-moss-500"></span>
-                  <span class="text-sm md:text-base">Other</span>
-                </li>
-              </ul>
-            </section>
+                  <li class="flex items-start gap-3 pt-0">
+                    <span
+                      aria-hidden="true"
+                      class="inline-flex size-7 shrink-0 items-center justify-center rounded-full border border-stone-300 bg-stone-100 text-xs font-bold">
+                      V
+                    </span>
+                    <span class="text-sm md:text-base">
+                      Vulnerable (BC Blue List): Sensitive or vulnerable to
+                      human activity or natural events.
+                    </span>
+                  </li>
 
-            <div class="pt-8">
-              <div class="overflow-x-auto">
-                <table
-                  id="species-table"
-                  class="w-full table-fixed border-collapse bg-white text-sm">
-                  <colgroup>
-                    <col class="w-[8%]" />
-                    <col class="w-[44%]" />
-                    <col class="w-[28%]" />
-                    <col class="w-[20%]" />
-                  </colgroup>
+                  <!-- <li class="flex items-start gap-3 pt-0">
+                    <span
+                      aria-hidden="true"
+                      class="inline-flex size-7 shrink-0 items-center justify-center rounded-full border border-stone-300 bg-stone-100 text-xs font-bold">
+                      S
+                    </span>
+                    <span class="text-sm md:text-base">
+                      Secure (BC Yellow List): Apparently secure or secure in
+                      BC.
+                    </span>
+                  </li>
 
-                  <thead>
-                    <tr class="border-b border-stone-300">
-                      <th
-                        class="bg-stone-200 p-3 text-center font-bold"
-                        scope="col"
-                        aria-sort="none">
-                        <button
-                          type="button"
-                          data-sort-button="status"
-                          class="inline-flex items-center justify-center cursor-pointer"
-                          aria-label="Sort by status dot color">
-                          <span class="sr-only">Status</span>
-                          <span
-                            data-sort-arrow="status"
-                            class="inline-block w-5 text-center"
-                            aria-hidden="true"></span>
-                        </button>
-                      </th>
+                  <li class="flex items-start gap-3 pt-0">
+                    <span
+                      aria-hidden="true"
+                      class="inline-flex size-7 shrink-0 items-center justify-center rounded-full border border-stone-300 bg-stone-100 text-xs font-bold">
+                      O
+                    </span>
+                    <span class="text-sm md:text-base">
+                      Other: Exotic, introduced, not reviewed, no status, or
+                      unconfirmed.
+                    </span>
+                  </li> -->
+                </ul>
+              </section>
 
-                      <th
-                        class="bg-stone-200 p-3 text-left font-bold"
-                        scope="col"
-                        aria-sort="none">
-                        <button
-                          type="button"
-                          data-sort-button="species"
-                          class="inline-flex items-center whitespace-nowrap text-left cursor-pointer">
-                          <span>Species</span>
-                          <span
-                            data-sort-arrow="species"
-                            class="inline-block w-5 text-center"
-                            aria-hidden="true"></span>
-                        </button>
-                      </th>
+              <div class="pt-8">
+                <div class="overflow-x-auto">
+                  <table
+                    id="species-table"
+                    class="w-full table-fixed border-collapse bg-white text-sm">
+                    <colgroup>
+                      <col class="w-[12%]" />
+                      <col class="w-[40%]" />
+                      <col class="w-[28%]" />
+                      <col class="w-[20%]" />
+                    </colgroup>
 
-                      <th
-                        class="bg-stone-200 p-3 text-left font-bold"
-                        scope="col"
-                        aria-sort="none">
-                        <button
-                          type="button"
-                          data-sort-button="category"
-                          class="inline-flex items-center whitespace-nowrap text-left cursor-pointer">
-                          <span>Category</span>
-                          <span
-                            data-sort-arrow="category"
-                            class="inline-block w-5 text-center"
-                            aria-hidden="true"></span>
-                        </button>
-                      </th>
+                    <thead>
+                      <tr class="border-b border-stone-300">
+                        <th
+                          class="bg-stone-200 p-3 text-center font-bold"
+                          scope="col"
+                          aria-sort="none">
+                          <button
+                            type="button"
+                            data-sort-button="status"
+                            class="inline-flex items-center justify-center cursor-pointer"
+                            aria-label="Sort by BC status">
+                            <span>BC</span>
+                            <span
+                              data-sort-arrow="status"
+                              class="inline-block w-5 text-center"
+                              aria-hidden="true"></span>
+                          </button>
+                        </th>
 
-                      <th
-                        class="bg-stone-200 p-3 text-right font-bold"
-                        scope="col"
-                        aria-sort="descending">
-                        <button
-                          type="button"
-                          data-sort-button="count"
-                          class="inline-flex items-center whitespace-nowrap cursor-pointer">
-                          <span>Count</span>
-                          <span
-                            data-sort-arrow="count"
-                            class="inline-block w-5 text-center"
-                            aria-hidden="true">
-                            ↓
-                          </span>
-                        </button>
-                      </th>
-                    </tr>
-                  </thead>
+                        <th
+                          class="bg-stone-200 p-3 text-left font-bold"
+                          scope="col"
+                          aria-sort="none">
+                          <button
+                            type="button"
+                            data-sort-button="species"
+                            class="inline-flex items-center whitespace-nowrap text-left cursor-pointer">
+                            <span>Species</span>
+                            <span
+                              data-sort-arrow="species"
+                              class="inline-block w-5 text-center"
+                              aria-hidden="true"></span>
+                          </button>
+                        </th>
 
-                  <tbody id="species-table-body"></tbody>
-                </table>
+                        <th
+                          class="bg-stone-200 p-3 text-left font-bold"
+                          scope="col"
+                          aria-sort="none">
+                          <button
+                            type="button"
+                            data-sort-button="category"
+                            class="inline-flex items-center whitespace-nowrap text-left cursor-pointer">
+                            <span>Category</span>
+                            <span
+                              data-sort-arrow="category"
+                              class="inline-block w-5 text-center"
+                              aria-hidden="true"></span>
+                          </button>
+                        </th>
+
+                        <th
+                          class="bg-stone-200 p-3 text-right font-bold"
+                          scope="col"
+                          aria-sort="descending">
+                          <button
+                            type="button"
+                            data-sort-button="count"
+                            class="inline-flex items-center whitespace-nowrap cursor-pointer">
+                            <span>Count</span>
+                            <span
+                              data-sort-arrow="count"
+                              class="inline-block w-5 text-center"
+                              aria-hidden="true">
+                              ↓
+                            </span>
+                          </button>
+                        </th>
+                      </tr>
+                    </thead>
+
+                    <tbody id="species-table-body"></tbody>
+                  </table>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </div>
+          </section>
+        </div>
+      </section>
 
       <!-- SUPPORT US -->
       <section

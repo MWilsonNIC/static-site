@@ -425,7 +425,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const visitorCentreOpen = dayOfWeek === 5 || dayOfWeek === 6 || dayOfWeek === 0;
 
-    visitorHoursEl.textContent = visitorCentreOpen ? "10:00 am - 3:00 pm" : "Closed Today";
+    visitorHoursEl.textContent = visitorCentreOpen ? "Open Today 10:00 am - 3:00 pm" : "Closed Today";
 });
 
 // Forms
@@ -762,16 +762,71 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 // Internal page links
-window.addEventListener("load", () => {
-    if (!window.location.hash) return;
+// window.addEventListener("load", () => {
+//     if (!window.location.hash) return;
 
-    const target = document.querySelector(window.location.hash);
-    if (!target) return;
+//     const target = document.querySelector(window.location.hash);
+//     if (!target) return;
 
-    setTimeout(() => {
-        target.scrollIntoView({ block: "start" });
-    }, 0);
-});
+//     setTimeout(() => {
+//         target.scrollIntoView({ block: "start" });
+//     }, 0);
+// });
+// Internal page links
+(() => {
+    const header = document.querySelector("header");
+
+    const getHeaderOffset = () => {
+        return header ? header.offsetHeight + 16 : 16;
+    };
+
+    const scrollToTarget = (hash, updateUrl = false) => {
+        if (!hash || hash === "#") return;
+
+        const id = decodeURIComponent(hash.slice(1));
+        const target = document.getElementById(id);
+
+        if (!target) return;
+
+        const targetPosition =
+            target.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth",
+        });
+
+        if (updateUrl) {
+            history.pushState(null, "", hash);
+        }
+    };
+
+    // Same-page link clicks
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+            const hash = link.getAttribute("href");
+
+            if (!hash || hash === "#") return;
+
+            const id = decodeURIComponent(hash.slice(1));
+            const target = document.getElementById(id);
+
+            if (!target) return;
+
+            event.preventDefault();
+            scrollToTarget(hash, true);
+        });
+    });
+
+    // Page loads with a hash already in the URL
+    window.addEventListener("load", () => {
+        if (!window.location.hash) return;
+
+        requestAnimationFrame(() => {
+            scrollToTarget(window.location.hash);
+        });
+    });
+})();
 
 // topo background
 

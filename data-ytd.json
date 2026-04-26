@@ -1,0 +1,456 @@
+[
+  {
+    "category": "Amphibians",
+    "color": "var(--color-moss-500)",
+    "patients": []
+  },
+  {
+    "category": "Reptiles",
+    "color": "var(--color-hotpink-500)",
+    "patients": []
+  },
+  {
+    "category": "Mammals",
+    "color": "var(--color-tangerine-500)",
+    "patients": [
+      {
+        "name": "Raccoon",
+        "count": 7,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "California Myotis",
+        "count": 5,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Yuma Myotis",
+        "count": 3,
+        "bcListStatus": "Blue",
+        "statusDotGroup": "lake",
+        "statusDotColor": "var(--color-lake-500)",
+        "statusDotLabel": "BC Blue-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "North American River Otter",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Townsend's Big-eared Bat",
+        "count": 1,
+        "bcListStatus": "Blue",
+        "statusDotGroup": "lake",
+        "statusDotColor": "var(--color-lake-500)",
+        "statusDotLabel": "BC Blue-listed species",
+        "statusMatchType": "web_verified"
+      }
+    ]
+  },
+  {
+    "category": "Birds",
+    "color": "var(--color-yolk-700)",
+    "patients": [
+      {
+        "name": "Bald Eagle",
+        "count": 26,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Anna's Hummingbird",
+        "count": 9,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Common Raven",
+        "count": 7,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Dark-eyed Junco",
+        "count": 7,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Purple Finch",
+        "count": 7,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "American Robin",
+        "count": 6,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Barred Owl",
+        "count": 4,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Rufous Hummingbird",
+        "count": 4,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "American Crow",
+        "count": 3,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Fox Sparrow",
+        "count": 3,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Northern Flicker",
+        "count": 3,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Olympic Gull",
+        "count": 3,
+        "bcListStatus": null,
+        "statusDotGroup": "moss",
+        "statusDotColor": "var(--color-moss-500)",
+        "statusDotLabel": "BC status not confirmed from online sources; using moss dot",
+        "statusMatchType": "fallback_moss"
+      },
+      {
+        "name": "Brewer's Blackbird",
+        "count": 2,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Chestnut-backed Chickadee",
+        "count": 2,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Glaucous-winged Gull",
+        "count": 2,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Great Blue Heron",
+        "count": 2,
+        "bcListStatus": "Blue",
+        "statusDotGroup": "lake",
+        "statusDotColor": "var(--color-lake-500)",
+        "statusDotLabel": "BC Blue-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Great Horned Owl",
+        "count": 2,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Green-winged Teal",
+        "count": 2,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Hairy Woodpecker",
+        "count": 2,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "House Finch",
+        "count": 2,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Mallard",
+        "count": 2,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Sharp-shinned Hawk",
+        "count": 2,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Song Sparrow",
+        "count": 2,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Spotted Towhee",
+        "count": 2,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Trumpeter Swan",
+        "count": 2,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Varied Thrush",
+        "count": 2,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "American Barn Owl",
+        "count": 1,
+        "bcListStatus": "Blue",
+        "statusDotGroup": "lake",
+        "statusDotColor": "var(--color-lake-500)",
+        "statusDotLabel": "BC Blue-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Ancient Murrelet",
+        "count": 1,
+        "bcListStatus": "Blue",
+        "statusDotGroup": "lake",
+        "statusDotColor": "var(--color-lake-500)",
+        "statusDotLabel": "BC Blue-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Canada Goose",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Common Goldeneye",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Common Merganser",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Downy Woodpecker",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Golden-crowned Kinglet",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Hermit Thrush",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Peregrine Falcon",
+        "count": 1,
+        "bcListStatus": "Blue",
+        "statusDotGroup": "lake",
+        "statusDotColor": "var(--color-lake-500)",
+        "statusDotLabel": "BC Blue-listed species; mapped to Peregrine Falcon, pealei subspecies",
+        "statusMatchType": "subspecies_web_verified"
+      },
+      {
+        "name": "Pileated Woodpecker",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Red-breasted Sapsucker",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Red-tailed Hawk",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Rhinocerous Auklet",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Ruby-crowned Kinglet",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Stellar's Jay",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "Violet-green Swallow",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      },
+      {
+        "name": "White-winged Scoter",
+        "count": 1,
+        "bcListStatus": "Yellow",
+        "statusDotGroup": "yolk",
+        "statusDotColor": "var(--color-yolk-500)",
+        "statusDotLabel": "BC Yellow-listed species",
+        "statusMatchType": "web_verified"
+      }
+    ]
+  }
+]
